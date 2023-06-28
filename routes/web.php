@@ -7,6 +7,7 @@ use App\Http\Controllers\EnginController;
 use App\Http\Controllers\MarquesController;
 use App\Http\Controllers\PieceCategorieController;
 use App\Http\Controllers\PiecesController;
+use App\Models\Temoignage;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,9 +52,10 @@ Route::resource('categorie_engin', EnginCategorieController::class);
 Route::resource('categorie_piece', PieceCategorieController::class);
 Route::resource('engin', EnginController::class);
 Route::resource('pieces', PiecesController::class);
-
-
 Route::resource('marques', MarquesController::class);
+
+Route::resource('temoignages', Temoignage::class);
+
 
 
 

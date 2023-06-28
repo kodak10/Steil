@@ -9,11 +9,11 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <h5 class="p-3">
-                        LISTE DES MEMBRES
+                        LISTE DES ENGIN
                     </h5>
                     <button class="btn btn-secondary">
-                        <a href="/pratiquants/create" class="p-3">
-                            NOUVEAU PRATIQUANT
+                        <a href="{{route('temoignages.create')}}" class="p-3">
+                            NOUVEL ENGIN
                         </a>
                     </button>
                 </div>
@@ -24,90 +24,44 @@
                                 <thead class="text-center">
                                     <tr>
                                         <th>#</th>
-                                        <th>Numéro de passeport</th>
-                                        <th>Nom & Prénoms</th>
-                                        <th>Date de naissance</th>
-                                        <th>Contact</th>
-                                        <th>Grade Actuel</th>
+                                        <th>Categorie de l'engin</th>
+                                        <th>Nom</th>
+                                        <th>Description</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
                                     <?php $i=0; ?>
                                     <!-- Boucle sur les données pour afficher les lignes -->
-                                    @foreach($pratiquants as $pratiquant)
+                                    @foreach($temoignages as $temoignage)
                                         <?php $i++; ?>
                                         <tr>
                                             <td>{{$i}}</td>
-                                            <td>{{ $pratiquant->num_passeport }}</td>
-                                            <td>{{ $pratiquant->nom }} {{ $pratiquant->prenoms }}</td>
-                                            <td>{{ $pratiquant->dat_nais }}</td>
-                                            <td>{{ $pratiquant->contact }}</td>
-                                            <td>{{ $pratiquant->grade }}</td>
-                                            <td class="text-center d-flex justify-content-between" > <a href=""><i class="fa-solid fa-pen-to-square"></i></a> <a href="" class="bg-danger"><i class="fa-solid fa-trash"></i></a></td>
+                                            <td></td>
+                                            <td>{{ $temoignage->nom }}</td>
+                                            <td>{{ $temoignage->message }}</td>
+                                            <td class="text-center d-flex justify-content-center" >
+                                                <button type="button" class="btn btn-primary mr-5">
+                                                    <a href="{{ route('temoignages.edit', $temoignage->id) }}" class="text-white ">Modifier</a>
+                                                </button>
+                                                <form
+
+                                                    method="POST"
+                                                    action="{{ route('temoignages.destroy', $temoignage->id) }}"
+                                                    onsubmit="return confirm('Etes vous sur de vouloir supprimer ? Cette action est irreversible.');">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit">Supprimer</button>
+                                                </form>
+
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
 
 
-                            {{-- <table id="liste_pratiquant" class="display expandable-table dataTable no-footer" style="width: 100%;" role="grid">
-                                  <thead>
-                                      <tr role="row">
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" style="width: 97px;">Cocher</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" style="width: 97px;">N° de passeport</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" style="width: 97px;">Date d'adhesion</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" style="width: 97px;">Nom & Prenoms</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" style="width: 97px;">Date de naissance</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" style="width: 97px;">Profession</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" style="width: 97px;">Numéro de téléphone</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" style="width: 97px;">Personne à contacter en cas d'urgence</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" style="width: 97px;">Numéro à contacter en cas d'urgence</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 118px;">Grade Actuel</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 118px;">Modifier</th>
-                                            <th  tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 118px;">Supprimer</th>
 
-                                        </tr>
-                                  </thead>
-                                  <tbody>
-
-                                    @php $num=1 @endphp
-                                    @foreach ($pratiquants as $pratiquant)
-                                        <tr>
-                                            <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                                            <td>{{$pratiquant->num_passeport}}</td>
-                                            <td>{{$pratiquant->created_at}}</td>
-                                            <td>{{$pratiquant->nom}} {{$pratiquant->prenoms}}</td>
-                                            <td>{{$pratiquant->date_nais}}</td>
-                                            <td>{{$pratiquant->profession}}</td>
-                                            <td>{{$pratiquant->contact_pratiquant}}</td>
-                                            <td>{{$pratiquant->nom_parent}}</td>
-                                            <td>{{$pratiquant->contact_parent1}}</td>
-                                            <td>{{$pratiquant->grade}}</td>
-
-
-                                            <td><a class="btn btn-primary" href="{{ route('pratiquant.edit',$pratiquant->id) }}">
-                                                <i class="fa-solid fa-pen"></i>
-                                            </a></td>
-
-                                            <td>
-                                                <form
-
-                                                    method="POST"
-                                                    action="{{ route('pratiquant.destroy', $pratiquant->id) }}"
-                                                    onsubmit="return confirm('Etes vous sur de vouloir supprimer ? Cette action est irreversible.');">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn " type="submit"><i class="fa-solid fa-trash" style="color: red;"></i></button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                @endforeach
-
-
-
-                                  </tbody>
-                                </table> --}}
 
                         </div>
                     </div>
@@ -118,7 +72,6 @@
 
 
     </div>
-    <!-- Page end  -->
 </div>
 
 
