@@ -48,7 +48,7 @@
           <li><a href="/" >Accueil</a></li>
           <li><a href="">A Propos</a></li>
           <li><a href="">Services</a></li>
-          <li><a href="/pieces">Pièces Auto / Engin</a></li>
+          <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
           <li><a href="/reparation" class="active">Reparation d'engin</a></li>
           <li><a href="/contact">Contact</a></li>
           <li><a href="/login/admin"><i class="fa-solid fa-user"></i></a></li>

@@ -128,13 +128,13 @@
                     </a>
                     <ul id="app6" class="submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class=" sidebar-layout mt-2">
-                            <a href="" class="svg-icon">
+                            <a href="/marques" class="svg-icon">
                                 <i class="fa-solid fa-plus"></i>
                                 <span class="">Liste des logo</span>
                             </a>
                         </li>
                         <li class=" sidebar-layout">
-                            <a href="" class="svg-icon">
+                            <a href="/marques/create" class="svg-icon">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 <span class="">Ajouter</span>
                             </a>

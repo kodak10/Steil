@@ -4,6 +4,7 @@ use App\Http\Controllers\EnginCategorieController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EnginController;
+use App\Http\Controllers\MarquesController;
 use App\Http\Controllers\PieceCategorieController;
 use App\Http\Controllers\PiecesController;
 
@@ -26,7 +27,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/pieces', function () {
+Route::get('/pieces_engin', function () {
     return view('pieces');
 });
 
@@ -49,9 +50,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('categorie_engin', EnginCategorieController::class);
 Route::resource('categorie_piece', PieceCategorieController::class);
 Route::resource('engin', EnginController::class);
-
-
 Route::resource('pieces', PiecesController::class);
+
+
+Route::resource('marques', MarquesController::class);
 
 
 
