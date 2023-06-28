@@ -57,10 +57,10 @@ class EnginController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('assets/img/engin'), $imageName);
+                $image->move(public_path('assets/img/engin/'), $imageName);
 
                 $photo = new Image();
-                $photo->chemin = 'assets/img/engin' . $imageName;
+                $photo->chemin = 'assets/img/engin/' . $imageName;
                 $engins->images()->save($photo);
             }
         }

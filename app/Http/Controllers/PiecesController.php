@@ -57,10 +57,10 @@ class PiecesController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('assets/img/pieces'), $imageName);
+                $image->move(public_path('assets/img/pieces/'), $imageName);
 
                 $photo = new Image();
-                $photo->chemin = 'assets/img/pieces' . $imageName;
+                $photo->chemin = 'assets/img/pieces/' . $imageName;
                 $pieces->images()->save($photo);
             }
         }
