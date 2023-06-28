@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
+use App\Models\Piece;
 use Illuminate\Http\Request;
+use App\Models\CategoriePiece;
 
 class PiecesController extends Controller
 {
@@ -11,7 +14,13 @@ class PiecesController extends Controller
      */
     public function index()
     {
-        //
+// $categorie_engin = CategorieEngin::all();
+        // $engin = Engin::find(1);
+        $pieces = Piece::all();
+        // $categories_engins = $engins->categorieEngin;
+
+
+        return view('dashboard.pieces.index', compact('pieces'));
     }
 
     /**
@@ -19,7 +28,8 @@ class PiecesController extends Controller
      */
     public function create()
     {
-        //
+        $categorie_pieces = CategoriePiece::all();
+        return view('dashboard.pieces.create' , compact('categorie_pieces'));
     }
 
     /**
@@ -27,7 +37,37 @@ class PiecesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validation des données d'entrée
+        $validatedData = $request->validate([
+            'nom' => 'required',
+            'description' => 'required',
+            'id_categories_pieces' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048'
+
+
+        ]);
+
+        // Création d'un nouvel
+        $pieces = new Piece();
+        $pieces->nom = $validatedData['nom'];
+        $pieces->description = $validatedData['description'];
+        $pieces->id_categories_pieces = $validatedData['id_categories_pieces'];
+        $pieces->save();
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $imageName = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path('assets/img/pieces'), $imageName);
+
+                $photo = new Image();
+                $photo->chemin = 'assets/img/pieces' . $imageName;
+                $pieces->images()->save($photo);
+            }
+        }
+
+
+
+        return redirect()->route('pieces.create')->with('success', "Pièces créé avec succès.");
     }
 
     /**
@@ -43,7 +83,9 @@ class PiecesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categorie_pieces = CategoriePiece::all();
+        $pieces = Piece::findOrFail($id);
+        return view('dashboard.pieces.edit', compact('categorie_pieces', 'pieces'));
     }
 
     /**
@@ -51,7 +93,22 @@ class PiecesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $piece = Piece::findOrFail($id);
+
+        // Validation des données d'entrée
+        $request->validate([
+            'nom' => 'required',
+            'description' => 'required',
+            'id_categories_pieces' => 'required',
+        ]);
+
+        $piece->nom = $request->input('nom');
+        $piece->description = $request->input('description');
+        $piece->id_categories_pieces = $request->input('id_categories_pieces');
+
+        $piece->save();
+
+        return redirect()->route('pieces.edit', $piece->id)->with('success', "Pièce mise à jour avec succès.");
     }
 
     /**
@@ -59,39 +116,10 @@ class PiecesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pieces = Piece::findOrFail($id);
+        $pieces->delete();
+
+        return redirect()->route('pieces.index')->with('success', "Pièce supprimer avec succès.");
     }
 
-
-    // Categorie
-
-    public function liste_categorie ()
-    {
-        return view('dashboard.pieces.categories.index');
-    }
-
-    public function create_categorie ()
-    {
-        return view('dashboard.pieces.categories.create');
-    }
-
-    public function store_categorie ()
-    {
-        
-    }
-
-    public function edit_categorie ()
-    {
-        return view('dashboard.pieces.categories.edit');
-    }
-
-    public function update_categorie ()
-    {
-        
-    }
-
-    public function destroy_categorie ()
-    {
-        
-    }
 }

@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\EnginCategorieController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EnginController;
+use App\Http\Controllers\PieceCategorieController;
 use App\Http\Controllers\PiecesController;
 
 /*
@@ -44,17 +46,17 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::resource('categorie_engin', EnginCategorieController::class);
+Route::resource('categorie_piece', PieceCategorieController::class);
 Route::resource('engin', EnginController::class);
-Route::get('/engin/categorie/create', [App\Http\Controllers\EnginController::class, 'create_categorie']);
-Route::get('/engin/categorie/list', [App\Http\Controllers\EnginController::class, 'liste_categorie']);
-Route::get('/engin/categorie/{id}/edit', [App\Http\Controllers\EnginController::class, 'edit_categorie']);
-
 
 
 Route::resource('pieces', PiecesController::class);
-Route::get('/pieces/categorie/create', [App\Http\Controllers\PiecesController::class, 'create_categorie']);
-Route::get('/pieces/categorie/list', [App\Http\Controllers\PiecesController::class, 'liste_categorie']);
-Route::get('/pieces/categorie/{id}/edit', [App\Http\Controllers\PiecesController::class, 'edit_categorie']);
+
+
+
+
+
+
 
 

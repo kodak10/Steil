@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Engin;
+use App\Models\Image;
 use Illuminate\Http\Request;
+use App\Models\CategorieEngin;
 
 class EnginController extends Controller
 {
@@ -11,7 +14,13 @@ class EnginController extends Controller
      */
     public function index()
     {
-        //
+        // $categorie_engin = CategorieEngin::all();
+        // $engin = Engin::find(1);
+        $engins = Engin::all();
+        // $categories_engins = $engins->categorieEngin;
+
+
+        return view('dashboard.engin.index', compact('engins'));
     }
 
     /**
@@ -19,7 +28,8 @@ class EnginController extends Controller
      */
     public function create()
     {
-        //
+        $categorie_engins = CategorieEngin::all();
+        return view('dashboard.engin.create' , compact('categorie_engins'));
     }
 
     /**
@@ -27,7 +37,36 @@ class EnginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         // Validation des données d'entrée
+         $validatedData = $request->validate([
+            'nom' => 'required',
+            'description' => 'required',
+            'id_categories_engin' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048'
+
+        ]);
+
+        // Création d'un nouvel
+
+        $engins = new Engin();
+        $engins->nom = $validatedData['nom'];
+        $engins->description = $validatedData['description'];
+        $engins->id_categories_engin = $validatedData['id_categories_engin'];
+        $engins->save();
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $imageName = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path('assets/img/engin'), $imageName);
+
+                $photo = new Image();
+                $photo->chemin = 'assets/img/engin' . $imageName;
+                $engins->images()->save($photo);
+            }
+        }
+
+
+        return redirect()->route('engin.create')->with('success', "Engin créé avec succès.");
     }
 
     /**
@@ -43,7 +82,10 @@ class EnginController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categorie_engins = CategorieEngin::all();
+        $engins = Engin::findOrFail($id);
+        return view('dashboard.engin.edit', compact('categorie_engins', 'engins'));
+
     }
 
     /**
@@ -51,7 +93,22 @@ class EnginController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $engin = Engin::findOrFail($id);
+
+        // Validation des données d'entrée
+        $request->validate([
+            'nom' => 'required',
+            'description' => 'required',
+            'id_categories_engin' => 'required',
+        ]);
+
+        $engin->nom = $request->input('nom');
+        $engin->description = $request->input('description');
+        $engin->id_categories_engin = $request->input('id_categories_engin');
+
+        $engin->save();
+
+        return redirect()->route('engin.edit', $engin->id)->with('success', "Engin mise à jour avec succès.");
     }
 
     /**
@@ -59,39 +116,12 @@ class EnginController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $engin = Engin::findOrFail($id);
+        $engin->delete();
+
+        return redirect()->route('engin.index')->with('success', "Engin supprimer avec succès.");
     }
 
-    // Categorie
 
-    public function liste_categorie ()
-    {
-        return view('dashboard.engin.categories.index');
-    }
-
-    public function create_categorie ()
-    {
-        return view('dashboard.engin.categories.create');
-    }
-
-    public function store_categorie ()
-    {
-        
-    }
-
-    public function edit_categorie ()
-    {
-        return view('dashboard.engin.categories.edit');
-    }
-
-    public function update_categorie ()
-    {
-        
-    }
-
-    public function destroy_categorie ()
-    {
-        
-    }
 
 }

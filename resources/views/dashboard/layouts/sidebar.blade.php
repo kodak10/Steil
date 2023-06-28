@@ -14,7 +14,7 @@
         <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="side-menu">
                 <li class="active sidebar-layout">
-                    <a href="/" class="svg-icon">
+                    <a href="/login/admin" class="svg-icon">
                         <i class="fa-solid fa-house"></i>
                         <span class="ml-2">MENU GENERAL</span>
                     </a>
@@ -25,7 +25,7 @@
 
                 <li class="sidebar-layout">
                     <a href="#app1" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
-                        <i class="fa-solid fa-users-line"></i>
+                        <i class="fa-solid fa-toolbox"></i>
                         <span class="ml-2">Pièces</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -33,21 +33,21 @@
                     </a>
                     <ul id="app1" class="submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class=" sidebar-layout">
-                            <a href="/pieces/categorie/create" class="svg-icon">
-                                <i class="fa-solid fa-print"></i>
+                            <a href="/categorie_piece" class="svg-icon">
+                                <i class="fa-solid fa-layer-group"></i>
                                 <span class="">Créer une Catégorie</span>
                             </a>
                         </li>
                         <li class=" sidebar-layout mt-2">
-                            <a href="/pieces/index" class="svg-icon">
-                                <i class="fa-solid fa-user-plus"></i>
+                            <a href="/pieces" class="svg-icon">
+                                <i class="fa-solid fa-list"></i>
                                 <span class="">Liste des Pièces</span>
                             </a>
                         </li>
-                       
+
                         <li class=" sidebar-layout">
                             <a href="/pieces/create" class="svg-icon">
-                                <i class="fa-solid fa-check-double"></i>
+                                <i class="fa-solid fa-plus"></i>
                                 <span class="">Ajouter une pièce</span>
                             </a>
                         </li>
@@ -58,7 +58,7 @@
 
                 <li class="sidebar-layout">
                     <a href="#app2" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
-                        <i class="fa-solid fa-newspaper"></i>
+                        <i class="fa-solid fa-car"></i>
                         <span class="ml-2">Engin</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active"  width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -66,20 +66,20 @@
                     </a>
                     <ul id="app2" class="submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class=" sidebar-layout">
-                            <a href="/engin/categorie/create" class="svg-icon">
-                                <i class="fa-solid fa-print"></i>
+                            <a href="/categorie_engin" class="svg-icon">
+                                <i class="fa-solid fa-layer-group"></i>
                                 <span class="">Créer une Catégorie</span>
                             </a>
                         </li>
                         <li class=" sidebar-layout mt-2">
-                            <a href="/engin/create" class="svg-icon">
-                                <i class="fa-solid fa-plus"></i>
+                            <a href="/engin" class="svg-icon">
+                                <i class="fa-solid fa-list"></i>
                                 <span class="">Liste des Engin</span>
                             </a>
                         </li>
                         <li class=" sidebar-layout">
                             <a href="/engin/create" class="svg-icon">
-                                <i class="fa-solid fa-check-double"></i>
+                                <i class="fa-solid fa-plus"></i>
                                 <span class="">Ajouter un Engin</span>
                             </a>
                         </li>
@@ -92,7 +92,7 @@
                 </li>
                 <li class="sidebar-layout">
                     <a href="#app3" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
-                        <i class="fa-solid fa-newspaper"></i>
+                        <i class="fa-solid fa-list"></i>
                         <span class="ml-2">Réalisation</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active"  width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
