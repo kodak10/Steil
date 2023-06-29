@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Engin;
 use App\Models\Piece;
+use App\Models\Realisation;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -25,5 +26,10 @@ class Image extends Model
     public function piece()
     {
         return $this->belongsTo(Piece::class);
+    }
+
+    public function realisation()
+    {
+        return $this->belongsTo(Realisation::class);
     }
 }

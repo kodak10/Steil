@@ -99,14 +99,20 @@
                         </svg>
                     </a>
                     <ul id="app3" class="submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li class=" sidebar-layout">
+                            <a href="/categorie_realisation" class="svg-icon">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <span class="">Créer une Catégorie</span>
+                            </a>
+                        </li>
                         <li class=" sidebar-layout mt-2">
-                            <a href="" class="svg-icon">
+                            <a href="/realisations" class="svg-icon">
                                 <i class="fa-solid fa-plus"></i>
                                 <span class="">Liste des réalisations</span>
                             </a>
                         </li>
                         <li class=" sidebar-layout">
-                            <a href="" class="svg-icon">
+                            <a href="/realisations/create" class="svg-icon">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 <span class="">Ajouter</span>
                             </a>

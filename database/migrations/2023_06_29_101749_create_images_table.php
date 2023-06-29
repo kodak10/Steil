@@ -15,9 +15,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('engin_id')->nullable();
             $table->unsignedBigInteger('piece_id')->nullable();
+            $table->unsignedBigInteger('realisation_id')->nullable();
+
             $table->string('chemin');
+            
             $table->foreign('engin_id')->references('id')->on('engins')->onDelete('cascade');
             $table->foreign('piece_id')->references('id')->on('pieces')->onDelete('cascade');
+            $table->foreign('realisation_id')->references('id')->on('realisations')->onDelete('cascade');
 
             $table->timestamps();
         });

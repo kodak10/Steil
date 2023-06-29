@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoriePiece;
+use App\Models\RealisationCategorie;
 use Illuminate\Http\Request;
 
-class PieceCategorieController extends Controller
+class RealisationCategorieController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories_pieces = CategoriePiece::all();
-        return view('dashboard.pieces.categories.index', compact('categories_pieces'));
+        $categories_realisations = RealisationCategorie::all();
+        return view('dashboard.realisation.categories.index', compact('categories_realisations'));
     }
 
     /**
@@ -21,7 +21,8 @@ class PieceCategorieController extends Controller
      */
     public function create()
     {
-        return view('dashboard.pieces.categories.create');
+        return view('dashboard.realisation.categories.create');
+
     }
 
     /**
@@ -35,11 +36,11 @@ class PieceCategorieController extends Controller
         ]);
 
         // Création d'un nouvel utilisateur
-        CategoriePiece::create([
+        RealisationCategorie::create([
             'nom' => $request->input('nom'),
         ]);
 
-        return redirect()->route('categorie_piece.create')->with('success', "Catégorie de pièce créé avec succès.");
+        return redirect()->route('categorie_realisation.create')->with('success', "Catégorie de réalisation créé avec succès.");
     }
 
     /**
@@ -55,8 +56,10 @@ class PieceCategorieController extends Controller
      */
     public function edit(string $id)
     {
-        $categories_piece = CategoriePiece::findOrFail($id);
-        return view('dashboard.pieces.categories.edit', compact('categories_piece'));
+        $categories_realisation = RealisationCategorie::findOrFail($id);
+
+        return view('dashboard.realisation.categories.edit', compact('categories_realisation'));
+
     }
 
     /**
@@ -64,19 +67,19 @@ class PieceCategorieController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
-        $categories_piece = CategoriePiece::findOrFail($id);
+
+        $categories_realisation = RealisationCategorie::findOrFail($id);
 
         // Validation des données d'entrée
         $request->validate([
             'nom' => 'required',
         ]);
 
-        $categories_piece->nom = $request->input('nom');
+        $categories_realisation->nom = $request->input('nom');
 
-        $categories_piece->save();
+        $categories_realisation->save();
 
-        return redirect()->route('categorie_piece.edit', $categories_piece->id)->with('success', "Catégorie de pièce mise à jour avec succès.");
+        return redirect()->route('categorie_realisation.edit', $categories_realisation->id)->with('success', "Catégorie de réalisation mise à jour avec succès.");
     }
 
     /**
@@ -84,8 +87,8 @@ class PieceCategorieController extends Controller
      */
     public function destroy(string $id)
     {
-        $categories_piece = CategoriePiece::findOrFail($id);
-        $categories_piece->delete();
+        $categories_realisation = RealisationCategorie::findOrFail($id);
+        $categories_realisation->delete();
 
         return redirect()->route('categorie_piece.index')->with('success', "Catégorie de pièce supprimer avec succès.");
     }
