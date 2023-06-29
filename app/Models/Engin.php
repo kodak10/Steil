@@ -28,4 +28,11 @@ class Engin extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+
+
+    public function getFirstImage()
+    {
+        return $this->images->first();
+    }
 }

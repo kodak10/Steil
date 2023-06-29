@@ -11,4 +11,9 @@ class RealisationCategorie extends Model
     protected $fillable = [
         'nom',
     ];
+
+    public function realisations()
+    {
+        return $this->hasMany(Realisation::class);
+    }
 }

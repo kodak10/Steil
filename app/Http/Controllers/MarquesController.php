@@ -31,7 +31,7 @@ class MarquesController extends Controller
     {
         // Validation des données d'entrée
         $validatedData = $request->validate([
-            'images.*' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048'
+            'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048'
 
         ]);
 

@@ -70,7 +70,7 @@
 
     <!-- ======= Services Section ======= -->
     <section id="services ours_services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="section-header">
           <h2>NOS PRESTATIONS DE REPARATION</h2>
@@ -78,7 +78,7 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6" >
             <div class="service-item  position-relative">
               <div class="icon">
                 <i class="fa-solid fa-toolbox"></i>
@@ -88,7 +88,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6" >
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
@@ -98,7 +98,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="fa-solid fa-toolbox"></i>
@@ -108,7 +108,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
@@ -118,7 +118,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-4 col-md-6" data-aos-delay="500">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="fa-solid fa-toolbox"></i>
@@ -128,7 +128,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="col-lg-4 col-md-6" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
@@ -144,16 +144,16 @@
     </section>
 
     <!-- ======= Our Projects Section ======= -->
-    <section id="projects" class="projects bg-dark">
-        <div class="container" data-aos="fade-up">
+    <section id="projects" class="projects">
+        <div class="container" >
 
           <div class="section-header">
-            <h2 class="text-white">NOS REALISATIONS</h2>
+            <h2>NOS REALISATIONS</h2>
           </div>
 
           <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
 
-            <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+            <ul class="portfolio-flters"  >
               <li data-filter="*" class="filter-active">Tout</li>
               <li data-filter=".filter-entretien">Entretien</li>
               <li data-filter=".filter-carrosserie">Carrosserie</li>
@@ -161,7 +161,7 @@
               <li data-filter=".filter-reparation">Reparation</li>
             </ul>
 
-            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4 portfolio-container"  >
 
               <div class="col-lg-4 col-md-6 portfolio-item filter-entretien">
                 <div class="portfolio-content h-100">
@@ -252,10 +252,162 @@
 
     </section>
 
+    <section id="projects" class="projects">
+        <div class="container" >
+
+          <div class="section-header">
+            <h2>NOS REALISATIONS</h2>
+            <p>Consequatur libero assumenda est voluptatem est quidem illum et officia imilique qui vel architecto accusamus fugit aut qui distinctio</p>
+          </div>
+
+          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+
+            <ul class="portfolio-flters"  >
+              <li data-filter="*" class="filter-active">Tout</li>
+              <li data-filter=".filter-entretien">Entretien</li>
+              <li data-filter=".filter-carrosserie">Carrosserie</li>
+              <li data-filter=".filter-climatisation">Climatisation</li>
+              <li data-filter=".filter-reparation">Reparation</li>
+            </ul>
+
+            <div class="row gy-4 portfolio-container"  >
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-entretien">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/projects/Entretien - 1.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Entretien</h4>
+                    <a href="assets/img/projects/Entretien - 1.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-carrosserie">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/projects/Carrosserie - 1.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Carrosserie</h4>
+                    <a href="assets/img/projects/Carrosserie - 1.jpg" title="Carrosserie" data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-climatisation">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/projects/Climatisation - 2.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Climatisation</h4>
+                    <a href="assets/img/projects/Climatisation - 2.jpg" title="Climatisation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-reparation">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/projects/Repartition - 1.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Reparation</h4>
+                    <a href="assets/img/projects/Repartition - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-entretien">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/projects/Entretien - 2.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Entretien</h4>
+                    <a href="assets/img/projects/Entretien - 2.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-carrosserie">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/projects/Carrosserie - 2.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Carrosserie</h4>
+                    <a href="assets/img/projects/Carrosserie - 2.jpg" title="Carrosserie " data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-climatisation">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/projects/Reparation - 1.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Reparation</h4>
+                    <a href="assets/img/projects/Reparation - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-reparation">
+                <div class="portfolio-content h-100">
+                  <img src="assets/img/projects/Repartition - 2.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>Reparation </h4>
+                    <a href="assets/img/projects/Repartition - 2.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+    </section>
+
+
+     <!-- ======= Our Projects Section ======= -->
+     {{-- <section id="projects" class="projects bg-dark">
+        <div class="container">
+
+          <div class="section-header">
+            <h2 class="text-white">NOS REALISATIONS</h2>
+          </div>
+
+          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+
+            <ul class="portfolio-flters" >
+                <li data-filter="*" class="filter-active">Tout</li>
+                @foreach ($realisations_categories as $realisations_categorie )
+                    <li data-filter=".filter-{{$realisations_categorie->nom}}">{{$realisations_categorie->nom}}</li>
+                @endforeach
+
+            </ul>
+
+            <div class="row gy-4 portfolio-container" >
+
+                @foreach ($realisations as $realisation )
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-{{$realisation->categorieRealisation->nom}}">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/realisations/Entretien - 1.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>{{$realisation->titre}}</h4>
+                                <a href="assets/img/realisations/Entretien - 1.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+    </section> --}}
+
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
-        <div class="container" data-aos="fade-up">
+        <div class="container">
 
           <div class="section-header">
             <h2 class="text-uppercase">Temoignages</h2>
@@ -409,8 +561,11 @@
 
 
   <!-- CDN link JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">/script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
@@ -419,7 +574,7 @@
 
 
   <!-- Main JS  -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{asset('assets/js/main.js')}}"></script>
 
 </body>
 

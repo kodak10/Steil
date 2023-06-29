@@ -234,181 +234,37 @@
             <a href="" class="fw-bold">Voir Tout</a>
           </div>
           <div class="row">
-              <div class="col-lg-3">
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                      <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Plaquettes de frein</a></h3>
-                  </div>
-                </div>
-              </div>
+                @foreach ($pieces_recentes as $pieces_recente)
+                    <div class="col-lg-3">
+                        <div class="single-product">
+                            <div class="product-img">
 
-              <div class="col-lg-3">
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                      <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
+                                <a href="#">
+                                    @foreach ($pieces_recente->images as $image )
+                                            <img class="default-img" src="{{ asset($image->chemin) }}" alt="#" style="height: 550px !important; width:750px; !important">
+                                            {{-- <img class="default-img" src="https://via.placeholder.com/550x750" alt="#"> --}}
+                                            <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 550px !important; width:750px; !important">
+                                        @endforeach
+                                    {{-- <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
+                                    <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#"> --}}
+                                </a>
+                                <div class="button-head " style="text-align: center !important;">
+                                    <div class="product-action">
+                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
+                                    </div>
+                                    <div class="product-action-2 text-center" >
+                                        <a title="Add to cart" href="#">Appeler</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="#">{{$pieces_recente->nom}}</a></h3>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Batterie </a></h3>
-                  </div>
-                </div>
-              </div>
+                @endforeach
 
-              <div class="col-lg-3">
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                      <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Pneus </a></h3>
-                  </div>
-                </div>
-              </div>
 
-              <div class="col-lg-3">
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                      <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Filtre à carburant</a></h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                      <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Amortisseurs</a></h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                      <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Bougies d'allumage</a></h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                      <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Radiateur</a></h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                      <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Filtre à air</a></h3>
-                  </div>
-                </div>
-              </div>
 
           </div>
 
@@ -478,99 +334,49 @@
 
     <!-- ======= Top Engin Section ======= -->
     <div class="product-area most-popular section">
-      <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="section-title">
-                <h2 class="text-center">ENGIN DISPONIBLE</h2>
-              </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 class="text-center">ENGIN DISPONIBLE</h2>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="row">
-              <div class="col-12">
-                  <div class="owl-carousel popular-slider">
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                      <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-                    </a>
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel popular-slider">
+                        @foreach ( $engins as $engin )
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="#">
+                                        @foreach ($engin->images as $image )
+                                            <img class="default-img" src="{{ asset($image->chemin) }}" alt="#" style="height: 550px !important; width:750px; !important">
+                                            {{-- <img class="default-img" src="https://via.placeholder.com/550x750" alt="#"> --}}
+                                            <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 550px !important; width:750px; !important">
+                                        @endforeach
 
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Excavatrice</a></h3>
 
-                  </div>
-                </div>
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                      <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                          <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Grue</a></h3>
-                  </div>
-                </div>
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                      <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-content">
-                    <h3><a href="#">Bulldozer</a></h3>
+                                    </a>
+
+                                    <div class="button-head " style="text-align: center !important;">
+                                        <div class="product-action">
+                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
+                                        </div>
+                                        <div class="product-action-2 text-center" >
+                                            <a title="" href="#">Appeler</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="#">{{$engin->nom}}</a></h3>
+                                </div>
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
-                <div class="single-product">
-                  <div class="product-img">
-                    <a href="#">
-                      <img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-                      <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-                    </a>
-                    <div class="button-head " style="text-align: center !important;">
-                      <div class="product-action">
-                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                      </div>
-                      <div class="product-action-2 text-center" >
-                        <a title="Add to cart" href="#">Appeler</a>
-                      </div>
-                    </div>
-                    </div>
-                    <div class="product-content">
-                      <h3><a href="#">Chargeuse sur pneus</a></h3>
-                    </div>
-                </div>
-              </div>
             </div>
-          </div>
-      </div>
+        </div>
     </div>
 
     <!-- ======= Testimonials Section ======= -->
@@ -659,50 +465,16 @@
         <div class="slides-3 swiper text-center">
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <div class="marques-wrap">
-                <div class="marques-item">
-                  <img src="{{asset('assets/img/marques/bmw.png')}}" class="marques-img" alt="" >
+                @foreach ($marques as $marque )
+                    <div class="swiper-slide">
+                        <div class="marques-wrap">
+                            <div class="marques-item">
+                            <img src="{{ asset($marque->chemin) }}" class="marques-img" alt="" >
 
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="marques-wrap">
-                <div class="marques-item">
-                  <img src="{{asset('assets/img/marques/hyundai.jpg')}}" class="marques-img" alt="">
-
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="marques-wrap">
-                <div class="marques-item">
-                  <img src="{{asset('assets/img/marques/Mercedes-Benz.png')}}" class="marques-img" alt="">
-
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="marques-wrap">
-                <div class="marques-item">
-                  <img src="{{asset('assets/img/marques/Peugeot.jpg')}}" class="marques-img" alt="">
-
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="marques-wrap">
-                <div class="marques-item">
-                  <img src="{{asset('assets/img/marques/toyota.webp')}}" class="marques-img" alt="">
-
-                </div>
-              </div>
-            </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 
           </div>
           <div class="swiper-pagination"></div>

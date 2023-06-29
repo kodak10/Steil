@@ -9,6 +9,7 @@ use App\Http\Controllers\PieceCategorieController;
 use App\Http\Controllers\PiecesController;
 use App\Http\Controllers\RealisationCategorieController;
 use App\Http\Controllers\RealisationController;
+use App\Http\Controllers\WebsiteController;
 use App\Models\Temoignage;
 
 /*
@@ -21,10 +22,11 @@ use App\Models\Temoignage;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('index');
+Route::get('/test', function () {
+    return view('test');
 });
+
+Route::get('/', [WebsiteController::class, 'index']);
 
 Route::get('/contact', function () {
     return view('contact');
@@ -34,9 +36,9 @@ Route::get('/pieces_engin', function () {
     return view('pieces');
 });
 
-Route::get('/reparation', function () {
-    return view('reparation');
-});
+Route::get('/reparation', [WebsiteController::class, 'reparation']);
+
+
 
 // Route::get('/login/admin', function () {
 //     return view('auth.login');
@@ -55,16 +57,14 @@ Route::resource('categorie_piece', PieceCategorieController::class);
 Route::resource('engin', EnginController::class);
 Route::resource('pieces', PiecesController::class);
 Route::resource('marques', MarquesController::class);
-
-
 Route::resource('categorie_realisation', RealisationCategorieController::class);
-
-
 Route::resource('realisations', RealisationController::class);
 
 
 
 Route::resource('temoignages', Temoignage::class);
+
+
 
 
 

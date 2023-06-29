@@ -42,7 +42,9 @@ class PiecesController extends Controller
             'nom' => 'required',
             'description' => 'required',
             'id_categories_pieces' => 'required',
+            'couverture' => 'required',
             'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048'
+
 
 
         ]);
@@ -56,11 +58,17 @@ class PiecesController extends Controller
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
+
+                
+
                 $imageName = time() . '_' . $image->getClientOriginalName();
                 $image->move(public_path('assets/img/pieces/'), $imageName);
 
                 $photo = new Image();
+
                 $photo->chemin = 'assets/img/pieces/' . $imageName;
+                $photo->couverture = 'assets/img/pieces/' . $firstImage;
+
                 $pieces->images()->save($photo);
             }
         }
