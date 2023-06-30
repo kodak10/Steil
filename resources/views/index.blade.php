@@ -374,76 +374,32 @@
     <section id="testimonials" class="testimonials section-bg">
         <div class="container" data-aos="fade-up">
 
-          <div class="section-header">
-            <h2 class="text-uppercase">Temoignages</h2>
-          </div>
-
-          <div class="slides-2 swiper">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="{{asset('assets/img/testimonials_user.avif')}}" class="testimonial-img" alt="">
-                    <h3>Nom</h3>
-                    <h4>Poste / Entreprise</h4>
-                    <p>
-                      <i class="fa-solid fa-quote-left"></i>
-                      Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                      <i class="fa-solid fa-quote-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="{{asset('assets/img/testimonials_user.avif')}}" class="testimonial-img" alt="">
-                    <h3>Nom</h3>
-                    <h4>Poste / Entreprise</h4>
-                    <p>
-                      <i class="fa-solid fa-quote-left"></i>
-                      Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                      <i class="fa-solid fa-quote-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="{{asset('assets/img/testimonials_user.avif')}}" class="testimonial-img" alt="">
-                    <h3>Nom</h3>
-                    <h4>Poste / Entreprise</h4>
-                    <p>
-                      <i class="fa-solid fa-quote-left"></i>
-                      Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                      <i class="fa-solid fa-quote-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="{{asset('assets/img/testimonials_user.avif')}}" class="testimonial-img" alt="">
-                    <h3>Nom</h3>
-                    <h4>Poste / Entreprise</h4>
-                    <p>
-                      <i class="fa-solid fa-quote-left"></i>
-                      Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                      <i class="fa-solid fa-quote-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
+            <div class="section-header">
+                <h2 class="text-uppercase">Temoignages</h2>
             </div>
-            <div class="swiper-pagination"></div>
-          </div>
+
+            <div class="slides-2 swiper">
+                <div class="swiper-wrapper">
+                    @foreach ($testimonials as $testimonial )
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <img src="{{ asset($testimonial->image) }}" class="testimonial-img" alt="">
+                                    <h3>{{$testimonial->nom}}</h3>
+                                    <h4>{{$testimonial->fonction}}</h4>
+                                    <p>
+                                        <i class="fa-solid fa-quote-left"></i>
+                                        {{$testimonial->message}}
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
 
         </div>
     </section>

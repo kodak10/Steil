@@ -8,6 +8,7 @@ use App\Models\Marque;
 use App\Models\Piece;
 use App\Models\Realisation;
 use App\Models\RealisationCategorie;
+use App\Models\testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -28,7 +29,9 @@ class WebsiteController extends Controller
             ->select('images.*')
             ->get();
 
-        return view('index', compact('marques', 'engins', 'images', 'pieces_recentes', 'images_engins'));
+        $testimonials = testimonial::get();
+
+        return view('index', compact('marques', 'engins', 'images', 'pieces_recentes', 'images_engins', 'testimonials'));
     }
 
 

@@ -10,7 +10,7 @@
                 <div class="card-header d-flex justify-content-between">
                     <div class="row">
                         <h5 class="p-3">
-                            CREATION DE NOUVEAU TEMOIGNAGE
+                            CREATION DE TEMOIGNAGE
                         </h5>
 
                     </div>
@@ -38,7 +38,7 @@
                                     </div>
                                 @endif
 
-                                <form id="" method="post" action="" enctype="multipart/form-data">
+                                <form id="" method="post" action="{{route('temoignages.store')}}"  enctype="multipart/form-data">
                                     @csrf
 
 
@@ -47,13 +47,12 @@
                                             <div class="form-group">
                                                 <label for="nom">Nom</label>
                                                 <input type="text" class="form-control" placeholder="Entrez votre nom" name="nom" value="{{ old('nom') }}">
-
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="nom">Fonction</label>
-                                                <input type="text" class="form-control" placeholder="Entrez votre nom" name="fonction" value="{{ old('fonction') }}">
+                                                <input type="text" class="form-control" placeholder="Entrez votre nom" value="Particulier" name="fonction" value="{{ old('nom') }}">
 
                                             </div>
                                         </div>
@@ -64,18 +63,23 @@
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="prenoms">Images</label>
+                                                <label>Photo</label>
                                                 <input type="file" name="image" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="prenoms">Temoignages</label>
+                                                <label>Message</label>
                                                 <textarea class="form-control" rows="5" name="message"></textarea>
 
                                             </div>
                                         </div>
-                                   </div>
+
+                                    </div>
+
+                                    <div class="row">
+
+                                    </div>
 
 
 

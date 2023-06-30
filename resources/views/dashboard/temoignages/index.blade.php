@@ -9,11 +9,11 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <h5 class="p-3">
-                        LISTE DES ENGIN
+                        LISTE DES TEMOIGNAGES
                     </h5>
                     <button class="btn btn-secondary">
                         <a href="{{route('temoignages.create')}}" class="p-3">
-                            NOUVEL ENGIN
+                            NOUVEAU TEMOIGNAGE
                         </a>
                     </button>
                 </div>
@@ -24,30 +24,33 @@
                                 <thead class="text-center">
                                     <tr>
                                         <th>#</th>
-                                        <th>Categorie de l'engin</th>
+                                        <th>Image</th>
+                                        <th>Fonction</th>
                                         <th>Nom</th>
-                                        <th>Description</th>
+                                        <th>Message</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
                                     <?php $i=0; ?>
                                     <!-- Boucle sur les données pour afficher les lignes -->
-                                    @foreach($temoignages as $temoignage)
+                                    @foreach($testimonials as $testimonial)
                                         <?php $i++; ?>
                                         <tr>
                                             <td>{{$i}}</td>
-                                            <td></td>
-                                            <td>{{ $temoignage->nom }}</td>
-                                            <td>{{ $temoignage->message }}</td>
+                                            <td><img src="{{ $testimonial->image }}" alt="" style="height: 90px;height:90px"></td>
+                                            <td>{{ $testimonial->nom }}</td>
+                                            <td>{{ $testimonial->fonction }}</td>
+                                            <td>{{ $testimonial->message }}</td>
+
                                             <td class="text-center d-flex justify-content-center" >
                                                 <button type="button" class="btn btn-primary mr-5">
-                                                    <a href="{{ route('temoignages.edit', $temoignage->id) }}" class="text-white ">Modifier</a>
+                                                    <a href="{{ route('temoignages.edit', $testimonial->id) }}" class="text-white ">Modifier</a>
                                                 </button>
                                                 <form
 
                                                     method="POST"
-                                                    action="{{ route('temoignages.destroy', $temoignage->id) }}"
+                                                    action="{{ route('temoignages.destroy', $testimonial->id) }}"
                                                     onsubmit="return confirm('Etes vous sur de vouloir supprimer ? Cette action est irreversible.');">
                                                     @csrf
                                                     @method('DELETE')

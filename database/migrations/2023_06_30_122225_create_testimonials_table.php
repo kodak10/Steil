@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('temoignages', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('fonction');
+            $table->string('fonction')->default('Particulier');
+            $table->string('image')->default('assets/img/temoignages/default.avif');
             $table->string('message');
-            $table->string('image');
-
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('temoignages');
+        Schema::dropIfExists('testimonials');
     }
 };
