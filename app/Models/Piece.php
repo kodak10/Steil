@@ -15,7 +15,7 @@ class Piece extends Model
         'nom',
         'description',
         'id_categories_pieces',
-        'image',
+        'couverture',
     ];
 
     public function categoriePiece()

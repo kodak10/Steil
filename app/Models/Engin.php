@@ -15,7 +15,7 @@ class Engin extends Model
         'nom',
         'description',
         'id_categories_engin',
-        'image',
+        'couverture',
 
     ];
 

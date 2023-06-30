@@ -240,13 +240,8 @@
                             <div class="product-img">
 
                                 <a href="#">
-                                    @foreach ($pieces_recente->images as $image )
-                                            <img class="default-img" src="{{ asset($image->chemin) }}" alt="#" style="height: 550px !important; width:750px; !important">
-                                            {{-- <img class="default-img" src="https://via.placeholder.com/550x750" alt="#"> --}}
-                                            <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 550px !important; width:750px; !important">
-                                        @endforeach
-                                    {{-- <img class="default-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#">
-                                    <img class="hover-img" src="https://www.pieces-auto-44.fr/wp-content/uploads/2022/07/fotolia_124912791.jpg" alt="#"> --}}
+                                    <img class="default-img" src="{{ asset($pieces_recente->couverture) }}" alt="#" style="height: 550px !important; width:750px; !important">
+                                    <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 550px !important; width:750px; !important">
                                 </a>
                                 <div class="button-head " style="text-align: center !important;">
                                     <div class="product-action">
@@ -349,13 +344,9 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <a href="#">
-                                        @foreach ($engin->images as $image )
-                                            <img class="default-img" src="{{ asset($image->chemin) }}" alt="#" style="height: 550px !important; width:750px; !important">
+                                            <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#" style="height: 450px !important; width:650px; !important">
                                             {{-- <img class="default-img" src="https://via.placeholder.com/550x750" alt="#"> --}}
-                                            <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 550px !important; width:750px; !important">
-                                        @endforeach
-
-
+                                            <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 450px !important; width:650px; !important">
                                     </a>
 
                                     <div class="button-head " style="text-align: center !important;">

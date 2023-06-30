@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom')->unique();
             $table->string('description');
+            $table->string('couverture');
 
             $table->unsignedBigInteger('id_categories_pieces');
             $table->foreign('id_categories_pieces')->references('id')->on('categorie_pieces');

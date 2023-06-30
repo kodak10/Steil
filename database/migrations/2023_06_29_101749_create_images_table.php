@@ -18,7 +18,6 @@ return new class extends Migration
             $table->unsignedBigInteger('realisation_id')->nullable();
 
             $table->string('chemin');
-            $table->string('couverture');
 
 
             $table->foreign('engin_id')->references('id')->on('engins')->onDelete('cascade');

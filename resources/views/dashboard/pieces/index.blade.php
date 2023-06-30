@@ -27,6 +27,7 @@
                                         <th>Categorie de la pièce</th>
                                         <th>Nom</th>
                                         <th>Description</th>
+                                        <th>Image de couverture</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -40,6 +41,7 @@
                                             <td></td>
                                             <td>{{ $piece->nom }}</td>
                                             <td>{{ $piece->description }}</td>
+                                            <td><img src="{{ $piece->couverture }}" alt="" style="height: 90px;height:90px"></td>
                                             <td class="text-center d-flex justify-content-center" >
                                                 <button type="button" class="btn btn-primary mr-5">
                                                     <a href="{{ route('pieces.edit', $piece->id) }}" class="text-white ">Modifier</a>

@@ -68,17 +68,27 @@
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="prenoms">Images</label>
-                                                <input type="file" name="images[]" multiple class="form-control">
+                                                <label>Image Couverture</label>
+                                                <input type="file" name="couverture" multiple class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="prenoms">Description</label>
-                                                <textarea class="form-control" rows="5" name="description"></textarea>
-
+                                                <label for="prenoms">Images</label>
+                                                <input type="file" name="images[]" multiple class="form-control">
                                             </div>
                                         </div>
+
+                                   </div>
+
+                                   <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="prenoms">Description</label>
+                                            <textarea class="form-control" rows="5" name="description"></textarea>
+
+                                        </div>
+                                    </div>
                                    </div>
 
 

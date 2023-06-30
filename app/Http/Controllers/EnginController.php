@@ -42,16 +42,24 @@ class EnginController extends Controller
             'nom' => 'required',
             'description' => 'required',
             'id_categories_engin' => 'required',
-            'images.*' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048'
+            'couverture' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048',
+            'images.*' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048',
+
 
         ]);
 
         // Création d'un nouvel
 
+
+
         $engins = new Engin();
         $engins->nom = $validatedData['nom'];
         $engins->description = $validatedData['description'];
         $engins->id_categories_engin = $validatedData['id_categories_engin'];
+
+        $imageName_couverture = time() . '_' . $validatedData['couverture']->getClientOriginalName();
+
+        $engins->couverture = 'assets/img/engin/' . $imageName_couverture;
         $engins->save();
 
         if ($request->hasFile('images')) {
