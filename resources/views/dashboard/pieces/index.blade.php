@@ -38,7 +38,9 @@
                                         <?php $i++; ?>
                                         <tr>
                                             <td>{{$i}}</td>
-                                            <td></td>
+                                            <td>
+
+                                            </td>
                                             <td>{{ $piece->nom }}</td>
                                             <td>{{ $piece->description }}</td>
                                             <td><img src="{{ $piece->couverture }}" alt="" style="height: 90px;height:90px"></td>

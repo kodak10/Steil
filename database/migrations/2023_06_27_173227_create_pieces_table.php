@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('description');
             $table->string('couverture');
 
-            $table->unsignedBigInteger('id_categories_pieces');
-            $table->foreign('id_categories_pieces')->references('id')->on('categorie_pieces');
+            $table->unsignedBigInteger('categorie_piece_id');
+            $table->foreign('categorie_piece_id')->references('id')->on('categorie_pieces');
 
             $table->timestamps();
         });

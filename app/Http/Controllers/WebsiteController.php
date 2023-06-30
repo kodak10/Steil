@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoriePiece;
 use App\Models\Engin;
 use App\Models\Image;
 use App\Models\Marque;
@@ -34,6 +35,28 @@ class WebsiteController extends Controller
         return view('index', compact('marques', 'engins', 'images', 'pieces_recentes', 'images_engins', 'testimonials'));
     }
 
+    public function eshop()
+    {
+        $engins = Engin::get();
+        $marques = Marque::all();
+        $pieces = Piece::get();
+
+
+
+        // $pieces_categories = CategoriePiece::get();
+
+
+        // $pieces = Piece::latest()->take(8)->get();
+        $categories_pieces = CategoriePiece::with('pieces')->get();
+
+        // $pieces = DB::table('pieces')
+        //     ->join('categorie_pieces', 'categorie_pieces.id', '=', 'pieces.id_categories_pieces')
+        //     ->select('categorie_pieces.*', 'pieces.*')
+        //     ->get();
+
+        return view('pieces', compact('engins', 'marques',  'categories_pieces', 'pieces'));
+
+    }
 
     public function reparation()
     {
@@ -42,6 +65,8 @@ class WebsiteController extends Controller
         return view('reparation', compact('realisations', 'realisations_categories'));
 
     }
+
+
 
     /**
      * Show the form for creating a new resource.

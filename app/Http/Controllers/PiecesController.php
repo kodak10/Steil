@@ -41,7 +41,7 @@ class PiecesController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required',
             'description' => 'required',
-            'id_categories_pieces' => 'required',
+            'categorie_piece_id' => 'required',
             'couverture' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048',
             'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048'
 
@@ -53,7 +53,7 @@ class PiecesController extends Controller
         $pieces = new Piece();
         $pieces->nom = $validatedData['nom'];
         $pieces->description = $validatedData['description'];
-        $pieces->id_categories_pieces = $validatedData['id_categories_pieces'];
+        $pieces->categorie_piece_id = $validatedData['categorie_piece_id'];
         $imageName_couverture = time() . '_' . $validatedData['couverture']->getClientOriginalName();
         $pieces->couverture = 'assets/img/pieces/' . $imageName_couverture;
         $pieces->save();

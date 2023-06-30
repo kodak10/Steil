@@ -123,15 +123,69 @@
 						<div class="product-info">
 							<div class="nav-main">
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
-									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#man" role="tab">Tout</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#women" role="tab">Categorie</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kids" role="tab">Categorie</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accessories" role="tab">Categorie</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#essential" role="tab">Categorie</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#prices" role="tab">Categorie</a></li>
+
+                                    @foreach ($categories_pieces as $categories_piece)
+                                        <li class="nav-item"><a class="nav-link mt-5 mt-3 {{ ($loop->first) ? 'active' : '' }} " data-toggle="tab" href="#{{$categories_piece->nom}}" role="tab">{{$categories_piece->nom}}</a></li>
+                                    @endforeach
 								</ul>
 							</div>
 							<div class="tab-content" id="myTabContent">
+                                @foreach ($categories_pieces as $categories_piece)
+                                    {{-- @foreach ($pieces as $piece ) --}}
+                                        <div class="tab-pane fade {{ ($loop->first) ? 'show active' : '' }}" id="{{$categories_piece->nom}}" role="tabpanel">
+                                            <div class="tab-single">
+                                                <div class="row">
+                                                    @forelse ( $categories_piece->pieces as $piece_detail )
+                                                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                                                            <div class="single-product">
+                                                                <div class="product-img">
+                                                                    <a href="#">
+                                                                        <img class="default-img" src="{{ asset($piece_detail->couverture) }}" alt="#">
+                                                                        <img class="hover-img" src="{{ asset($piece_detail->couverture) }}" alt="#">
+                                                                    </a>
+                                                                    <div class="button-head " style="text-align: center !important;">
+                                                                        <div class="product-action">
+                                                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
+                                                                        </div>
+                                                                        <div class="product-action-2 text-center" >
+                                                                            <a title="Add to cart" href="#">Appeler</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-content">
+                                                                    <h3><a href="#">{{$piece_detail->nom}}</a></h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @empty
+                                                        <span class="text-center mt-5">Aucune pièce disponible pour cette catégorie.</span>
+                                                    @endforelse
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{-- @endforeach --}}
+                                @endforeach
+							</div>
+                            {{!! $pieces->links() }}
+						</div>
+					</div>
+				</div>
+
+                {{-- <div class="row">
+					<div class="col-12">
+						<div class="product-info">
+							<div class="nav-main">
+								<ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                                    @foreach ($pieces_categories as $pieces_categorie)
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#{{$pieces_categorie->nom}}" role="tab">{{$pieces_categorie->nom}}</a></li>
+                                    @endforeach
+								</ul>
+							</div>
+							<div class="tab-content" id="myTabContent">
+
 								<div class="tab-pane fade show active" id="man" role="tabpanel">
 									<div class="tab-single">
 										<div class="row">
@@ -1245,27 +1299,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div>
-					<nav aria-label="Page navigation example">
-						<ul class="pagination d-flex">
-						  <li class="page-item">
-							<a class="page-link" href="#" aria-label="Previous">
-							  <span aria-hidden="true">&laquo;</span>
-							</a>
-						  </li>
-						  <li class="page-item"><a class="page-link" href="#">1</a></li>
-						  <li class="page-item"><a class="page-link" href="#">2</a></li>
-						  <li class="page-item"><a class="page-link" href="#">3</a></li>
-						  <li class="page-item">
-							<a class="page-link" href="#" aria-label="Next">
-							  <span aria-hidden="true">&raquo;</span>
-							</a>
-						  </li>
-						</ul>
-					  </nav>
-				</div>
+				</div> --}}
             </div>
     </div>
 
@@ -1298,163 +1332,72 @@
 
 	<!-- ======= Engin disponible Section ======= -->
 	<div class="product-area most-popular section">
-		<div class="container">
-			<div class="row">
-		<div class="col-12">
-		  <div class="section-title">
-			<h2>ENGIN DISPONIBLES</h2>
-		  </div>
-		</div>
-			</div>
-			<div class="row">
-				<div class="col-12">
-					<div class="owl-carousel popular-slider">
-						<div class="single-product">
-						<div class="product-img">
-							<a href="#">
-							<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-							<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 class="text-center">ENGIN DISPONIBLE</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel popular-slider">
+                        @foreach ( $engins as $engin )
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="#">
+                                            <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#" style="height: 450px !important; width:650px; !important">
+                                            {{-- <img class="default-img" src="https://via.placeholder.com/550x750" alt="#"> --}}
+                                            <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 450px !important; width:650px; !important">
+                                    </a>
 
-							</a>
-							<div class="button-head " style="text-align: center !important;">
-										<div class="product-action">
-											<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-										</div>
-										<div class="product-action-2 text-center" >
-											<a title="Add to cart" href="#">Appeler</a>
-										</div>
-										</div>
-						</div>
-						<div class="product-content">
-							<h3><a href="#">Excavatrice</a></h3>
+                                    <div class="button-head " style="text-align: center !important;">
+                                        <div class="product-action">
+                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
+                                        </div>
+                                        <div class="product-action-2 text-center" >
+                                            <a title="" href="#">Appeler</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3><a href="#">{{$engin->nom}}</a></h3>
+                                </div>
+                            </div>
+                        @endforeach
 
-						</div>
-						</div>
-						<div class="single-product">
-										<div class="product-img">
-											<a href="#">
-												<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-												<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-											</a>
-							<div class="button-head " style="text-align: center !important;">
-										<div class="product-action">
-											<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-										</div>
-										<div class="product-action-2 text-center" >
-											<a title="Add to cart" href="#">Appeler</a>
-										</div>
-										</div>
-										</div>
-										<div class="product-content">
-											<h3><a href="#">Grue</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-										</div>
-						</div>
-						<div class="single-product">
-										<div class="product-img">
-											<a href="#">
-												<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-												<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
+    <!-- ======= Marques Section ======= -->
+    <section id="" class="marques">
+        <div class="container-fluid" data-aos="fade-up">
+            <h4 class="text-center mb-3">NOS MARQUES DE PIECES AUTO</h4>
 
-											</a>
-							<div class="button-head " style="text-align: center !important;">
-										<div class="product-action">
-											<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-										</div>
-										<div class="product-action-2 text-center" >
-											<a title="Add to cart" href="#">Appeler</a>
-										</div>
-										</div>
-										</div>
-										<div class="product-content">
-											<h3><a href="#">Bulldozer</a></h3>
+            <div class="slides-3 swiper text-center">
+                <div class="swiper-wrapper">
 
-										</div>
-						</div>
-						<div class="single-product">
-										<div class="product-img">
-											<a href="#">
-												<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-												<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-											</a>
-							<div class="button-head " style="text-align: center !important;">
-										<div class="product-action">
-											<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-										</div>
-										<div class="product-action-2 text-center" >
-											<a title="Add to cart" href="#">Appeler</a>
-										</div>
-										</div>
-										</div>
-										<div class="product-content">
-											<h3><a href="#">Chargeuse sur pneus</a></h3>
+                    @foreach ($marques as $marque )
+                        <div class="swiper-slide">
+                            <div class="marques-wrap">
+                                <div class="marques-item">
+                                <img src="{{ asset($marque->chemin) }}" class="marques-img" alt="" >
 
-										</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
 
-	<!-- ======= Marques Section ======= -->
-	<section id="" class="testimonials">
-		<div class="container-fluid" data-aos="fade-up">
-		<h4 class="text-center mb-3">NOS MARQUES DE PIECES AUTO</h4>
-		  <div class="slides-3 swiper">
-			<div class="swiper-wrapper">
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
 
-			  <div class="swiper-slide">
-				<div class="testimonial-wrap">
-				  <div class="testimonial-item">
-					<img src="../assets/img/logo/bmw.png" class="testimonial-img" alt="">
-
-				  </div>
-				</div>
-			  </div>
-
-			  <div class="swiper-slide">
-				<div class="testimonial-wrap">
-				  <div class="testimonial-item">
-					<img src="../assets/img/logo/hyundai.jpg" class="testimonial-img" alt="">
-
-				  </div>
-				</div>
-			  </div>
-
-			  <div class="swiper-slide">
-				<div class="testimonial-wrap">
-				  <div class="testimonial-item">
-					<img src="../assets/img/logo/Mercedes-Benz.png" class="testimonial-img" alt="">
-
-				  </div>
-				</div>
-			  </div>
-
-			  <div class="swiper-slide">
-				<div class="testimonial-wrap">
-				  <div class="testimonial-item">
-					<img src="../assets/img/logo/Peugeot.jpg" class="testimonial-img" alt="">
-
-				  </div>
-				</div>
-			  </div>
-
-			  <div class="swiper-slide">
-				<div class="testimonial-wrap">
-				  <div class="testimonial-item">
-					<img src="../assets/img/logo/toyota.webp" class="testimonial-img" alt="">
-
-				  </div>
-				</div>
-			  </div>
-
-			</div>
-			<div class="swiper-pagination"></div>
-		  </div>
-
-		</div>
-	</section>
+        </div>
+    </section>
 
 	<section class="shop-newsletter section">
 		<div class="container">
@@ -1586,9 +1529,8 @@
 	</footer>
 
 
+
 	<!-- Vendor Jquery -->
-
-
     <script src="{{asset('assets/js/main.js')}}" ></script>
 
     <script src="{{asset('assets/eshop/js/jquery.min.js')}}"></script>

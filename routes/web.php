@@ -29,9 +29,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/pieces_engin', function () {
-    return view('pieces');
-});
+
+Route::get('/pieces_engin', [WebsiteController::class, 'eshop']);
 
 Route::get('/reparation', [WebsiteController::class, 'reparation']);
 
@@ -54,7 +53,6 @@ Route::resource('pieces', PiecesController::class);
 Route::resource('marques', MarquesController::class);
 Route::resource('categorie_realisation', RealisationCategorieController::class);
 Route::resource('realisations', RealisationController::class);
-
 Route::resource('temoignages', TestimonialsController::class);
 
 
