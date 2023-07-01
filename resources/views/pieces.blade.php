@@ -19,7 +19,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
 	<!-- Link CDN -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css"/>
 
@@ -28,10 +27,12 @@
     <link rel="stylesheet" href="{{asset('assets/eshop/css/slicknav.min.css')}}" >
 
 	<!-- StyleSheet -->
-	<link rel="stylesheet" href="{{asset('assets/eshop/css/reset.css.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/eshop/css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('assets/eshop/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/eshop/css/responsive.css')}}">
     <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 	<style>
 		a{
@@ -57,7 +58,7 @@
 		  <nav id="navbar" class="navbar">
 			<ul>
 				<li><a href="/" >Accueil</a></li>
-				<li><a href="">A Propos</a></li>
+				<li><a href="/#about">A Propos</a></li>
 				<li><a href="">Services</a></li>
 				<li><a href="/pieces_engin" class="active">Pièces Auto / Engin</a></li>
 				<li><a href="/reparation">Reparation d'engin</a></li>
@@ -73,36 +74,32 @@
 	<section class="small-banner section">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>Pièces auto</p>
-							<h3>Pneu</h3>
-							<a href="#">Appeler</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>Pièces auto</p>
-							<h3>Vitre</h3>
-							<a href="#">Appeler</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-12">
-					<div class="single-banner tab-height">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<p>Engin en vente</p>
-							<h3>Tracteur</h3>
-							<a href="#">Appeler</a>
-						</div>
-					</div>
-				</div>
+
+                @foreach ($banner_pieces as $banner_piece)
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="single-banner">
+                            <img src="{{ asset($banner_piece->couverture) }}" style="height: 370px !important; width:600px !important" alt="#">
+                            <div class="content">
+                                <p>Pièces auto</p>
+                                <h3>{{$banner_piece->nom}}</h3>
+                                <a href="#">Appeler</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+                @foreach ($banner_engins as $banner_engin)
+                    <div class="col-lg-4 col-12">
+                        <div class="single-banner tab-height">
+                            <img src="{{ asset($banner_engin->couverture) }}" style="height: 370px !important; width:600px !important" alt="#">
+                            <div class="content">
+                                <p>Engin en vente</p>
+                                <h3>{{$banner_engin->nom}}</h3>
+                                <a href="#">Appeler</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 			</div>
 		</div>
 	</section>
@@ -121,21 +118,27 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="product-info">
+
 							<div class="nav-main">
 								<ul class="nav nav-tabs" id="myTab" role="tablist">
-
                                     @foreach ($categories_pieces as $categories_piece)
-                                        <li class="nav-item"><a class="nav-link mt-5 mt-3 {{ ($loop->first) ? 'active' : '' }} " data-toggle="tab" href="#{{$categories_piece->nom}}" role="tab">{{$categories_piece->nom}}</a></li>
+
+                                        @php
+                                            $categories_piece_nom = preg_replace('/\s+/', '', $categories_piece->nom);
+                                         @endphp
+                                        <li class="nav-item"><a class="nav-link mt-5 mt-3 {{ ($loop->first) ? 'active' : '' }} " data-toggle="tab" href="#{{$categories_piece_nom}}" role="tab">{{$categories_piece->nom}}</a></li>
                                     @endforeach
 								</ul>
 							</div>
 							<div class="tab-content" id="myTabContent">
-                                @foreach ($categories_pieces as $categories_piece)
-                                    {{-- @foreach ($pieces as $piece ) --}}
-                                        <div class="tab-pane fade {{ ($loop->first) ? 'show active' : '' }}" id="{{$categories_piece->nom}}" role="tabpanel">
+                                @forelse ($categories_pieces as $categories_piece)
+                                        @php
+                                            $categories_piece_nom = preg_replace('/\s+/', '', $categories_piece->nom);
+                                        @endphp
+                                        <div class="tab-pane fade {{ ($loop->first) ? 'show active' : '' }}" id="{{$categories_piece_nom}}" role="tabpanel">
                                             <div class="tab-single">
                                                 <div class="row">
-                                                    @forelse ( $categories_piece->pieces as $piece_detail )
+                                                    @foreach ( $categories_piece->pieces as $piece_detail )
                                                         <div class="col-xl-3 col-lg-4 col-md-4 col-12">
                                                             <div class="single-product">
                                                                 <div class="product-img">
@@ -157,1175 +160,50 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    @empty
-                                                        <span class="text-center mt-5">Aucune pièce disponible pour cette catégorie.</span>
-                                                    @endforelse
+                                                    @endforeach
+
+
+
+
+
+
 
 
                                                 </div>
                                             </div>
                                         </div>
-                                    {{-- @endforeach --}}
-                                @endforeach
-							</div>
-                            {{!! $pieces->links() }}
+
+
+
+                                        @empty
+                                            <span class="text-center mt-5">Aucune pièce disponible pour cette catégorie.</span>
+                                        @endforelse
+                                </div>
+                                {{-- {{ $pieces->links() }} --}}
+
+
 						</div>
 					</div>
 				</div>
 
-                {{-- <div class="row">
-					<div class="col-12">
-						<div class="product-info">
-							<div class="nav-main">
-								<ul class="nav nav-tabs" id="myTab" role="tablist">
 
-                                    @foreach ($pieces_categories as $pieces_categorie)
-                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#{{$pieces_categorie->nom}}" role="tab">{{$pieces_categorie->nom}}</a></li>
-                                    @endforeach
-								</ul>
-							</div>
-							<div class="tab-content" id="myTabContent">
-
-								<div class="tab-pane fade show active" id="man" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="women" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="kids" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="accessories" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="essential" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="prices" role="tabpanel">
-									<div class="tab-single">
-										<div class="row">
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
-												<div class="single-product">
-													<div class="product-img">
-														<a href="#">
-															<img class="default-img" src="https://via.placeholder.com/550x750" alt="#">
-															<img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
-
-														</a>
-														<div class="button-head " style="text-align: center !important;">
-															<div class="product-action">
-																<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-															</div>
-															<div class="product-action-2 text-center" >
-																<a title="Add to cart" href="#">Appeler</a>
-															</div>
-														</div>
-													</div>
-													<div class="product-content">
-														<h3><a href="#">Lorem ipsum dolor</a></h3>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> --}}
             </div>
     </div>
 
 	<section class="midium-banner">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<h4>Vitre triple impact</h4>
-
-							<a href="#">Contactez Nous</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-12">
-					<div class="single-banner">
-						<img src="https://via.placeholder.com/600x370" alt="#">
-						<div class="content">
-							<h4>Vitre triple impact</h4>
-
-							<a href="#" class="btn">Contactez Nous</a>
-						</div>
-					</div>
-				</div>
+                @foreach ($top_pieces_buys as $top_pieces_buy )
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-banner">
+                            <img src="{{ asset($top_pieces_buy->couverture) }}" style="height: 370px !important; width:600px !important" alt="#">
+                            <div class="content">
+                                <h4>{{$top_pieces_buy->nom}}</h4>
+                                <a href="#">Contactez Nous</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 			</div>
 		</div>
 	</section>
@@ -1347,9 +225,9 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <a href="#">
-                                            <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#" style="height: 450px !important; width:650px; !important">
+                                            <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#" style="height: 370px !important; width:650px; !important">
                                             {{-- <img class="default-img" src="https://via.placeholder.com/550x750" alt="#"> --}}
-                                            <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 450px !important; width:650px; !important">
+                                            <img class="hover-img" src="{{ asset($engin->couverture) }}" alt="#" style="height: 370px !important; width:650px; !important">
                                     </a>
 
                                     <div class="button-head " style="text-align: center !important;">
@@ -1376,28 +254,29 @@
     <!-- ======= Marques Section ======= -->
     <section id="" class="marques">
         <div class="container-fluid" data-aos="fade-up">
-            <h4 class="text-center mb-3">NOS MARQUES DE PIECES AUTO</h4>
+          <h4 class="text-center mb-3">NOS MARQUES DE PIECES AUTO</h4>
 
-            <div class="slides-3 swiper text-center">
-                <div class="swiper-wrapper">
+          <div class="slides-3 swiper text-center">
+            <div class="swiper-wrapper">
 
-                    @foreach ($marques as $marque )
-                        <div class="swiper-slide">
-                            <div class="marques-wrap">
-                                <div class="marques-item">
-                                <img src="{{ asset($marque->chemin) }}" class="marques-img" alt="" >
+                  @foreach ($marques as $marque )
+                      <div class="swiper-slide">
+                          <div class="marques-wrap">
+                              <div class="marques-item">
+                              <img src="{{ asset($marque->chemin) }}" class="marques-img" alt="" >
 
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+                              </div>
+                          </div>
+                      </div>
+                  @endforeach
 
-                </div>
-                <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-pagination"></div>
+          </div>
 
         </div>
-    </section>
+      </section>
+
 
 	<section class="shop-newsletter section">
 		<div class="container">
@@ -1530,6 +409,15 @@
 
 
 
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+
 	<!-- Vendor Jquery -->
     <script src="{{asset('assets/js/main.js')}}" ></script>
 
@@ -1541,12 +429,14 @@
     <script src="{{asset('assets/eshop/js/slicknav.min.js')}}"></script>
 	<script src="{{asset('assets/eshop/js/owl-carousel.js')}}"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 
 	<!--  Jquery -->
     <script src="{{asset('assets/eshop/js/active.js')}}"></script>
+
+    <!-- Main JS  -->
+
+
+
 
 </body>
 </html>

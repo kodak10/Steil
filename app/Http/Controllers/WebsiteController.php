@@ -39,22 +39,17 @@ class WebsiteController extends Controller
     {
         $engins = Engin::get();
         $marques = Marque::all();
-        $pieces = Piece::get();
 
-
-
-        // $pieces_categories = CategoriePiece::get();
-
-
-        // $pieces = Piece::latest()->take(8)->get();
+        $categories_pieces = CategoriePiece::get();
         $categories_pieces = CategoriePiece::with('pieces')->get();
+        $pieces = CategoriePiece::with('pieces')->paginate(10);
 
-        // $pieces = DB::table('pieces')
-        //     ->join('categorie_pieces', 'categorie_pieces.id', '=', 'pieces.id_categories_pieces')
-        //     ->select('categorie_pieces.*', 'pieces.*')
-        //     ->get();
+        $banner_engins = Engin::latest()->take(1)->get();
+        $banner_pieces = Piece::latest()->take(2)->get();
+        $top_pieces_buys = Piece::orderBy('created_at', 'asc')->take(2)->get();
 
-        return view('pieces', compact('engins', 'marques',  'categories_pieces', 'pieces'));
+
+        return view('pieces', compact('engins', 'marques',  'categories_pieces', 'pieces', 'banner_engins', 'banner_pieces', 'top_pieces_buys'));
 
     }
 
@@ -66,53 +61,4 @@ class WebsiteController extends Controller
 
     }
 
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

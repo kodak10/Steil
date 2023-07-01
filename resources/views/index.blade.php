@@ -240,8 +240,8 @@
                             <div class="product-img">
 
                                 <a href="#">
-                                    <img class="default-img" src="{{ asset($pieces_recente->couverture) }}" alt="#" style="height: 550px !important; width:750px; !important">
-                                    <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 550px !important; width:750px; !important">
+                                    <img class="default-img" src="{{ asset($pieces_recente->couverture) }}" alt="#" style="height: 550px !important; width:750px !important;">
+                                    <img class="hover-img" src="{{ asset($pieces_recente->couverture) }}" alt="#" style="height: 550px !important; width:750px !important;">
                                 </a>
                                 <div class="button-head " style="text-align: center !important;">
                                     <div class="product-action">
@@ -406,29 +406,26 @@
 
     <!-- ======= Marques Section ======= -->
     <section id="" class="marques">
-      <div class="container-fluid" data-aos="fade-up">
-        <h4 class="text-center mb-3">NOS MARQUES DE PIECES AUTO</h4>
-
-        <div class="slides-3 swiper text-center">
-          <div class="swiper-wrapper">
-
-                @foreach ($marques as $marque )
-                    <div class="swiper-slide">
-                        <div class="marques-wrap">
-                            <div class="marques-item">
-                            <img src="{{ asset($marque->chemin) }}" class="marques-img" alt="" >
-
+        <div class="container-fluid" data-aos="fade-up">
+            <h4 class="text-center mb-3">NOS MARQUES DE PIECES AUTO</h4>
+            <div class="slides-3 swiper text-center">
+                <div class="swiper-wrapper">
+                    @foreach ($marques as $marque )
+                        <div class="swiper-slide">
+                            <div class="marques-wrap">
+                                <div class="marques-item">
+                                    <img src="{{ asset($marque->chemin) }}" class="marques-img" alt="" >
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
 
-          </div>
-          <div class="swiper-pagination"></div>
         </div>
-
-      </div>
     </section>
+
 
   </main>
 
