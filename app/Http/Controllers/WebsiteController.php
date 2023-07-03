@@ -57,7 +57,9 @@ class WebsiteController extends Controller
     {
         $realisations = Realisation::all();
         $realisations_categories = RealisationCategorie::all();
-        return view('reparation', compact('realisations', 'realisations_categories'));
+        $testimonials = testimonial::get();
+
+        return view('reparation', compact('realisations', 'realisations_categories', 'testimonials'));
 
     }
 

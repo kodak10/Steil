@@ -61,7 +61,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="/" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="" class="img-fluid">
+        <img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid">
         <h1>STEIL AUTOMOBILE</h1>
       </a>
 
@@ -70,8 +70,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/" class="active">Accueil</a></li>
-          <li><a href="">A Propos</a></li>
-          <li><a href="">Services</a></li>
+          <li><a href="#get-started">A Propos</a></li>
+          <li><a href="#ours_services">Services</a></li>
           <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
           <li><a href="/reparation">Reparation d'engin</a></li>
           <li><a href="/contact">Contact</a></li>
@@ -88,7 +88,7 @@
 
     <div class="info d-flex align-items-center">
       <div class="container">
-        <div class="row justify-content-center">
+        <div class="row d-flex justify-content-center align-items-center">
           <div class="col-lg-6 text-center">
             <h2 data-aos="fade-down">Site internet de <span style="color: #e41a20;">STEIL AUTOMOBILE</span></h2>
             <p data-aos="fade-up">Explorez, découvrez plusieurs pièces automobile dont vous avez besoins pour votre activité.</p>
@@ -121,14 +121,14 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="get-started about" class="get-started section-bg">
+    <section id="get-started" class="get-started section-bg">
       <div class="container-fluid">
 
         <div class="row justify-content-between gy-4">
 
           <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up">
             <div class="content w-100">
-              <h3>QUI SOMMES NOUS ?</h3>
+              <h3 class="title-section">QUI SOMMES NOUS ?</h3>
               <p>
                 Nous sommes spécialisés dans la vente de pièces automobiles de haute qualité. Nous proposons une large gamme de pièces détachées provenant de marques réputées, couvrant différents modèles et types de véhicules.
               </p>
@@ -151,13 +151,11 @@
                         <i class="fa-solid fa-phone"></i>
                         <h3>Téléphone</h3>
                         <p>+225 0707636245</p>
-                        <p>+225 0777424405</p><br>
-
+                        <p>+225 0777424405</p>
                       </div>
-
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mt-5 mb-5">
                       <div class="info-item d-flex flex-column justify-content-center align-items-center p-2">
                         <i class="fa-solid fa-envelope"></i>
                         <h3>Email</h3>
@@ -167,7 +165,7 @@
 
                     </div>
 
-                    <div class="col-lg-12 mt-5">
+                    <div class="col-lg-12">
                       <div class="info-item  d-flex flex-column justify-content-center align-items-center p-2">
                         <i class="fa-solid fa-map-pin"></i>
                         <h3>Notre Adresse</h3>
@@ -187,14 +185,14 @@
     </section>
 
     <!-- ======= ActivitY Section ======= -->
-    <section class="activite h-100" style="background-color: #000000;">
+    <section class="activite h-100" style="background-color: #000000;" id="ours_services">
         <div class="container">
-          <h2 class="text-center text-white mb-5">NOS SERVICES</h2>
+          <h2 class="text-center mb-5 title-section text-white">NOS SERVICES</h2>
             <div class="row">
                 <div class="col-lg-4">
                     <a href="">
                       <div class="card pieces_auto  w-100" style="min-height: 200px;">
-                        <div class="card-body d-flex justify-content-center align-items-center">
+                        <div class="card-body d-flex justify-content-center align-items-center text-center">
                           <h5 class="card-title">VENTE DE PIECE AUTO</h5>
                         </div>
                       </div>
@@ -204,7 +202,7 @@
                 <div class="col-lg-4 mt-5 mb-5">
                     <a href="">
                       <div class="card reparation w-100" style="min-height: 200px;">
-                        <div class="card-body d-flex justify-content-center align-items-center">
+                        <div class="card-body d-flex justify-content-center align-items-center text-center">
                           <h5 class="card-title">REPARATION DE GROS ENGIN</h5>
                         </div>
                       </div>
@@ -214,7 +212,7 @@
                 <div class="col-lg-4 ">
                   <a href="">
                     <div class="card vente_vehicule w-100" style="min-height: 200px;">
-                      <div class="card-body d-flex justify-content-center align-items-center">
+                      <div class="card-body d-flex justify-content-center align-items-center text-center">
                         <h5 class="card-title">VENTE ET LOCATION D'ENGIN</h5>
                       </div>
                     </div>
@@ -229,9 +227,9 @@
     <section class="mb-3 h-100">
       <div class="container" data-aos="fade-up">
 
-          <div class="d-flex justify-content-between">
-            <h2 class="text-uppercase text-white title-home">Pieces récentes</h2>
-            <a href="" class="fw-bold">Voir Tout</a>
+          <div class="d-flex justify-content-between m-auto">
+            <h2 class="text-uppercase text-white title-section ">Pieces récentes</h2>
+            <a href="/pieces_engin" class="fs-4 fw-bold">Voir Tout</a>
           </div>
           <div class="row">
                 @foreach ($pieces_recentes as $pieces_recente)
@@ -240,8 +238,8 @@
                             <div class="product-img">
 
                                 <a href="#">
-                                    <img class="default-img" src="{{ asset($pieces_recente->couverture) }}" alt="#" style="height: 550px !important; width:750px !important;">
-                                    <img class="hover-img" src="{{ asset($pieces_recente->couverture) }}" alt="#" style="height: 550px !important; width:750px !important;">
+                                    <img class="default-img" src="{{ asset($pieces_recente->couverture) }}" alt="#" >
+                                    <img class="hover-img" src="{{ asset($pieces_recente->couverture) }}" alt="#">
                                 </a>
                                 <div class="button-head " style="text-align: center !important;">
                                     <div class="product-action">
@@ -333,7 +331,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="text-center">ENGIN DISPONIBLE</h2>
+                        <h2 class="text-center title-section">ENGINS DISPONIBLES</h2>
                     </div>
                 </div>
             </div>
@@ -344,11 +342,9 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <a href="#">
-                                            <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#" style="height: 450px !important; width:650px; !important">
-                                            {{-- <img class="default-img" src="https://via.placeholder.com/550x750" alt="#"> --}}
-                                            <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#" style="height: 450px !important; width:650px; !important">
+                                        <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#">
+                                        <img class="hover-img" src="{{ asset($engin->couverture) }}" alt="#">
                                     </a>
-
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action">
                                             <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
@@ -373,10 +369,7 @@
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
         <div class="container" data-aos="fade-up">
-
-            <div class="section-header">
-                <h2 class="text-uppercase">Temoignages</h2>
-            </div>
+            <h2 class="text-uppercase title-section text-center mb-5">Temoignages</h2>
 
             <div class="slides-2 swiper">
                 <div class="swiper-wrapper">
@@ -407,7 +400,7 @@
     <!-- ======= Marques Section ======= -->
     <section id="" class="marques">
         <div class="container-fluid" data-aos="fade-up">
-            <h4 class="text-center mb-3">NOS MARQUES DE PIECES AUTO</h4>
+            <h4 class="text-center mb-3 title-section">NOS MARQUES DE PIECES AUTO</h4>
             <div class="slides-3 swiper text-center">
                 <div class="swiper-wrapper">
                     @foreach ($marques as $marque )
@@ -439,13 +432,13 @@
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
               <a href="/" class="logo d-flex align-items-center mb-3">
-                <img src="assets/img/logo.png" alt="" class="img-fluid" style="max-height: 50px;">
+                <img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid" style="max-height: 50px;">
                 <h4 class="p-3">STEIL AUTOMOBILE</h4>
               </a>
               <p>
-                Abidjan, ...<br><br>
-                <strong>Téléphone:</strong> +225 0101010101<br>
-                <strong>Email:</strong> info@gmail.com<br>
+                Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
+                <span class="mt-1 mb-1"><strong>Téléphone:</strong> +225 0707636245 / +225 0777424405 </span><br>
+                <strong>Email:</strong> dafstephane@gmail.com<br>
               </p>
               <div class="social-links d-flex mt-3">
                     <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
@@ -458,23 +451,23 @@
             <h4>Lien de Navigation</h4>
             <ul>
               <li><a href="/">Accueil</a></li>
-              <li><a href="">A Propos</a></li>
-              <li><a href="">Services</a></li>
-              <li><a href="">Pièces Auto / Engin</a></li>
-              <li><a href="">Reparation d'engin</a></li>
-              <li><a href="">Contact</a></li>
+              <li><a href="#get-started">A Propos</a></li>
+              <li><a href="#ours_services">Services</a></li>
+              <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
+              <li><a href="/reparation">Reparation d'engin</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Prestations de reparation Auto</h4>
             <ul>
-              <li><a href="">Entretien</a></li>
-              <li><a href="">Réparation du moteur</a></li>
-              <li><a href="">Réparation de la transmission</a></li>
-              <li><a href="">Réparation de la climatisation et du système de refroidissement</a></li>
-              <li><a href="">Réparation du système électrique</a></li>
-              <li><a href="">Réparation de la carrosserie</a></li>
+              <li><a href="#">Entretien</a></li>
+              <li><a href="#">Réparation du moteur</a></li>
+              <li><a href="#">Réparation de la transmission</a></li>
+              <li><a href="#">Réparation de la climatisation et du système de refroidissement</a></li>
+              <li><a href="#">Réparation du système électrique</a></li>
+              <li><a href="#">Réparation de la carrosserie</a></li>
 
             </ul>
           </div>
@@ -491,31 +484,32 @@
       </div>
     </div>
 
-  </footer>
+</footer>
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></a>
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></a>
 
-  <div id="preloader"></div>
+    <div id="preloader"></div>
 
-  <!-- CDN link JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+    <!-- CDN link JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 
 
-  <!-- Main JS  -->
-  <script src="{{asset('assets/js/main.js')}}" ></script>
+    <!-- Main JS  -->
+    <script src="{{asset('assets/js/main.js')}}" ></script>
 
-  <script src="{{asset('assets/eshop/js/jquery.min.js')}}"></script>
-  <script src="{{asset('assets/eshop/js/jquery-migrate-3.0.0.js')}}"></script>
-  <script src="{{asset('assets/eshop/js/jquery-ui.min.js')}}"></script>
-
-  <script src="{{asset('assets/eshop/js/slicknav.min.js')}}"></script>
-	<script src="{{asset('assets/eshop/js/owl-carousel.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/jquery-migrate-3.0.0.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/popper.min.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/slicknav.min.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/owl-carousel.js')}}"></script>
 
 	<script src="{{asset('assets/eshop/js/active.js')}}"></script>
 

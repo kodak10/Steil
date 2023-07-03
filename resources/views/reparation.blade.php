@@ -46,8 +46,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/" >Accueil</a></li>
-          <li><a href="">A Propos</a></li>
-          <li><a href="">Services</a></li>
+          <li><a href="/#get-started">A Propos</a></li>
+          <li><a href="/#ours_services">Services</a></li>
           <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
           <li><a href="/reparation" class="active">Reparation d'engin</a></li>
           <li><a href="/contact">Contact</a></li>
@@ -64,7 +64,7 @@
 
     <section class="big-banner section" style="background-image: url('https://fakeimg.pl/1024x800') ;">
 		<div class="container">
-			<h2 class="text-center text-white">REPARATION D'ENGIN</h2>
+			<h2 class="text-center text-dark">REPARATION D'ENGIN</h2>
 		</div>
 	</section>
 
@@ -144,114 +144,6 @@
     </section>
 
     <!-- ======= Our Projects Section ======= -->
-    <section id="projects" class="projects">
-        <div class="container" >
-
-          <div class="section-header">
-            <h2>NOS REALISATIONS</h2>
-          </div>
-
-          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
-
-            <ul class="portfolio-flters"  >
-              <li data-filter="*" class="filter-active">Tout</li>
-              <li data-filter=".filter-entretien">Entretien</li>
-              <li data-filter=".filter-carrosserie">Carrosserie</li>
-              <li data-filter=".filter-climatisation">Climatisation</li>
-              <li data-filter=".filter-reparation">Reparation</li>
-            </ul>
-
-            <div class="row gy-4 portfolio-container"  >
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-entretien">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Entretien - 1.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Entretien</h4>
-                    <a href="assets/img/projects/Entretien - 1.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-carrosserie">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Carrosserie - 1.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Carrosserie</h4>
-                    <a href="assets/img/projects/Carrosserie - 1.jpg" title="Carrosserie" data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-climatisation">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Climatisation - 2.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Climatisation</h4>
-                    <a href="assets/img/projects/Climatisation - 2.jpg" title="Climatisation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-reparation">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Repartition - 1.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Reparation</h4>
-                    <a href="assets/img/projects/Repartition - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-entretien">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Entretien - 2.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Entretien</h4>
-                    <a href="assets/img/projects/Entretien - 2.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-carrosserie">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Carrosserie - 2.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Carrosserie</h4>
-                    <a href="assets/img/projects/Carrosserie - 2.jpg" title="Carrosserie " data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-climatisation">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Reparation - 1.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Reparation</h4>
-                    <a href="assets/img/projects/Reparation - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-reparation">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Repartition - 2.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Reparation </h4>
-                    <a href="assets/img/projects/Repartition - 2.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link d-flex justify-content-center text-center"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-    </section>
-
     <section id="projects" class="projects">
         <div class="container" >
 
@@ -407,78 +299,31 @@
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-uppercase title-section text-center mb-5">Temoignages</h2>
 
-          <div class="section-header">
-            <h2 class="text-uppercase">Temoignages</h2>
-          </div>
+            <div class="slides-2 swiper">
+                <div class="swiper-wrapper">
+                    @foreach ($testimonials as $testimonial )
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <img src="{{ asset($testimonial->image) }}" class="testimonial-img" alt="">
+                                    <h3>{{$testimonial->nom}}</h3>
+                                    <h4>{{$testimonial->fonction}}</h4>
+                                    <p>
+                                        <i class="fa-solid fa-quote-left"></i>
+                                        {{$testimonial->message}}
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
 
-          <div class="slides-2 swiper">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="assets/img/testimonials_user.avif" class="testimonial-img" alt="">
-                    <h3>Nom</h3>
-                    <h4>Poste / Entreprise</h4>
-                    <p>
-                      <i class="fa-solid fa-quote-left"></i>
-                      Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                      <i class="fa-solid fa-quote-right"></i>
-                    </p>
-                  </div>
                 </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="assets/img/testimonials_user.avif" class="testimonial-img" alt="">
-                    <h3>Nom</h3>
-                    <h4>Poste / Entreprise</h4>
-                    <p>
-                      <i class="fa-solid fa-quote-left"></i>
-                      Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                      <i class="fa-solid fa-quote-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="assets/img/testimonials_user.avif" class="testimonial-img" alt="">
-                    <h3>Nom</h3>
-                    <h4>Poste / Entreprise</h4>
-                    <p>
-                      <i class="fa-solid fa-quote-left"></i>
-                      Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                      <i class="fa-solid fa-quote-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="assets/img/testimonials_user.avif" class="testimonial-img" alt="">
-                    <h3>Nom</h3>
-                    <h4>Poste / Entreprise</h4>
-                    <p>
-                      <i class="fa-solid fa-quote-left"></i>
-                      Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                      <i class="fa-solid fa-quote-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-pagination"></div>
-          </div>
 
         </div>
     </section>
@@ -494,14 +339,14 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <a href="index.html" class="logo d-flex align-items-center mb-3">
-                <img src="assets/img/logo.png" alt="" class="img-fluid" style="max-height: 50px;">
+              <a href="/" class="logo d-flex align-items-center mb-3">
+                <img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid" style="max-height: 50px;">
                 <h4 class="p-3">STEIL AUTOMOBILE</h4>
               </a>
               <p>
-                Abidjan, ...<br><br>
-                <strong>Téléphone:</strong> +225 0101010101<br>
-                <strong>Email:</strong> info@gmail.com<br>
+                Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
+                <strong>Téléphone:</strong> +225 0707636245 <br> +225 0777424405 <br>
+                <strong>Email:</strong> dafstephane@gmail.com<br>
               </p>
               <div class="social-links d-flex mt-3">
                     <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
@@ -513,12 +358,12 @@
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Lien de Navigation</h4>
             <ul>
-              <li><a href="index.html">Accueil</a></li>
-              <li><a href="index.html#about">A Propos</a></li>
-              <li><a href="index.html#ours_services">Services</a></li>
-              <li><a href="eshop/index.html">Pièces Auto / Engin</a></li>
-              <li><a href="reparation.html">Reparation d'engin</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/#get-started">A Propos</a></li>
+              <li><a href="/#ours_services">Services</a></li>
+              <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
+              <li><a href="/reparation">Reparation d'engin</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
@@ -534,11 +379,6 @@
 
             </ul>
           </div>
-
-
-
-
-
         </div>
       </div>
     </div>
@@ -552,7 +392,7 @@
       </div>
     </div>
 
-  </footer>
+</footer>
 
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></a>
@@ -562,7 +402,7 @@
 
   <!-- CDN link JS -->
 
-{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">/script> --}}
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">/script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
@@ -574,7 +414,32 @@
 
 
   <!-- Main JS  -->
-  <script src="{{asset('assets/js/main.js')}}"></script>
+  <script src="{{asset('assets/js/main.js')}}"></script> --}}
+
+
+
+  <!-- CDN link JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+
+  <!-- Main JS  -->
+  <script src="{{asset('assets/js/main.js')}}" ></script>
+
+  <script src="{{asset('assets/eshop/js/jquery.min.js')}}"></script>
+  <script src="{{asset('assets/eshop/js/jquery-migrate-3.0.0.js')}}"></script>
+  <script src="{{asset('assets/eshop/js/jquery-ui.min.js')}}"></script>
+  <script src="{{asset('assets/eshop/js/popper.min.js')}}"></script>
+  <script src="{{asset('assets/eshop/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('assets/eshop/js/slicknav.min.js')}}"></script>
+  <script src="{{asset('assets/eshop/js/owl-carousel.js')}}"></script>
+
+  <script src="{{asset('assets/eshop/js/active.js')}}"></script>
 
 </body>
 

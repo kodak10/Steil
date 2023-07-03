@@ -30,8 +30,9 @@
 	<link rel="stylesheet" href="{{asset('assets/eshop/css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('assets/eshop/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/eshop/css/responsive.css')}}">
-    <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
+
 
 
 	<style>
@@ -41,32 +42,31 @@
 	</style>
 
 </head>
-<body class="js">
+<body class="">
 
 	<!-- ======= Header ======= -->
-
 	<header id="header" class="d-flex align-items-center">
 		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
 		  <a href="/" class="logo d-flex align-items-center">
-			<img src="assets/img/logo.png" alt="" class="img-fluid">
+			<img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid">
 			<h1>STEIL AUTOMOBILE</h1>
 		  </a>
 
 		  <i class="mobile-nav-toggle mobile-nav-show fa-regular fa-solid fa-bars"></i>
 		  <i class="mobile-nav-toggle mobile-nav-hide d-none fa-solid fa-xmark"></i>
 		  <nav id="navbar" class="navbar">
-			<ul>
-				<li><a href="/" >Accueil</a></li>
-				<li><a href="/#about">A Propos</a></li>
-				<li><a href="">Services</a></li>
-				<li><a href="/pieces_engin" class="active">Pièces Auto / Engin</a></li>
-				<li><a href="/reparation">Reparation d'engin</a></li>
-				<li><a href="/contact">Contact</a></li>
-                <li><a href="/login/admin"><i class="fa-solid fa-user"></i></a></li>
+            <ul>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/#get-started">A Propos</a></li>
+              <li><a href="/#ours_services">Services</a></li>
+              <li><a href="/pieces_engin"  class="active">Pièces Auto / Engin</a></li>
+              <li><a href="/reparation">Reparation d'engin</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/login/admin"><i class="fa-solid fa-user"></i></a></li>
 
-			  </ul>
-		  </nav>
+            </ul>
+          </nav>
 
 		</div>
 	</header>
@@ -162,13 +162,6 @@
                                                         </div>
                                                     @endforeach
 
-
-
-
-
-
-
-
                                                 </div>
                                             </div>
                                         </div>
@@ -179,8 +172,6 @@
                                             <span class="text-center mt-5">Aucune pièce disponible pour cette catégorie.</span>
                                         @endforelse
                                 </div>
-                                {{-- {{ $pieces->links() }} --}}
-
 
 						</div>
 					</div>
@@ -225,9 +216,8 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <a href="#">
-                                            <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#" style="height: 370px !important; width:650px; !important">
-                                            {{-- <img class="default-img" src="https://via.placeholder.com/550x750" alt="#"> --}}
-                                            <img class="hover-img" src="{{ asset($engin->couverture) }}" alt="#" style="height: 370px !important; width:650px; !important">
+                                            <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#">
+                                            <img class="hover-img" src="{{ asset($engin->couverture) }}" alt="#">
                                     </a>
 
                                     <div class="button-head " style="text-align: center !important;">
@@ -275,8 +265,7 @@
           </div>
 
         </div>
-      </section>
-
+    </section>
 
 	<section class="shop-newsletter section">
 		<div class="container">
@@ -339,84 +328,80 @@
     </div>
 
 	<!-- ======= Footer ======= -->
-	<footer id="footer" class="footer">
+    <footer id="footer" class="footer">
 
-		<div class="footer-content position-relative">
-		  <div class="container">
-			<div class="row">
+        <div class="footer-content position-relative">
+          <div class="container">
+            <div class="row">
 
-			  <div class="col-lg-4 col-md-6">
-				<div class="footer-info">
-					<a href="../index.html" class="logo d-flex align-items-center mb-3">
-						<img src="../assets/img/logo.png" alt="" class="img-fluid" style="max-height: 50px;">
-						<h4 class="p-3">STEIL AUTOMOBILE</h4>
-					</a>
-					<p>
-						Abidjan, ...<br><br>
-						<strong>Téléphone:</strong> +225 0101010101<br>
-						<strong>Email:</strong> info@gmail.com<br>
-				  </p>
-				  <div class="social-links d-flex mt-3">
-						<a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
-						<a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-instagram"></i></a>
-				  </div>
-				</div>
-			  </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="footer-info">
+                  <a href="/" class="logo d-flex align-items-center mb-3">
+                    <img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid" style="max-height: 50px;">
+                    <h4 class="p-3">STEIL AUTOMOBILE</h4>
+                  </a>
+                  <p>
+                    Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
+                    <strong>Téléphone:</strong> +225 0707636245 <br> +225 0777424405 <br>
+                    <strong>Email:</strong> dafstephane@gmail.com<br>
+                  </p>
+                  <div class="social-links d-flex mt-3">
+                        <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
 
-			  <div class="col-lg-4 col-md-6 footer-links">
-				<h4>Lien de Navigation</h4>
-				<ul>
-					<li><a href="../index.html">Accueil</a></li>
-					<li><a href="../index.html#about">A Propos</a></li>
-					<li><a href="../index.html#ours_services">Services</a></li>
-					<li><a href="index.html">Pièces Auto / Engin</a></li>
-					<li><a href="../reparation.html">Reparation d'engin</a></li>
-					<li><a href="../contact.html">Contact</a></li>
-				  </ul>
-			  </div>
+              <div class="col-lg-4 col-md-6 footer-links">
+                <h4>Lien de Navigation</h4>
+                <ul>
+                  <li><a href="/">Accueil</a></li>
+                  <li><a href="/#get-started">A Propos</a></li>
+                  <li><a href="/#ours_services">Services</a></li>
+                  <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
+                  <li><a href="/reparation">Reparation d'engin</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                </ul>
+              </div>
 
-			  <div class="col-lg-4 col-md-6 footer-links">
-				<h4>Prestations de réparation Auto</h4>
-				<ul>
-				  <li><a href="#">Entretien</a></li>
-				  <li><a href="#">Réparation du moteur</a></li>
-				  <li><a href="#">Réparation de la transmission</a></li>
-				  <li><a href="#">Réparation de la climatisation et du système de refroidissement</a></li>
-				  <li><a href="#">Réparation du système électrique</a></li>
-				  <li><a href="#">Réparation de la carrosserie</a></li>
+              <div class="col-lg-4 col-md-6 footer-links">
+                <h4>Prestations de reparation Auto</h4>
+                <ul>
+                  <li><a href="#">Entretien</a></li>
+                  <li><a href="#">Réparation du moteur</a></li>
+                  <li><a href="#">Réparation de la transmission</a></li>
+                  <li><a href="#">Réparation de la climatisation et du système de refroidissement</a></li>
+                  <li><a href="#">Réparation du système électrique</a></li>
+                  <li><a href="#">Réparation de la carrosserie</a></li>
 
-				</ul>
-			  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="footer-legal text-center position-relative">
+          <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Steil Automobile</span></strong> tous droits réservés.
+            </div>
 
+          </div>
+        </div>
 
+    </footer>
 
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></a>
 
-			</div>
-		  </div>
-		</div>
+    <div id="preloader"></div>
 
-		<div class="footer-legal text-center position-relative">
-		  <div class="container">
-			<div class="copyright">
-				&copy; Copyright <strong><span>Steil Automobile</span></strong> tous droits réservés.
-			</div>
-
-		  </div>
-		</div>
-
-	</footer>
-
-
-
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 
 	<!-- Vendor Jquery -->
     <script src="{{asset('assets/js/main.js')}}" ></script>
@@ -429,13 +414,8 @@
     <script src="{{asset('assets/eshop/js/slicknav.min.js')}}"></script>
 	<script src="{{asset('assets/eshop/js/owl-carousel.js')}}"></script>
 
-
 	<!--  Jquery -->
     <script src="{{asset('assets/eshop/js/active.js')}}"></script>
-
-    <!-- Main JS  -->
-
-
 
 
 </body>

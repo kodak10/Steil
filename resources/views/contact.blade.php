@@ -35,7 +35,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="" class="img-fluid">
+        <img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid">
         <h1>STEIL AUTOMOBILE</h1>
       </a>
 
@@ -43,9 +43,9 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none fa-solid fa-xmark"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/">Accueil</a></li>
-          <li><a href="">A Propos</a></li>
-          <li><a href="">Services</a></li>
+          <li><a href="/" >Accueil</a></li>
+          <li><a href="/#get-started">A Propos</a></li>
+          <li><a href="/#ours_services">Services</a></li>
           <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
           <li><a href="/reparation">Reparation d'engin</a></li>
           <li><a href="/contact" class="active">Contact</a></li>
@@ -59,30 +59,24 @@
 
   <main id="main bg-dark">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
-      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
-
-        <h2>Contact</h2>
-        <ol>
-          <li><a href="/">Accueil</a></li>
-          <li>Contact</li>
-        </ol>
-
-      </div>
-    </div>
-
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" >
 
         <div class="row gy-4">
           <div class="col-lg-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center">
+              <i class="fa-solid fa-map-pin "></i>
+              <h3> Notre Adresse</h3>
+              <p class="text-center"> Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord</p> <br>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center">
               <i class="fa-solid fa-phone"></i>
-              <h3>Téléphone</h3>
-              <p>+225 0707636245</p>
-              <p>+225 0777424405</p><br>
+              <h3> Téléphone</h3>
+              <p> +225 0707636245 / +225 0777424405</p> <br>
             </div>
           </div>
 
@@ -90,33 +84,25 @@
             <div class="info-item d-flex flex-column justify-content-center align-items-center">
               <i class="fa-solid fa-envelope"></i>
               <h3>Email</h3>
-              <p>dafstephane@gmail.com</p> <br> <br>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="fa-solid fa-map-pin"></i>
-              <h3>Notre Adresse</h3>
-              <p class="m-auto text-center">Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord</p><br>
+              <p class="m-auto text-center">dafstephane@gmail.com</p><br>
             </div>
           </div>
 
         </div>
 
-        <div class="row gy-4 mt-1">
+        <div class="row gy-4 mt-5">
 
           <div class="col-lg-6 ">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d127109.37359526935!2d-3.998058399999977!3d5.391362400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sci!4v1687642056615!5m2!1sfr!2sci" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="" method="post" role="form" class="php-email-form">
               <div class="row gy-4">
                 <div class="col-lg-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom Complet" required>
                 </div>
                 <div class="col-lg-6 form-group">
-                  <input type="email" class="form-control" name="phone" id="email" placeholder="Votre Numéro de télépone" required>
+                  <input type="email" class="form-control" name="phone" id="email" placeholder="Votre Numéro de téléphone" required>
                 </div>
               </div>
               <div class="form-group">
@@ -151,13 +137,13 @@
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
               <a href="/" class="logo d-flex align-items-center mb-3">
-                <img src="assets/img/logo.png" alt="" class="img-fluid" style="max-height: 50px;">
+                <img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid" style="max-height: 50px;">
                 <h4 class="p-3">STEIL AUTOMOBILE</h4>
               </a>
               <p>
-                    Abidjan, ...<br><br>
-                    <strong>Téléphone:</strong> +225 0101010101<br>
-                    <strong>Email:</strong> info@gmail.com<br>
+                Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
+                <strong>Téléphone:</strong> +225 0707636245 <br> +225 0777424405 <br>
+                <strong>Email:</strong> dafstephane@gmail.com<br>
               </p>
               <div class="social-links d-flex mt-3">
                     <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
@@ -170,10 +156,10 @@
             <h4>Lien de Navigation</h4>
             <ul>
               <li><a href="/">Accueil</a></li>
-              <li><a href="">A Propos</a></li>
-              <li><a href="">Services</a></li>
-              <li><a href="">Pièces Auto / Engin</a></li>
-              <li><a href="">Reparation d'engin</a></li>
+              <li><a href="/#get-started">A Propos</a></li>
+              <li><a href="/#ours_services">Services</a></li>
+              <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
+              <li><a href="/reparation">Reparation d'engin</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
@@ -190,7 +176,6 @@
 
             </ul>
           </div>
-
         </div>
       </div>
     </div>
@@ -204,24 +189,34 @@
       </div>
     </div>
 
-  </footer>
+</footer>
 
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></a>
 
   <div id="preloader"></div>
 
-<!-- CDN link JS -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>4
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 
 
 <!-- Main JS  -->
-<script src="assets/js/main.js"></script>
+<script src="{{asset('assets/js/main.js')}}" ></script>
+
+<script src="{{asset('assets/eshop/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/eshop/js/jquery-migrate-3.0.0.js')}}"></script>
+<script src="{{asset('assets/eshop/js/jquery-ui.min.js')}}"></script>
+<script src="{{asset('assets/eshop/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/eshop/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/eshop/js/slicknav.min.js')}}"></script>
+<script src="{{asset('assets/eshop/js/owl-carousel.js')}}"></script>
+
+<script src="{{asset('assets/eshop/js/active.js')}}"></script>
 
 </body>
 
