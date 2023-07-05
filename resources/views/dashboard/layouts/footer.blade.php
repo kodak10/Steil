@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-6 text-left">
                 <span class="mr-1">
-                    Chelsea Taekwondo
+                    Steil Automobile
                 </span>
             </div>
             <div class="col-lg-6 text-right">

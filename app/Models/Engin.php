@@ -14,7 +14,7 @@ class Engin extends Model
     protected $fillable = [
         'nom',
         'description',
-        'id_categories_engin',
+        'categorie_engin_id',
         'couverture',
 
     ];
