@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\testimonial;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class TestimonialsController extends Controller
@@ -12,7 +12,7 @@ class TestimonialsController extends Controller
      */
     public function index()
     {
-        $testimonials = testimonial::all();
+        $testimonials = Testimonial::all();
         return view('dashboard.temoignages.index', compact('testimonials'));
     }
 
@@ -43,7 +43,7 @@ class TestimonialsController extends Controller
 
 
 
-        $testimonials = new testimonial();
+        $testimonials = new Testimonial();
         $testimonials->nom = $validatedData['nom'];
         $testimonials->fonction = $validatedData['fonction'];
         $testimonials->message = $validatedData['message'];
@@ -77,7 +77,7 @@ class TestimonialsController extends Controller
      */
     public function edit(string $id)
     {
-        $testimonial = testimonial::findOrFail($id);
+        $testimonial = Testimonial::findOrFail($id);
         return view('dashboard.temoignages.edit', compact('testimonial'));
     }
 
@@ -86,7 +86,7 @@ class TestimonialsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $testimonial = testimonial::findOrFail($id);
+        $testimonial = Testimonial::findOrFail($id);
 
         // Validation des données d'entrée
         $request->validate([
@@ -120,7 +120,7 @@ class TestimonialsController extends Controller
      */
     public function destroy(string $id)
     {
-        $testimonial = testimonial::findOrFail($id);
+        $testimonial = Testimonial::findOrFail($id);
         $testimonial->delete();
 
         return redirect()->route('temoignages.index')->with('success', "Témoignage supprimer avec succès.");

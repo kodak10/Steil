@@ -4,7 +4,8 @@
 	<!-- Meta Tag -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name='copyright' content=''>
+    <meta content="pieces auto,reparation de vehicule,achat d'engin" name="description">
+	<meta name='copyright' content='steilautomobile'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
