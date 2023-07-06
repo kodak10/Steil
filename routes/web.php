@@ -55,7 +55,9 @@ Route::resource('categorie_realisation', RealisationCategorieController::class);
 Route::resource('realisations', RealisationController::class);
 Route::resource('temoignages', TestimonialsController::class);
 
-
+Route::fallback(function() {
+    return view('404'); // la vue 404.blade.php
+ });
 
 
 

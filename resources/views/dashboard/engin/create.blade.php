@@ -46,7 +46,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="nom">Categorie</label>
-                                                <select name="id_categories_engin" id="" class="form-control">
+                                                <select name="categorie_engin_id" id="" class="form-control">
                                                     @foreach ( $categorie_engins as $categorie_engins )
                                                         <option value="{{$categorie_engins->id}}">{{$categorie_engins->nom}}</option>
                                                     @endforeach

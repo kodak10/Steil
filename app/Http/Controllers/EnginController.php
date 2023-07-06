@@ -41,7 +41,7 @@ class EnginController extends Controller
          $validatedData = $request->validate([
             'nom' => 'required',
             'description' => 'required',
-            'id_categories_engin' => 'required',
+            'categorie_engin_id' => 'required',
             'couverture' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048',
             'images.*' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048',
 
@@ -55,7 +55,7 @@ class EnginController extends Controller
         $engins = new Engin();
         $engins->nom = $validatedData['nom'];
         $engins->description = $validatedData['description'];
-        $engins->id_categories_engin = $validatedData['id_categories_engin'];
+        $engins->categorie_engin_id = $validatedData['categorie_engin_id'];
 
         $imageName_couverture = time() . '_' . $validatedData['couverture']->getClientOriginalName();
 
@@ -68,7 +68,7 @@ class EnginController extends Controller
                 $image->move(public_path('assets/img/engin/'), $imageName);
 
                 $photo = new Image();
-                $photo->chemin = 'assets/img/engin/' . $imageName;
+                $photo->chemin = asset('assets/img/engin/' . $imageName);
                 $engins->images()->save($photo);
             }
         }

@@ -344,7 +344,7 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <a href="#">
-                                        <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#">
+                                        <img class="default-img" src="{{ asset($engin->couverture) }} " alt="#">
                                         <img class="hover-img" src="{{ asset($engin->couverture) }}" alt="#">
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
