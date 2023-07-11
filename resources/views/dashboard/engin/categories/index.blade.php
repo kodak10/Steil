@@ -42,6 +42,7 @@
                                                 <button type="button" class="btn btn-primary mr-5">
                                                     <a href="{{ route('categorie_engin.edit', $categories_engin->id) }}" class="text-white ">Modifier</a>
                                                 </button>
+                                                <!--
                                                 <form
 
                                                     method="POST"
@@ -53,6 +54,8 @@
                                                 </form>
 
                                             </td>
+                                            
+                                            -->
 
 
                                         </tr>

@@ -42,6 +42,7 @@
                                                 <button type="button" class="btn btn-primary mr-5">
                                                     <a href="{{ route('categorie_piece.edit', $categories_piece->id) }}" class="text-white ">Modifier</a>
                                                 </button>
+                                                <!--
                                                 <form
 
                                                     method="POST"
@@ -51,8 +52,10 @@
                                                     @method('DELETE')
                                                     <button class="btn btn-danger" type="submit">Supprimer</button>
                                                 </form>
+                                                
 
                                             </td>
+                                            -->
 
 
                                         </tr>

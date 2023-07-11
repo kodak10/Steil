@@ -44,9 +44,11 @@
                                             <td><img src="{{ $engin->couverture }}" alt="" style="height: 90px;height:90px"></td>
 
                                             <td class="text-center d-flex justify-content-center" >
+                                                <!--
                                                 <button type="button" class="btn btn-primary mr-5">
                                                     <a href="{{ route('engin.edit', $engin->id) }}" class="text-white ">Modifier</a>
                                                 </button>
+                                                -->
                                                 <form
 
                                                     method="POST"

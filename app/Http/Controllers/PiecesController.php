@@ -42,7 +42,7 @@ class PiecesController extends Controller
             'nom' => 'required',
             'description' => 'required',
             'categorie_piece_id' => 'required',
-            'couverture' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048',
+            'couverture' => 'image|mimes:jpeg,png,jpg,PNG,JPG,webp|max:2048',
             'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048'
 
 

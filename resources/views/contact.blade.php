@@ -78,7 +78,8 @@
             <div class="info-item d-flex flex-column justify-content-center align-items-center">
               <i class="fa-solid fa-phone"></i>
               <h3> Téléphone</h3>
-              <p> +225 0707636245 / +225 0777424405</p> <br>
+              <p> +225 0707636245 / +225 0777424405</p>                         <p>+225 0758265650</p>
+<br>
             </div>
           </div>
 

@@ -55,7 +55,7 @@ class MarquesController extends Controller
         // }
 
 
-        return redirect()->route('marques.create')->with('success', "Engin créé avec succès.");
+        return redirect()->route('marques.create')->with('success', "Marque créé avec succès.");
     }
 
     /**
@@ -71,7 +71,7 @@ class MarquesController extends Controller
      */
     public function edit(string $id)
     {
-        return view ('dashboard.marques.edit');
+        //return view ('dashboard.marques.edit');
     }
 
     /**

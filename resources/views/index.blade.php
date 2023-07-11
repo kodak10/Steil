@@ -49,7 +49,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body d-flex justify-content-center align-items-center">
-            <p style="font-size: 18px;" class="p-2">Bienvenue sur le site internet de <strong>STEIL AUTOMOBILE </strong>, anciennement connu sous le nom de [Ancien nom]</p>
+            <p style="font-size: 18px;" class="p-2">Bienvenue sur le site internet de <strong>STEIL AUTOMOBILE </strong>, anciennement connu sous le nom de STEPHEN PIECE AUTO</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">ACCEDER AU SITE</button>
@@ -154,6 +154,8 @@
                         <h3>Téléphone</h3>
                         <p>+225 0707636245</p>
                         <p>+225 0777424405</p>
+                        <p>+225 0758265650</p>
+
                       </div>
                     </div>
 
@@ -248,7 +250,7 @@
                                         <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
                                     </div>
                                     <div class="product-action-2 text-center" >
-                                        <a title="Add to cart" href="#">Appeler</a>
+                                        <a  href="tel:+2250758265650">Appeler</a>
                                     </div>
                                 </div>
                             </div>
@@ -307,7 +309,7 @@
                                   </div>
                               </div>
                               <!-- <h3>$9000 FCFA</h3> -->
-                              <div class="quickview-peragraph mt-5">
+                              <div class="quickview-peragraph mt-5 w-100">
                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam.</p>
                               </div>
 
@@ -344,7 +346,7 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <a href="#">
-                                        <img class="default-img" src="{{ asset($engin->couverture) }} " alt="#">
+                                        <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#">
                                         <img class="hover-img" src="{{ asset($engin->couverture) }}" alt="#">
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
@@ -352,7 +354,7 @@
                                             <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
                                         </div>
                                         <div class="product-action-2 text-center" >
-                                            <a title="" href="#">Appeler</a>
+                                            <a  href="tel:+2250758265650">Appeler</a>
                                         </div>
                                     </div>
                                 </div>

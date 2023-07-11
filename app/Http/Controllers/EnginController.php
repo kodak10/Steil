@@ -68,7 +68,7 @@ class EnginController extends Controller
                 $image->move(public_path('assets/img/engin/'), $imageName);
 
                 $photo = new Image();
-                $photo->chemin = asset('assets/img/engin/' . $imageName);
+                $photo->chemin = 'assets/img/engin/' . $imageName;
                 $engins->images()->save($photo);
             }
         }

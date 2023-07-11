@@ -83,7 +83,7 @@
                             <div class="content">
                                 <p>Pièces auto</p>
                                 <h3>{{$banner_piece->nom}}</h3>
-                                <a href="#">Appeler</a>
+                                <a  href="tel:+2250758265650">Appeler</a>
                             </div>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                             <div class="content">
                                 <p>Engin en vente</p>
                                 <h3>{{$banner_engin->nom}}</h3>
-                                <a href="#">Appeler</a>
+                                <a  href="tel:+2250758265650">Appeler</a>
                             </div>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                                                                             <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
                                                                         </div>
                                                                         <div class="product-action-2 text-center" >
-                                                                            <a title="Add to cart" href="#">Appeler</a>
+                                                                            <a  href="tel:+2250758265650">Appeler</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -191,7 +191,7 @@
                             <img src="{{ asset($top_pieces_buy->couverture) }}" style="height: 370px !important; width:600px !important" alt="#">
                             <div class="content">
                                 <h4>{{$top_pieces_buy->nom}}</h4>
-                                <a href="#">Contactez Nous</a>
+                                <a  href="tel:+2250758265650">Contactez-nous</a>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
                                             <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
                                         </div>
                                         <div class="product-action-2 text-center" >
-                                            <a title="" href="#">Appeler</a>
+                                            <a  href="tel:+2250758265650">Appeler</a>
                                         </div>
                                     </div>
                                 </div>

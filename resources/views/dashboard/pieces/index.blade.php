@@ -45,9 +45,11 @@
                                             <td>{{ $piece->description }}</td>
                                             <td><img src="{{ $piece->couverture }}" alt="" style="height: 90px;height:90px"></td>
                                             <td class="text-center d-flex justify-content-center" >
+                                                <!--
                                                 <button type="button" class="btn btn-primary mr-5">
                                                     <a href="{{ route('pieces.edit', $piece->id) }}" class="text-white ">Modifier</a>
                                                 </button>
+                                                -->
                                                 <form
 
                                                     method="POST"

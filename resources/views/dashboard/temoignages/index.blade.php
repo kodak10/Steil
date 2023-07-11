@@ -25,8 +25,8 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Image</th>
-                                        <th>Fonction</th>
                                         <th>Nom</th>
+                                        <th>Fonction</th>
                                         <th>Message</th>
                                         <th>Action</th>
                                     </tr>

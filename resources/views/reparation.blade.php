@@ -22,7 +22,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css"/>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css"/>
 
   <!-- Main CSS -->
@@ -149,7 +150,7 @@
 
           <div class="section-header">
             <h2>NOS REALISATIONS</h2>
-            <p>Consequatur libero assumenda est voluptatem est quidem illum et officia imilique qui vel architecto accusamus fugit aut qui distinctio</p>
+            
           </div>
 
           <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
@@ -169,7 +170,7 @@
                   <img src="assets/img/projects/Entretien - 1.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Entretien</h4>
-                    <a href="assets/img/projects/Entretien - 1.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="assets/img/projects/Entretien - 1.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
@@ -179,7 +180,7 @@
                   <img src="assets/img/projects/Carrosserie - 1.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Carrosserie</h4>
-                    <a href="assets/img/projects/Carrosserie - 1.jpg" title="Carrosserie" data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="assets/img/projects/Carrosserie - 1.jpg" title="Carrosserie" data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
@@ -189,7 +190,7 @@
                   <img src="assets/img/projects/Climatisation - 2.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Climatisation</h4>
-                    <a href="assets/img/projects/Climatisation - 2.jpg" title="Climatisation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="assets/img/projects/Climatisation - 2.jpg" title="Climatisation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
@@ -199,7 +200,7 @@
                   <img src="assets/img/projects/Repartition - 1.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Reparation</h4>
-                    <a href="assets/img/projects/Repartition - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="assets/img/projects/Repartition - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
@@ -209,7 +210,7 @@
                   <img src="assets/img/projects/Entretien - 2.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Entretien</h4>
-                    <a href="assets/img/projects/Entretien - 2.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="assets/img/projects/Entretien - 2.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
@@ -219,7 +220,7 @@
                   <img src="assets/img/projects/Carrosserie - 2.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Carrosserie</h4>
-                    <a href="assets/img/projects/Carrosserie - 2.jpg" title="Carrosserie " data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="assets/img/projects/Carrosserie - 2.jpg" title="Carrosserie " data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
@@ -229,7 +230,7 @@
                   <img src="assets/img/projects/Reparation - 1.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Reparation</h4>
-                    <a href="assets/img/projects/Reparation - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="assets/img/projects/Reparation - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
@@ -239,7 +240,7 @@
                   <img src="assets/img/projects/Repartition - 2.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Reparation </h4>
-                    <a href="assets/img/projects/Repartition - 2.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    <a href="assets/img/projects/Repartition - 2.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
@@ -254,7 +255,6 @@
     </section>
 
 
-     <!-- ======= Our Projects Section ======= -->
      {{-- <section id="projects" class="projects bg-dark">
         <div class="container">
 
@@ -402,44 +402,29 @@
 
   <!-- CDN link JS -->
 
-{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">/script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
+ 
+ <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+ 
+ 
 
-  <!-- Main JS  -->
-  <script src="{{asset('assets/js/main.js')}}"></script> --}}
+ <script src="{{asset('assets/js/main.js')}}" ></script>
 
-
-
-  <!-- CDN link JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
-
-
-  <!-- Main JS  -->
-  <script src="{{asset('assets/js/main.js')}}" ></script>
-
-  <script src="{{asset('assets/eshop/js/jquery.min.js')}}"></script>
-  <script src="{{asset('assets/eshop/js/jquery-migrate-3.0.0.js')}}"></script>
-  <script src="{{asset('assets/eshop/js/jquery-ui.min.js')}}"></script>
-  <script src="{{asset('assets/eshop/js/popper.min.js')}}"></script>
-  <script src="{{asset('assets/eshop/js/bootstrap.min.js')}}"></script>
-  <script src="{{asset('assets/eshop/js/slicknav.min.js')}}"></script>
-  <script src="{{asset('assets/eshop/js/owl-carousel.js')}}"></script>
-
-  <script src="{{asset('assets/eshop/js/active.js')}}"></script>
+ <script src="{{asset('assets/eshop/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/jquery-migrate-3.0.0.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/popper.min.js')}}"></script>
+    <script src="{{asset('assets/eshop/js/bootstrap.min.js')}}"></script>
 
 </body>
 
