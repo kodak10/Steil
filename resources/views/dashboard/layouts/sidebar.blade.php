@@ -32,12 +32,6 @@
                         </svg>
                     </a>
                     <ul id="app1" class="submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class=" sidebar-layout">
-                            <a href="/categorie_piece" class="svg-icon">
-                                <i class="fa-solid fa-layer-group"></i>
-                                <span class="">Créer une Catégorie</span>
-                            </a>
-                        </li>
                         <li class=" sidebar-layout mt-2">
                             <a href="/pieces" class="svg-icon">
                                 <i class="fa-solid fa-list"></i>
@@ -65,12 +59,6 @@
                         </svg>
                     </a>
                     <ul id="app2" class="submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class=" sidebar-layout">
-                            <a href="/categorie_engin" class="svg-icon">
-                                <i class="fa-solid fa-layer-group"></i>
-                                <span class="">Créer une Catégorie</span>
-                            </a>
-                        </li>
                         <li class=" sidebar-layout mt-2">
                             <a href="/engin" class="svg-icon">
                                 <i class="fa-solid fa-list"></i>

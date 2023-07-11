@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css"/>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css"/>
 
   <!-- Main CSS -->
@@ -52,7 +52,7 @@
           <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
           <li><a href="/reparation" class="active">Reparation d'engin</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li><a href="/login/admin"><i class="fa-solid fa-user"></i></a></li>
+          <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
 
         </ul>
       </nav>
@@ -150,7 +150,7 @@
 
           <div class="section-header">
             <h2>NOS REALISATIONS</h2>
-            
+
           </div>
 
           <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
@@ -344,9 +344,10 @@
                 <h4 class="p-3">STEIL AUTOMOBILE</h4>
               </a>
               <p>
+
                 Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
-                <strong>Téléphone:</strong> +225 0707636245 <br> +225 0777424405 <br>
-                <strong>Email:</strong> dafstephane@gmail.com<br>
+                <strong>Téléphone:</strong>+225 0767754079 <br> +225 0767755112 <br> <br>+225 0767754095
+                <strong>Email:</strong> steilautocommercial@gmail.com<br>
               </p>
               <div class="social-links d-flex mt-3">
                     <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
@@ -407,16 +408,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
- 
+
  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
- 
+
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
- 
+
  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
- 
+
  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
- 
- 
+
+
 
  <script src="{{asset('assets/js/main.js')}}" ></script>
 

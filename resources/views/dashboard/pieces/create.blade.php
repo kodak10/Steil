@@ -8,10 +8,15 @@
         <div class="col-lg-10  m-auto">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <div class="row">
+                    <div class="row d-flex">
                         <h5 class="p-3">
                             CREATION DE PIECES
                         </h5>
+                        <button class="btn btn-secondary">
+                            <a href="" class="p-3">
+                                IMPORTER
+                            </a>
+                        </button>
 
                     </div>
 
@@ -43,21 +48,28 @@
 
 
                                    <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="nom">Categorie</label>
-                                                <select name="categorie_piece_id" id="" class="form-control">
-                                                    @foreach ( $categorie_pieces as $categorie_piece )
-                                                        <option value="{{$categorie_piece->id}}">{{$categorie_piece->nom}}</option>
-                                                    @endforeach
+                                                <select name="categorie_pieces" id="" class="form-control">
+                                                    <option value="moteur">Moteur</option>
+                                                    <option value="pieces_detachees">Pièces Détachées</option>
                                                 </select>
 
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="nom">Référence</label>
+                                                <input type="text" class="form-control" placeholder="Entrez la référence" name="reference" value="{{ old('reference') }}">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="nom">Nom</label>
-                                                <input type="text" class="form-control" placeholder="Entrez votre nom" name="nom" value="{{ old('nom') }}">
+                                                <input type="text" class="form-control" placeholder="Entrez le nom" name="nom" value="{{ old('nom') }}">
 
                                             </div>
                                         </div>

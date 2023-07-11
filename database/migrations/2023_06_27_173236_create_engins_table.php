@@ -16,10 +16,6 @@ return new class extends Migration
             $table->string('nom')->unique();
             $table->string('description');
             $table->string('couverture');
-
-            $table->unsignedBigInteger('categorie_engin_id');
-            $table->foreign('categorie_engin_id')->references('id')->on('categorie_engins');
-
             $table->timestamps();
         });
     }

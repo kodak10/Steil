@@ -77,7 +77,7 @@
           <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
           <li><a href="/reparation">Reparation d'engin</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li><a href="/login/admin"><i class="fa-solid fa-user"></i></a></li>
+          <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
 
         </ul>
       </nav>
@@ -152,9 +152,9 @@
                       <div class="info-item  d-flex flex-column justify-content-center align-items-center p-2">
                         <i class="fa-solid fa-phone"></i>
                         <h3>Téléphone</h3>
-                        <p>+225 0707636245</p>
-                        <p>+225 0777424405</p>
-                        <p>+225 0758265650</p>
+                        <p>+225 0767754079</p>
+                        <p>+225 0767754095</p>
+                        <p>+225 0767755112</p>
 
                       </div>
                     </div>
@@ -163,7 +163,7 @@
                       <div class="info-item d-flex flex-column justify-content-center align-items-center p-2">
                         <i class="fa-solid fa-envelope"></i>
                         <h3>Email</h3>
-                        <p>dafstephane@gmail.com</p>
+                        <p>steilautocommercial@gmail.com</p>
                         <br>
                       </div>
 
@@ -404,7 +404,9 @@
     <!-- ======= Marques Section ======= -->
     <section id="" class="marques">
         <div class="container-fluid" data-aos="fade-up">
-            <h4 class="text-center mb-3 title-section">NOS MARQUES DE PIECES AUTO</h4>
+            <div class="section-title">
+                <h2 class="text-center">NOS MARQUES DE PIECES AUTO</h2>
+            </div>
             <div class="slides-3 swiper text-center">
                 <div class="swiper-wrapper">
                     @foreach ($marques as $marque )
@@ -440,9 +442,10 @@
                 <h4 class="p-3">STEIL AUTOMOBILE</h4>
               </a>
               <p>
+
                 Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
-                <span class="mt-1 mb-1"><strong>Téléphone:</strong> +225 0707636245 / +225 0777424405 </span><br>
-                <strong>Email:</strong> dafstephane@gmail.com<br>
+                <strong>Téléphone:</strong>+225 0767754079 <br> +225 0767755112 <br> <br>+225 0767754095
+                <strong>Email:</strong> steilautocommercial@gmail.com<br>
               </p>
               <div class="social-links d-flex mt-3">
                     <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>

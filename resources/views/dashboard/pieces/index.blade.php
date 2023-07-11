@@ -11,6 +11,7 @@
                     <h5 class="p-3">
                         LISTE DES PIECES
                     </h5>
+                    
                     <button class="btn btn-secondary">
                         <a href="{{route('pieces.create')}}" class="p-3">
                             NOUVELLE PIECES
@@ -24,7 +25,7 @@
                                 <thead class="text-center">
                                     <tr>
                                         <th>#</th>
-                                        <th>Categorie de la pièce</th>
+                                        <th>Référence</th>
                                         <th>Nom</th>
                                         <th>Description</th>
                                         <th>Image de couverture</th>
@@ -38,18 +39,18 @@
                                         <?php $i++; ?>
                                         <tr>
                                             <td>{{$i}}</td>
-                                            <td>
-
-                                            </td>
+                                            <td>{{ $piece->reference }}</td>
                                             <td>{{ $piece->nom }}</td>
                                             <td>{{ $piece->description }}</td>
                                             <td><img src="{{ $piece->couverture }}" alt="" style="height: 90px;height:90px"></td>
                                             <td class="text-center d-flex justify-content-center" >
-                                                <!--
+
                                                 <button type="button" class="btn btn-primary mr-5">
-                                                    <a href="{{ route('pieces.edit', $piece->id) }}" class="text-white ">Modifier</a>
+                                                    {{-- <a href="{{ route('pieces.edit', $piece->id) }}" class="text-white ">Modifier</a> --}}
+
+                                                    <a href="#" class="text-white ">Modifier</a>
                                                 </button>
-                                                -->
+
                                                 <form
 
                                                     method="POST"

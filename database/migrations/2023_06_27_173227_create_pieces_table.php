@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('pieces', function (Blueprint $table) {
             $table->id();
-            $table->string('nom')->unique();
-            $table->string('description');
+            $table->string('categorie_pieces');
+            $table->string('reference')->unique();
+            $table->string('nom');
             $table->string('couverture');
-
-            $table->unsignedBigInteger('categorie_piece_id');
-            $table->foreign('categorie_piece_id')->references('id')->on('categorie_pieces');
+            $table->string('description')->nullable();
 
             $table->timestamps();
         });

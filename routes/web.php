@@ -38,9 +38,7 @@ Route::get('/reparation', [WebsiteController::class, 'reparation']);
 //     return view('auth.login');
 // });
 
-Route::get('/login/admin', function () {
-    return view('dashboard.home');
-});
+
 
 Auth::routes();
 

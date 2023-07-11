@@ -12,16 +12,12 @@ class Piece extends Model
     use HasFactory;
 
     protected $fillable = [
+        'reference',
         'nom',
         'description',
-        'id_categories_pieces',
+        'categorie_pieces',
         'couverture',
     ];
-
-    public function categoriePiece()
-    {
-        return $this->belongsTo(CategoriePiece::class);
-    }
 
     public function images()
     {

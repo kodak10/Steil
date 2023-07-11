@@ -14,12 +14,7 @@ class PiecesController extends Controller
      */
     public function index()
     {
-// $categorie_engin = CategorieEngin::all();
-        // $engin = Engin::find(1);
         $pieces = Piece::all();
-        // $categories_engins = $engins->categorieEngin;
-
-
         return view('dashboard.pieces.index', compact('pieces'));
     }
 
@@ -28,8 +23,7 @@ class PiecesController extends Controller
      */
     public function create()
     {
-        $categorie_pieces = CategoriePiece::all();
-        return view('dashboard.pieces.create' , compact('categorie_pieces'));
+        return view('dashboard.pieces.create');
     }
 
     /**
@@ -39,24 +33,40 @@ class PiecesController extends Controller
     {
         // Validation des données d'entrée
         $validatedData = $request->validate([
+            'categorie_pieces' => 'required',
             'nom' => 'required',
-            'description' => 'required',
-            'categorie_piece_id' => 'required',
-            'couverture' => 'image|mimes:jpeg,png,jpg,PNG,JPG,webp|max:2048',
-            'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048'
-
-
+            'reference' => 'required',
+            'couverture' => 'required', 'image|mimes:jpeg,png,jpg,PNG,JPG,webp|max:2048',
+            'images.*' =>  'image|mimes:jpeg,png,jpg,webp|max:2048',
+            'description' => 'max:225',
 
         ]);
 
         // Création d'un nouvel
-        $pieces = new Piece();
-        $pieces->nom = $validatedData['nom'];
-        $pieces->description = $validatedData['description'];
-        $pieces->categorie_piece_id = $validatedData['categorie_piece_id'];
-        $imageName_couverture = time() . '_' . $validatedData['couverture']->getClientOriginalName();
-        $pieces->couverture = 'assets/img/pieces/' . $imageName_couverture;
-        $pieces->save();
+        if ($request->hasFile('images')) {
+            foreach ($request->file('couverture') as $couverture) {
+                $imageName = time() . '_' . $image->getClientOriginalName();
+                $couverture->move(public_path('assets/img/pieces/'), $imageName);
+
+                $pieces = new Piece();
+                $couverture = $validatedData['couverture'];
+                $pieces->categorie_pieces = $validatedData['categorie_pieces'];
+                $pieces->nom = $validatedData['nom'];
+                $pieces->reference = $validatedData['reference'];
+                $pieces->description = $validatedData['description'];
+
+                $imageName_couverture = time() . '_' . $validatedData['couverture']->getClientOriginalName();
+               // $couverture->move(public_path('assets/img/pieces/' .$imageName_couverture ));
+
+                $pieces->couverture = 'assets/img/pieces/' . $imageName_couverture;
+                $pieces->save();
+                $photo = new Image();
+                $photo->chemin = 'assets/img/pieces/' . $imageName;
+                $pieces->images()->save($photo);
+            }
+        }
+
+
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
@@ -68,8 +78,6 @@ class PiecesController extends Controller
                 $pieces->images()->save($photo);
             }
         }
-
-
 
         return redirect()->route('pieces.create')->with('success', "Pièces créé avec succès.");
     }
@@ -87,9 +95,8 @@ class PiecesController extends Controller
      */
     public function edit(string $id)
     {
-        $categorie_pieces = CategoriePiece::all();
         $pieces = Piece::findOrFail($id);
-        return view('dashboard.pieces.edit', compact('categorie_pieces', 'pieces'));
+        return view('dashboard.pieces.edit', compact('pieces'));
     }
 
     /**
@@ -103,7 +110,7 @@ class PiecesController extends Controller
         $request->validate([
             'nom' => 'required',
             'description' => 'required',
-            'id_categories_pieces' => 'required',
+            'id_categories_piece' => 'required',
         ]);
 
         $piece->nom = $request->input('nom');

@@ -64,7 +64,7 @@
               <li><a href="/pieces_engin"  class="active">Pièces Auto / Engin</a></li>
               <li><a href="/reparation">Reparation d'engin</a></li>
               <li><a href="/contact">Contact</a></li>
-              <li><a href="/login/admin"><i class="fa-solid fa-user"></i></a></li>
+              <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
 
             </ul>
           </nav>
@@ -106,7 +106,71 @@
 	</section>
 
 	<!-- ======= Produits pièces auto Section ======= -->
-    <div class="product-area section">
+    <section class="product-area shop-sidebar shop section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-12">
+                    <div class="shop-sidebar">
+                            <!-- Single Widget -->
+                            <div class="single-widget category">
+                                <h3 class="title">Catégories</h3>
+                                <ul class="categor-list">
+                                    <li><a href="#">Moteur</a></li>
+                                    <li><a href="#">Pièces détachées</a></li>
+
+                                </ul>
+                            </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="search-top">
+								<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
+								<div class="search-top">
+									<form class="search-form">
+										<input type="text" placeholder="Search here..." name="search">
+										<button value="search" type="submit"><i class="ti-search"></i></button>
+									</form>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="single-product">
+                                @foreach ($pieces as $piece )
+                                <div class="product-img">
+                                        <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                            <img class="default-img" src="{{ asset($piece_detail->couverture) }}" alt="#">
+                                            <img class="hover-img" src="{{ asset($piece_detail->couverture) }}" alt="#">
+                                        </a>
+                                        <div class="button-head " style="text-align: center !important;">
+                                            <div class="product-action">
+                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
+                                            </div>
+                                            <div class="product-action-2 text-center" >
+                                                <a  href="tel:+2250767754079">Appeler</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="#" data-toggle="modal" data-target="#exampleModal">{{$piece_detail->nom}}</a></h3>
+                                    </div>
+                                @endforeach
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- <div class="product-area section">
             <div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -180,7 +244,7 @@
 
 
             </div>
-    </div>
+    </div> --}}
 
 	<section class="midium-banner">
 		<div class="container">
@@ -245,7 +309,9 @@
     <!-- ======= Marques Section ======= -->
     <section id="" class="marques">
         <div class="container-fluid" data-aos="fade-up">
-          <h4 class="text-center mb-3">NOS MARQUES DE PIECES AUTO</h4>
+            <div class="section-title">
+                <h2 class="text-center">NOS MARQUES DE PIECES AUTO</h2>
+            </div>
 
           <div class="slides-3 swiper text-center">
             <div class="swiper-wrapper">
@@ -342,9 +408,10 @@
                     <h4 class="p-3">STEIL AUTOMOBILE</h4>
                   </a>
                   <p>
+
                     Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
-                    <strong>Téléphone:</strong> +225 0707636245 <br> +225 0777424405 <br>
-                    <strong>Email:</strong> dafstephane@gmail.com<br>
+                    <strong>Téléphone:</strong>+225 0767754079 <br> +225 0767755112 <br> <br>+225 0767754095
+                    <strong>Email:</strong> steilautocommercial@gmail.com<br>
                   </p>
                   <div class="social-links d-flex mt-3">
                         <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>

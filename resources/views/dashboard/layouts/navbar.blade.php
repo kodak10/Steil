@@ -19,8 +19,9 @@
                         <li class="nav-item nav-icon dropdown">
                             <a href="#" class="nav-item nav-icon dropdown-toggle pr-0 search-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 <img src="#" class="img-fluid avatar-rounded" alt="">
-                                <span class="mb-0 ml-2 user-name">Username</span>
+                                <span class="mb-0 ml-2 user-name">{{ Auth::user()->name }}</span>
                             </a>
+
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <li class="dropdown-item d-flex svg-icon">
                                     <i class="fa-solid fa-user-tie"></i>
@@ -31,11 +32,21 @@
                                     <a href="#">Parametrage d'Accès</a>
                                 </li>
 
-
                                 <li class="dropdown-item  d-flex svg-icon border-top">
                                     <i class="fa-solid fa-right-from-bracket"></i>
-                                    <a href="#">Se Deconnecter</a>
+
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+
+                                        Se Deconnecter
+
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+
                                 </li>
+
                             </ul>
                         </li>
                     </ul>
