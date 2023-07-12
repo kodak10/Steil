@@ -39,19 +39,42 @@ class WebsiteController extends Controller
     {
         $engins = Engin::get();
         $marques = Marque::all();
-
-        $categories_pieces = CategoriePiece::get();
-        $categories_pieces = CategoriePiece::with('pieces')->get();
-        $pieces = CategoriePiece::with('pieces')->paginate(10);
-
+        $pieces = Piece::paginate(9);
         $banner_engins = Engin::latest()->take(1)->get();
         $banner_pieces = Piece::latest()->take(2)->get();
         $top_pieces_buys = Piece::orderBy('created_at', 'asc')->take(2)->get();
 
 
-        return view('pieces', compact('engins', 'marques',  'categories_pieces', 'pieces', 'banner_engins', 'banner_pieces', 'top_pieces_buys'));
+        return view('pieces', compact('engins', 'marques', 'pieces', 'banner_engins', 'banner_pieces', 'top_pieces_buys'));
 
     }
+
+
+    public function filtrerPieces(Request $request)
+    {
+        $categorie = $request->input('categorie');
+
+        $piecesQuery = Piece::query();
+
+        if ($categorie) {
+            $piecesQuery->whereHas('categories', function ($query) use ($categorie) {
+                $query->where('nom', $categorie);
+            });
+        }
+
+        $pieces = $piecesQuery->paginate(10);
+
+        $view = view('pieces.partials.liste', ['pieces' => $pieces])->render();
+        $pagination = $pieces->links()->render();
+
+        return response()->json([
+            'pieces' => $view,
+            'pagination' => $pagination
+        ]);
+    }
+
+
+
 
     public function reparation()
     {

@@ -115,8 +115,9 @@
                             <div class="single-widget category">
                                 <h3 class="title">Catégories</h3>
                                 <ul class="categor-list">
-                                    <li><a href="#">Moteur</a></li>
-                                    <li><a href="#">Pièces détachées</a></li>
+                                    <li><a href="#" data-categorie="" class="active">TOUTES LES PIECES</a></li>
+                                    <li><a href="#" data-categorie="moteur">Moteur</a></li>
+                                    <li><a href="#" data-categorie="pieces_detachees">Pièces détachées</a></li>
 
                                 </ul>
                             </div>
@@ -141,17 +142,18 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="single-product">
-                                @foreach ($pieces as $piece )
-                                <div class="product-img">
+                        @foreach ($pieces as $piece )
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="single-product" id="single-product">
+
+                                    <div class="product-img">
                                         <a href="#" data-toggle="modal" data-target="#exampleModal">
-                                            <img class="default-img" src="{{ asset($piece_detail->couverture) }}" alt="#">
-                                            <img class="hover-img" src="{{ asset($piece_detail->couverture) }}" alt="#">
+                                            <img class="default-img" src="{{ asset($piece->couverture) }}" alt="#">
+                                            <img class="hover-img" src="{{ asset($piece->couverture) }}" alt="#">
                                         </a>
                                         <div class="button-head " style="text-align: center !important;">
                                             <div class="product-action">
-                                                <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
+                                                    <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
                                             </div>
                                             <div class="product-action-2 text-center" >
                                                 <a  href="tel:+2250767754079">Appeler</a>
@@ -159,92 +161,19 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="#" data-toggle="modal" data-target="#exampleModal">{{$piece_detail->nom}}</a></h3>
+                                        <h3><a href="#" data-toggle="modal" data-target="#exampleModal">{{$piece->nom}}</a></h3>
                                     </div>
-                                @endforeach
-
+                                </div>
                             </div>
+                        @endforeach
+                        <div class="d-flex text-center justify-content-center" id="pagination">
+                            {{ $pieces->links() }}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    {{-- <div class="product-area section">
-            <div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="section-title">
-							<h2>CATEGORIES DE PIECES</h2>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-12">
-						<div class="product-info">
-
-							<div class="nav-main">
-								<ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    @foreach ($categories_pieces as $categories_piece)
-
-                                        @php
-                                            $categories_piece_nom = preg_replace('/\s+/', '', $categories_piece->nom);
-                                         @endphp
-                                        <li class="nav-item"><a class="nav-link mt-5 mt-3 {{ ($loop->first) ? 'active' : '' }} " data-toggle="tab" href="#{{$categories_piece_nom}}" role="tab">{{$categories_piece->nom}}</a></li>
-                                    @endforeach
-								</ul>
-							</div>
-							<div class="tab-content" id="myTabContent">
-                                @forelse ($categories_pieces as $categories_piece)
-                                        @php
-                                            $categories_piece_nom = preg_replace('/\s+/', '', $categories_piece->nom);
-                                        @endphp
-                                        <div class="tab-pane fade {{ ($loop->first) ? 'show active' : '' }}" id="{{$categories_piece_nom}}" role="tabpanel">
-                                            <div class="tab-single">
-                                                <div class="row">
-                                                    @foreach ( $categories_piece->pieces as $piece_detail )
-                                                        <div class="col-xl-3 col-lg-4 col-md-4 col-12">
-                                                            <div class="single-product">
-                                                                <div class="product-img">
-                                                                    <a href="#">
-                                                                        <img class="default-img" src="{{ asset($piece_detail->couverture) }}" alt="#">
-                                                                        <img class="hover-img" src="{{ asset($piece_detail->couverture) }}" alt="#">
-                                                                    </a>
-                                                                    <div class="button-head " style="text-align: center !important;">
-                                                                        <div class="product-action">
-                                                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                                                                        </div>
-                                                                        <div class="product-action-2 text-center" >
-                                                                            <a  href="tel:+2250758265650">Appeler</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-content">
-                                                                    <h3><a href="#">{{$piece_detail->nom}}</a></h3>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    @endforeach
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-                                        @empty
-                                            <span class="text-center mt-5">Aucune pièce disponible pour cette catégorie.</span>
-                                        @endforelse
-                                </div>
-
-						</div>
-					</div>
-				</div>
-
-
-            </div>
-    </div> --}}
 
 	<section class="midium-banner">
 		<div class="container">
@@ -485,6 +414,30 @@
 	<!--  Jquery -->
     <script src="{{asset('assets/eshop/js/active.js')}}"></script>
 
+    <script>
+        // Lorsque l'on clique sur un lien de filtre
+$('#filtres a').on('click', function(e) {
+    e.preventDefault();
+
+    var categorie = $(this).data('categorie');
+
+    // Appel AJAX pour récupérer les résultats filtrés
+    $.ajax({
+        url: '/filtrer',
+        type: 'GET',
+        data: { categorie: categorie },
+        success: function(response) {
+            // Mettre à jour le contenu des résultats
+            $('#single-product').html(response);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+});
+
+
+    </script>
 
 </body>
 </html>
