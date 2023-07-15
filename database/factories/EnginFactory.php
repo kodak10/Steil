@@ -18,12 +18,13 @@ class EnginFactory extends Factory
      */
     public function definition(): array
     {
-        $nbWords = 6;
+        $nbWords = 10;
 
         return [
             'nom' => $this->faker->unique()->sentence($nbWords),
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum, nisi at aliquam finibus, elit dui tincidunt dui, a congue orci justo ut ligula. Maecenas vitae metus in massa consectetur fringilla.',
-            'couverture' => 'https://via.placeholder.com/550x750',
+            'image' => 'https://via.placeholder.com/550x750',
+            'description' =>    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Maecenas vitae metus in massa consectetur fringilla.',
         ];
     }
 }

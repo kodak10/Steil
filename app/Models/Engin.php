@@ -13,9 +13,8 @@ class Engin extends Model
 
     protected $fillable = [
         'nom',
+        'image',
         'description',
-        'categorie_engin_id',
-        'couverture',
 
     ];
 

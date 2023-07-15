@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Engin;
-use App\Models\Image;
 use Illuminate\Http\Request;
-use App\Models\CategorieEngin;
+use Intervention\Image\Facades\Image;
 
 class EnginController extends Controller
 {
@@ -14,12 +13,7 @@ class EnginController extends Controller
      */
     public function index()
     {
-        // $categorie_engin = CategorieEngin::all();
-        // $engin = Engin::find(1);
         $engins = Engin::all();
-        // $categories_engins = $engins->categorieEngin;
-
-
         return view('dashboard.engin.index', compact('engins'));
     }
 
@@ -28,8 +22,7 @@ class EnginController extends Controller
      */
     public function create()
     {
-        $categorie_engins = CategorieEngin::all();
-        return view('dashboard.engin.create' , compact('categorie_engins'));
+        return view('dashboard.engin.create');
     }
 
     /**
@@ -37,45 +30,31 @@ class EnginController extends Controller
      */
     public function store(Request $request)
     {
-         // Validation des données d'entrée
-         $validatedData = $request->validate([
+        // Validation des données d'entrée
+        $validatedData = $request->validate([
             'nom' => 'required',
-            'description' => 'required',
-            'categorie_engin_id' => 'required',
-            'couverture' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048',
-            'images.*' => 'image|mimes:jpeg,png,jpg,PNG,JPG|max:2048',
-
-
+            'image' => 'image|mimes:jpeg,png,jpg,PNG,JPG,webp|max:2048',
+            'description' => '',
         ]);
 
-        // Création d'un nouvel
+        // Création d'un nouvel engin
+$imageOriginale = $request->file('image');
+$imageOriginaleName = time() . '.' . $imageOriginale->getClientOriginalExtension();
 
+$imageOriginalePath = 'assets/img/engin/' . $imageOriginaleName;
+$imageOriginale->move(public_path('assets/img/engin'), $imageOriginaleName);
 
-
-        $engins = new Engin();
-        $engins->nom = $validatedData['nom'];
-        $engins->description = $validatedData['description'];
-        $engins->categorie_engin_id = $validatedData['categorie_engin_id'];
-
-        $imageName_couverture = time() . '_' . $validatedData['couverture']->getClientOriginalName();
-
-        $engins->couverture = 'assets/img/engin/' . $imageName_couverture;
-        $engins->save();
-
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('assets/img/engin/'), $imageName);
-
-                $photo = new Image();
-                $photo->chemin = 'assets/img/engin/' . $imageName;
-                $engins->images()->save($photo);
-            }
-        }
-
+// Enregistrement des données dans la base de données
+$engin = Engin::create([
+    'nom' => $request->nom,
+    'image' => $imageOriginalePath,
+    'description' => $request->description,
+]);
 
         return redirect()->route('engin.create')->with('success', "Engin créé avec succès.");
-    }
+
+        }
+
 
     /**
      * Display the specified resource.
@@ -90,9 +69,8 @@ class EnginController extends Controller
      */
     public function edit(string $id)
     {
-        $categorie_engins = CategorieEngin::all();
         $engins = Engin::findOrFail($id);
-        return view('dashboard.engin.edit', compact('categorie_engins', 'engins'));
+        return view('dashboard.engin.edit', compact( 'engins'));
 
     }
 
@@ -107,12 +85,10 @@ class EnginController extends Controller
         $request->validate([
             'nom' => 'required',
             'description' => 'required',
-            'id_categories_engin' => 'required',
         ]);
 
         $engin->nom = $request->input('nom');
         $engin->description = $request->input('description');
-        $engin->id_categories_engin = $request->input('id_categories_engin');
 
         $engin->save();
 

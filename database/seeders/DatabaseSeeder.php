@@ -10,6 +10,7 @@ use App\Models\testimonial;
 use App\Models\CategorieEngin;
 use App\Models\CategoriePiece;
 use App\Models\Piece;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,18 +20,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
-
         testimonial::factory()->count(8)->create();
-        Marque::factory()->count(8)->create();
-        Engin::factory()->count(10)->create();
-        //Piece::factory()->count(20)->create();
-
-
-
-
-
-
+        Marque::factory()->count(7)->create();
+        Engin::factory()->count(20)->create();
+        User::factory()->count(1)->create();
+        Piece::factory()->count(200)->create();
 
 
     }

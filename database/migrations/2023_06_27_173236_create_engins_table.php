@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('engins', function (Blueprint $table) {
             $table->id();
             $table->string('nom')->unique();
-            $table->string('description');
-            $table->string('couverture');
+            //$table->string('thumbnail');
+            $table->string('image');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

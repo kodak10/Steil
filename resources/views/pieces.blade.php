@@ -21,6 +21,8 @@
 
 	<!-- Link CDN -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css"/>
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css"/>
 
 
@@ -33,6 +35,7 @@
     <link rel="stylesheet" href="{{asset('assets/eshop/css/responsive.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"/>
 
 
 
@@ -72,38 +75,9 @@
 		</div>
 	</header>
 
-	<section class="small-banner section">
-		<div class="container-fluid">
-			<div class="row">
+    <div style="max-height: 300px; min-height:300px">
 
-                @foreach ($banner_pieces as $banner_piece)
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="single-banner">
-                            <img src="{{ asset($banner_piece->couverture) }}" style="height: 370px !important; width:600px !important" alt="#">
-                            <div class="content">
-                                <p>Pièces auto</p>
-                                <h3>{{$banner_piece->nom}}</h3>
-                                <a  href="tel:+2250758265650">Appeler</a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-                @foreach ($banner_engins as $banner_engin)
-                    <div class="col-lg-4 col-12">
-                        <div class="single-banner tab-height">
-                            <img src="{{ asset($banner_engin->couverture) }}" style="height: 370px !important; width:600px !important" alt="#">
-                            <div class="content">
-                                <p>Engin en vente</p>
-                                <h3>{{$banner_engin->nom}}</h3>
-                                <a  href="tel:+2250758265650">Appeler</a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-			</div>
-		</div>
-	</section>
+    </div>
 
 	<!-- ======= Produits pièces auto Section ======= -->
     <section class="product-area shop-sidebar shop section">
@@ -129,27 +103,41 @@
                 </div>
                 <div class="col-lg-9 col-md-8 col-12">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-6">
                             <div class="search-top">
 								<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
 								<div class="search-top">
 									<form class="search-form">
-										<input type="text" placeholder="Search here..." name="search">
+										<input type="text" placeholder="Entrer le d'une piece" name="search" class="form-control p-2">
 										<button value="search" type="submit"><i class="ti-search"></i></button>
 									</form>
 								</div>
 							</div>
                         </div>
+
+                        <div class="col-6">
+                            <form action="{{ route('pieces_engin') }}" method="GET">
+                                <select name="categorie_pieces" class="form-control p-2" onchange="this.form.submit()">
+                                    <option value="">Toutes les Categories</option>
+                                    <option value="Moteur">Moteur</option>
+                                    <option value="Pieces_detachees">Pieces Détachées</option>
+                                </select>
+
+
+                            </form>
+                        </div>
+
                     </div>
-                    <div class="row">
+
+                    <div class="row" id="selectedPieces">
                         @foreach ($pieces as $piece )
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="single-product" id="single-product">
 
                                     <div class="product-img">
-                                        <a href="#" data-toggle="modal" data-target="#exampleModal">
-                                            <img class="default-img" src="{{ asset($piece->couverture) }}" alt="#">
-                                            <img class="hover-img" src="{{ asset($piece->couverture) }}" alt="#">
+                                        <a data-fancybox="piece_{{$piece->id}}" href="{{ $piece->image }}">
+                                            <img class="default-img" src="{{ $piece->thumbnail }}" alt="#">
+                                            <img class="hover-img" src="{{ $piece->thumbnail }}" alt="#">
                                         </a>
                                         <div class="button-head " style="text-align: center !important;">
                                             <div class="product-action">
@@ -175,23 +163,9 @@
         </div>
     </section>
 
-	<section class="midium-banner">
-		<div class="container">
-			<div class="row">
-                @foreach ($top_pieces_buys as $top_pieces_buy )
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="single-banner">
-                            <img src="{{ asset($top_pieces_buy->couverture) }}" style="height: 370px !important; width:600px !important" alt="#">
-                            <div class="content">
-                                <h4>{{$top_pieces_buy->nom}}</h4>
-                                <a  href="tel:+2250758265650">Contactez-nous</a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-			</div>
-		</div>
-	</section>
+	<div style="max-height: 300px; min-height:300px">
+
+    </div>
 
 	<!-- ======= Engin disponible Section ======= -->
 	<div class="product-area most-popular section">
@@ -199,7 +173,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="text-center">ENGIN DISPONIBLE</h2>
+                        <h2 class="text-center">ENGINS DISPONIBLES</h2>
                     </div>
                 </div>
             </div>
@@ -209,21 +183,17 @@
                         @foreach ( $engins as $engin )
                             <div class="single-product">
                                 <div class="product-img">
-                                    <a href="#">
-                                            <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#">
-                                            <img class="hover-img" src="{{ asset($engin->couverture) }}" alt="#">
+                                    <a data-fancybox="engin_{{$engin->id}}" href="{{ $engin->image }}">
+                                        <img class="default-img" src="{{ $engin->image }}" alt="#">
+                                        <img class="hover-img" src="{{ $engin->image }}" alt="#">
                                     </a>
-
                                     <div class="button-head " style="text-align: center !important;">
-                                        <div class="product-action">
-                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                                        </div>
                                         <div class="product-action-2 text-center" >
                                             <a  href="tel:+2250758265650">Appeler</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-content">
+                                <div class="product-content align-self-end">
                                     <h3><a href="#">{{$engin->nom}}</a></h3>
                                 </div>
                             </div>
@@ -414,28 +384,52 @@
 	<!--  Jquery -->
     <script src="{{asset('assets/eshop/js/active.js')}}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
     <script>
-        // Lorsque l'on clique sur un lien de filtre
-$('#filtres a').on('click', function(e) {
-    e.preventDefault();
+        $("[data-fancybox]").fancybox({
+                    zoom            : true,
+                    thumbs          : false,
+                    hash            : false,
+                    loop            : true,
+                    keyboard        : true,
+                    toolbar         : false,
+                    animationEffect : false,
+                    arrows          : true,
+                    clickContent    : false
+                });
+    </script>
 
-    var categorie = $(this).data('categorie');
 
-    // Appel AJAX pour récupérer les résultats filtrés
-    $.ajax({
-        url: '/filtrer',
-        type: 'GET',
-        data: { categorie: categorie },
-        success: function(response) {
-            // Mettre à jour le contenu des résultats
-            $('#single-product').html(response);
-        },
-        error: function(xhr, status, error) {
-            console.error(error);
-        }
+    <script>
+       document.getElementById('selectionForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var moteurId = document.getElementById('moteurSelect').value;
+
+    // Envoyer une requête AJAX
+    axios.post('/select-pieces', {
+        moteur_id: moteurId
+    })
+    .then(function (response) {
+        var piecesHtml = '';
+
+        // Générer le HTML des pièces sélectionnées
+        response.data.pieces.data.forEach(function(piece) {
+            piecesHtml += '<div>';
+            piecesHtml += '<h2>' + piece.nom + '</h2>';
+            piecesHtml += '<p>' + piece.description + '</p>';
+            // Ajoutez d'autres informations de la pièce détachée...
+            piecesHtml += '</div>';
+        });
+
+        // Mettre à jour la section 'selectedPieces' avec les pièces sélectionnées et la pagination
+        document.getElementById('selectedPieces').innerHTML = piecesHtml + response.data.pagination;
+    })
+    .catch(function (error) {
+        console.error(error);
     });
 });
-
 
     </script>
 

@@ -34,6 +34,8 @@
   <link rel="stylesheet" href="{{asset('assets/eshop/css/responsive.css')}}">
   <link rel="stylesheet" href="{{asset('assets/eshop/style.css')}}">
   <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"/>
+
 
 
 </head>
@@ -241,14 +243,12 @@
                         <div class="single-product">
                             <div class="product-img">
 
-                                <a href="#">
-                                    <img class="default-img" src="{{ asset($pieces_recente->couverture) }}" alt="#" >
-                                    <img class="hover-img" src="{{ asset($pieces_recente->couverture) }}" alt="#">
+                                <a data-fancybox="piece_{{$pieces_recente->id}}" href="{{ $pieces_recente->image }}">
+                                    <img class="default-img" src="{{ $pieces_recente->image }}" alt="#">
+                                    <img class="hover-img" src="{{ $pieces_recente->image }}" alt="#">
                                 </a>
                                 <div class="button-head " style="text-align: center !important;">
-                                    <div class="product-action">
-                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                                    </div>
+
                                     <div class="product-action-2 text-center" >
                                         <a  href="tel:+2250758265650">Appeler</a>
                                     </div>
@@ -335,7 +335,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="text-center title-section">ENGINS DISPONIBLES</h2>
+                        <h2 class="text-center">ENGINS DISPONIBLES</h2>
                     </div>
                 </div>
             </div>
@@ -345,20 +345,17 @@
                         @foreach ( $engins as $engin )
                             <div class="single-product">
                                 <div class="product-img">
-                                    <a href="#">
-                                        <img class="default-img" src="{{ asset($engin->couverture) }}" alt="#">
-                                        <img class="hover-img" src="{{ asset($engin->couverture) }}" alt="#">
+                                    <a data-fancybox="engin_{{$engin->id}}" href="{{ $engin->image }}">
+                                        <img class="default-img" src="{{ $engin->image }}" alt="#">
+                                        <img class="hover-img" src="{{ $engin->image }}" alt="#">
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
-                                        <div class="product-action">
-                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                                        </div>
                                         <div class="product-action-2 text-center" >
                                             <a  href="tel:+2250758265650">Appeler</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-content">
+                                <div class="product-content align-self-end">
                                     <h3><a href="#">{{$engin->nom}}</a></h3>
                                 </div>
                             </div>
@@ -519,6 +516,9 @@
     <script src="{{asset('assets/eshop/js/owl-carousel.js')}}"></script>
 
 	<script src="{{asset('assets/eshop/js/active.js')}}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
 
 </body>
 

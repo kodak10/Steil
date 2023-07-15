@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Faker\Generator as Faker;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Piece>
  */
@@ -16,11 +16,15 @@ class PieceFactory extends Factory
      */
     public function definition(): array
     {
+        $marques = ['Moteur', 'Pieces_detachees'];
+
         return [
-            'nom' => $this->faker->unique()->sentence($nbWords=6),
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vestibulum, nisi at aliquam finibus, elit dui tincidunt dui, a congue orci justo ut ligula. Maecenas vitae metus in massa consectetur fringilla.',
-            'couverture' => 'https://via.placeholder.com/550x750',
-            'categorie_piece_id' => $this->faker->numberBetween(1,5),
+            'categorie_pieces' => $this->faker->randomElement($marques),
+            'reference' => $this->faker->swiftBicNumber(),
+            'nom' => $this->faker->unique()->sentence($nbWords=12),
+            'thumbnail' => 'https://via.placeholder.com/550x750',
+            'image' => 'https://via.placeholder.com/550x750',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. metus in massa consectetur fringilla.',
         ];
     }
 }

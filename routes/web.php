@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EnginController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImportPieceDetaillerController;
 use App\Http\Controllers\MarquesController;
 use App\Http\Controllers\PiecesController;
@@ -16,6 +17,8 @@ use App\Http\Controllers\WebsiteController;
 // Website Route
 Route::get('/', [WebsiteController::class, 'index']);
 Route::get('/pieces_engin', [WebsiteController::class, 'eshop']);
+Route::get('/pieces_engin/{type?}', [WebsiteController::class, 'eshop'])->name('pieces_engin');
+
 Route::get('/reparation', [WebsiteController::class, 'reparation']);
 Route::get('/contact', function () {
     return view('contact');
@@ -25,9 +28,11 @@ Route::get('/filtrer-pieces',  [WebsiteController::class, 'filtrerPieces'])->nam
 
 
 // Authentication Routes
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('login', [LoginController::class, 'showLoginForm'] )->name('login');
+Route::post('login', [LoginController::class, 'login'] );
+Route::post('logout', [LoginController::class, 'logout'] )->name('logout');
+
+Route::get('/home',[HomeController::class, 'index'])->name('home');
 
 // Action de l'agent
 Route::middleware(['auth'])->group(function() {

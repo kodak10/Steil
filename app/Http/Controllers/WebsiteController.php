@@ -35,43 +35,47 @@ class WebsiteController extends Controller
         return view('index', compact('marques', 'engins', 'images', 'pieces_recentes', 'images_engins', 'testimonials'));
     }
 
-    public function eshop()
+    public function eshop($type = null)
     {
         $engins = Engin::get();
         $marques = Marque::all();
-        $pieces = Piece::paginate(9);
+        //$pieces = Piece::paginate(9);
         $banner_engins = Engin::latest()->take(1)->get();
         $banner_pieces = Piece::latest()->take(2)->get();
         $top_pieces_buys = Piece::orderBy('created_at', 'asc')->take(2)->get();
 
 
+        $query = Piece::query();
+
+        // Appliquer des conditions basées sur le type sélectionné
+        if ($type) {
+            $query->where('categorie_pieces', $type);
+        }
+
+        $pieces = $query->paginate(9);
+
+        // Renvoyer les résultats à la vue
         return view('pieces', compact('engins', 'marques', 'pieces', 'banner_engins', 'banner_pieces', 'top_pieces_buys'));
 
     }
 
-
-    public function filtrerPieces(Request $request)
+    public function select_catgeories_pieces($type = null)
     {
-        $categorie = $request->input('categorie');
+        $query = Piece::query();
 
-        $piecesQuery = Piece::query();
-
-        if ($categorie) {
-            $piecesQuery->whereHas('categories', function ($query) use ($categorie) {
-                $query->where('nom', $categorie);
-            });
+        // Appliquer des conditions basées sur le type sélectionné
+        if ($type) {
+            $query->where('categorie_pieces', $type);
         }
 
-        $pieces = $piecesQuery->paginate(10);
+        $pieces = $query->paginate(9);
 
-        $view = view('pieces.partials.liste', ['pieces' => $pieces])->render();
-        $pagination = $pieces->links()->render();
-
-        return response()->json([
-            'pieces' => $view,
-            'pagination' => $pagination
-        ]);
+        // Renvoyer les résultats à la vue
+        return view('pieces', compact('pieces'));
     }
+
+
+
 
 
 

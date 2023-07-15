@@ -24,7 +24,6 @@
                                 <thead class="text-center">
                                     <tr>
                                         <th>#</th>
-                                        <th>Categorie de l'engin</th>
                                         <th>Nom</th>
                                         <th>Description</th>
                                         <th>Image de couverture</th>
@@ -38,10 +37,9 @@
                                         <?php $i++; ?>
                                         <tr>
                                             <td>{{$i}}</td>
-                                            <td></td>
                                             <td>{{ $engin->nom }}</td>
                                             <td>{{ $engin->description }}</td>
-                                            <td><img src="{{ $engin->couverture }}" alt="" style="height: 90px;height:90px"></td>
+                                            <td><img src="{{ $engin->image }}" alt="" style="height: 90px;height:90px"></td>
 
                                             <td class="text-center d-flex justify-content-center" >
                                                 <!--

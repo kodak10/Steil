@@ -167,80 +167,80 @@
 
               <div class="col-lg-4 col-md-6 portfolio-item filter-entretien">
                 <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Entretien - 1.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/realisations/Entretien - 1.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Entretien</h4>
-                    <a href="assets/img/projects/Entretien - 1.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
+                    <a href="assets/img/realisations/Entretien - 1.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-6 portfolio-item filter-carrosserie">
                 <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Carrosserie - 1.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/realisations/Carrosserie - 1.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Carrosserie</h4>
-                    <a href="assets/img/projects/Carrosserie - 1.jpg" title="Carrosserie" data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
+                    <a href="assets/img/realisations/Carrosserie - 1.jpg" title="Carrosserie" data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-6 portfolio-item filter-climatisation">
                 <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Climatisation - 2.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/realisations/Climatisation - 2.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Climatisation</h4>
-                    <a href="assets/img/projects/Climatisation - 2.jpg" title="Climatisation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
+                    <a href="assets/img/realisations/Climatisation - 2.jpg" title="Climatisation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-6 portfolio-item filter-reparation">
                 <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Repartition - 1.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/realisations/Repartition - 1.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Reparation</h4>
-                    <a href="assets/img/projects/Repartition - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
+                    <a href="assets/img/realisations/Repartition - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-6 portfolio-item filter-entretien">
                 <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Entretien - 2.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/realisations/Entretien - 2.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Entretien</h4>
-                    <a href="assets/img/projects/Entretien - 2.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
+                    <a href="assets/img/realisations/Entretien - 2.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-6 portfolio-item filter-carrosserie">
                 <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Carrosserie - 2.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/realisations/Carrosserie - 2.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Carrosserie</h4>
-                    <a href="assets/img/projects/Carrosserie - 2.jpg" title="Carrosserie " data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
+                    <a href="assets/img/realisations/Carrosserie - 2.jpg" title="Carrosserie " data-gallery="portfolio-gallery-carrosserie" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-6 portfolio-item filter-climatisation">
                 <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Reparation - 1.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/realisations/Reparation - 1.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Reparation</h4>
-                    <a href="assets/img/projects/Reparation - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
+                    <a href="assets/img/realisations/Reparation - 1.jpg" title="Reparation" data-gallery="portfolio-gallery-climatisation" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-md-6 portfolio-item filter-reparation">
                 <div class="portfolio-content h-100">
-                  <img src="assets/img/projects/Repartition - 2.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/realisations/Repartition - 2.jpg" class="img-fluid" alt="">
                   <div class="portfolio-info">
                     <h4>Reparation </h4>
-                    <a href="assets/img/projects/Repartition - 2.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
+                    <a href="assets/img/realisations/Repartition - 2.jpg" title="Reparation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="fa-solid fa-eye"></i></a>
                   </div>
                 </div>
               </div>
@@ -253,48 +253,6 @@
 
 
     </section>
-
-
-     {{-- <section id="projects" class="projects bg-dark">
-        <div class="container">
-
-          <div class="section-header">
-            <h2 class="text-white">NOS REALISATIONS</h2>
-          </div>
-
-          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
-
-            <ul class="portfolio-flters" >
-                <li data-filter="*" class="filter-active">Tout</li>
-                @foreach ($realisations_categories as $realisations_categorie )
-                    <li data-filter=".filter-{{$realisations_categorie->nom}}">{{$realisations_categorie->nom}}</li>
-                @endforeach
-
-            </ul>
-
-            <div class="row gy-4 portfolio-container" >
-
-                @foreach ($realisations as $realisation )
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-{{$realisation->categorieRealisation->nom}}">
-                        <div class="portfolio-content h-100">
-                            <img src="assets/img/realisations/Entretien - 1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>{{$realisation->titre}}</h4>
-                                <a href="assets/img/realisations/Entretien - 1.jpg" title="Entretien" data-gallery="portfolio-gallery-entretien" class="glightbox preview-link"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-    </section> --}}
 
 
     <!-- ======= Testimonials Section ======= -->
@@ -344,10 +302,9 @@
                 <h4 class="p-3">STEIL AUTOMOBILE</h4>
               </a>
               <p>
-
                 Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
-                <strong>Téléphone:</strong>+225 0767754079 <br> +225 0767755112 <br> <br>+225 0767754095
-                <strong>Email:</strong> steilautocommercial@gmail.com<br>
+                <strong>Téléphone:</strong> +225 0707636245 <br> +225 0777424405 <br>
+                <strong>Email:</strong> dafstephane@gmail.com<br>
               </p>
               <div class="social-links d-flex mt-3">
                     <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>

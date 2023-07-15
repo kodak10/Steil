@@ -43,17 +43,7 @@
 
 
                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="nom">Categorie</label>
-                                                <select name="categorie_engin_id" id="" class="form-control">
-                                                    @foreach ( $categorie_engins as $categorie_engins )
-                                                        <option value="{{$categorie_engins->id}}">{{$categorie_engins->nom}}</option>
-                                                    @endforeach
-                                                </select>
 
-                                            </div>
-                                        </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="nom">Nom</label>
@@ -66,16 +56,11 @@
 
                                    <div class="row">
 
+
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>Image Couverture</label>
-                                                <input type="file" name="couverture" multiple class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="prenoms">Images</label>
-                                                <input type="file" name="images[]" multiple class="form-control">
+                                                <label for="prenoms">image_originale</label>
+                                                <input type="file" name="image" class="form-control">
                                             </div>
                                         </div>
 
