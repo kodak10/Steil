@@ -107,10 +107,12 @@
                             <div class="search-top">
 								<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
 								<div class="search-top">
-									<form class="search-form">
-										<input type="text" placeholder="Entrer le d'une piece" name="search" class="form-control p-2">
-										<button value="search" type="submit"><i class="ti-search"></i></button>
-									</form>
+
+                                    <form action="{{ route('recherche') }}" method="POST">
+                                        @csrf
+										<input type="text" placeholder="Entrer le nom d'une piece" name="search" class="form-control p-2">
+                                        <button type="submit">Rechercher</button>
+                                    </form>
 								</div>
 							</div>
                         </div>
@@ -173,7 +175,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="text-center">ENGINS DISPONIBLES</h2>
+                        <h2 class="text-center">ENGINS</h2>
                     </div>
                 </div>
             </div>

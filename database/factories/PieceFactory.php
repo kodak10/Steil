@@ -22,7 +22,6 @@ class PieceFactory extends Factory
             'categorie_pieces' => $this->faker->randomElement($marques),
             'reference' => $this->faker->swiftBicNumber(),
             'nom' => $this->faker->unique()->sentence($nbWords=12),
-            'thumbnail' => 'https://via.placeholder.com/550x750',
             'image' => 'https://via.placeholder.com/550x750',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. metus in massa consectetur fringilla.',
         ];

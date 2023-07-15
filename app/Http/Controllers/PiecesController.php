@@ -36,48 +36,32 @@ class PiecesController extends Controller
             'categorie_pieces' => 'required',
             'nom' => 'required',
             'reference' => 'required',
-            'couverture' => 'required', 'image|mimes:jpeg,png,jpg,PNG,JPG,webp|max:2048',
+            'image' => 'required', 'image|mimes:jpeg,png,jpg,PNG,JPG,webp|max:2048',
             'images.*' =>  'image|mimes:jpeg,png,jpg,webp|max:2048',
             'description' => 'max:225',
 
         ]);
+        // Création d'un nouvel engin
+        $imageOriginale = $request->file('image');
+        $imageOriginaleName = time() . '.' . $imageOriginale->getClientOriginalExtension();
 
-        // Création d'un nouvel
-        if ($request->hasFile('images')) {
-            foreach ($request->file('couverture') as $couverture) {
-                $imageName = time() . '_' . $image->getClientOriginalName();
-                $couverture->move(public_path('assets/img/pieces/'), $imageName);
+        $imageOriginalePath = 'assets/img/pieces/' . $imageOriginaleName;
+        $imageOriginale->move(public_path('assets/img/pieces'), $imageOriginaleName);
 
-                $pieces = new Piece();
-                $couverture = $validatedData['couverture'];
-                $pieces->categorie_pieces = $validatedData['categorie_pieces'];
-                $pieces->nom = $validatedData['nom'];
-                $pieces->reference = $validatedData['reference'];
-                $pieces->description = $validatedData['description'];
-
-                $imageName_couverture = time() . '_' . $validatedData['couverture']->getClientOriginalName();
-               // $couverture->move(public_path('assets/img/pieces/' .$imageName_couverture ));
-
-                $pieces->couverture = 'assets/img/pieces/' . $imageName_couverture;
-                $pieces->save();
-                $photo = new Image();
-                $photo->chemin = 'assets/img/pieces/' . $imageName;
-                $pieces->images()->save($photo);
-            }
-        }
+        // Enregistrement des données dans la base de données
+        $pieces = Piece::create([
+            'categorie_pieces' => $request->categorie_pieces,
+            'nom' => $request->nom,
+            'reference' => $request->reference,
+            'image' => $imageOriginalePath,
+            'description' => $request->description,
+        ]);
 
 
 
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('assets/img/pieces/'), $imageName);
 
-                $photo = new Image();
-                $photo->chemin = 'assets/img/pieces/' . $imageName;
-                $pieces->images()->save($photo);
-            }
-        }
+
+
 
         return redirect()->route('pieces.create')->with('success', "Pièces créé avec succès.");
     }

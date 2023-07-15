@@ -38,18 +38,18 @@ class EnginController extends Controller
         ]);
 
         // Création d'un nouvel engin
-$imageOriginale = $request->file('image');
-$imageOriginaleName = time() . '.' . $imageOriginale->getClientOriginalExtension();
+        $imageOriginale = $request->file('image');
+        $imageOriginaleName = time() . '.' . $imageOriginale->getClientOriginalExtension();
 
-$imageOriginalePath = 'assets/img/engin/' . $imageOriginaleName;
-$imageOriginale->move(public_path('assets/img/engin'), $imageOriginaleName);
+        $imageOriginalePath = 'assets/img/engin/' . $imageOriginaleName;
+        $imageOriginale->move(public_path('assets/img/engin'), $imageOriginaleName);
 
-// Enregistrement des données dans la base de données
-$engin = Engin::create([
-    'nom' => $request->nom,
-    'image' => $imageOriginalePath,
-    'description' => $request->description,
-]);
+        // Enregistrement des données dans la base de données
+        $engin = Engin::create([
+            'nom' => $request->nom,
+            'image' => $imageOriginalePath,
+            'description' => $request->description,
+        ]);
 
         return redirect()->route('engin.create')->with('success', "Engin créé avec succès.");
 

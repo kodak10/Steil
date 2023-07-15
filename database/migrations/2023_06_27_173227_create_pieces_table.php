@@ -16,9 +16,8 @@ return new class extends Migration
             $table->string('categorie_pieces');
             $table->string('reference')->unique();
             $table->string('nom');
-            $table->string('thumbnail');
             $table->string('image');
-            $table->string('description');
+            $table->string('description')->nullable();
 
             $table->timestamps();
         });

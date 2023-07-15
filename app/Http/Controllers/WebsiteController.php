@@ -58,6 +58,15 @@ class WebsiteController extends Controller
         return view('pieces', compact('engins', 'marques', 'pieces', 'banner_engins', 'banner_pieces', 'top_pieces_buys'));
 
     }
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('search');
+
+        $pieces = Piece::where('nom', 'like', '%' . $searchTerm . '%')->get();
+
+        return view('pieces', compact('engins'));
+    }
+
 
     public function select_catgeories_pieces($type = null)
     {

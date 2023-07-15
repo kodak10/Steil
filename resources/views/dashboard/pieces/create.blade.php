@@ -80,16 +80,11 @@
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="prenoms">Image Couverture</label>
-                                                <input type="file" name="couverture" multiple class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
                                                 <label for="prenoms">Images</label>
-                                                <input type="file" name="images[]" multiple class="form-control">
+                                                <input type="file" name="image" class="form-control">
                                             </div>
                                         </div>
+                                        
 
                                     </div>
 
