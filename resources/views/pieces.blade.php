@@ -75,15 +75,15 @@
 		</div>
 	</header>
 
-    <div style="max-height: 300px; min-height:300px">
-
+    <div class="container-fluid">
+        <img src="{{asset('assets/img/Banner_pieces_auto.png')}}" class="img-fluid w-100" alt="">
     </div>
 
 	<!-- ======= Produits pièces auto Section ======= -->
     <section class="product-area shop-sidebar shop section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-12">
+                <div class="col-lg-3 col-md-4 col-12 mb-3">
                     <div class="shop-sidebar">
                             <!-- Single Widget -->
                             <div class="single-widget category">
@@ -95,15 +95,11 @@
 
                                 </ul>
                             </div>
-
-
-
-
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-8 col-12">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-lg-6 mb-3">
                             <div class="search-top">
 								<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
 								<div class="search-top">
@@ -117,7 +113,7 @@
 							</div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-lg-6">
                             {{-- <form action="{{ route('pieces_engin') }}" method="GET">
                                 <select name="categorie_pieces" class="form-control p-2" onchange="this.form.submit()">
                                     <option value="">Toutes les Categories</option>
@@ -145,7 +141,6 @@
                         @foreach ($pieces as $piece )
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="single-product" id="single-product">
-
                                     <div class="product-img">
                                         <a data-fancybox="piece_{{$piece->id}}" href="{{ $piece->image }}">
                                             <img class="default-img" src="{{ $piece->image }}" alt="#" style="height:250px !important; widht:100% !important">
@@ -164,7 +159,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="container d-flex text-center justify-content-center" id="pagination">
+                        <div class="container d-flex text-center justify-content-center m-auto" id="pagination">
                             {{ $pieces->links() }}
                         </div>
                     </div>
@@ -173,7 +168,7 @@
         </div>
     </section>
 
-	<div style="max-height: 300px; min-height:300px">
+	<div style="max-height: 300px; min-height:200px">
 
     </div>
 
