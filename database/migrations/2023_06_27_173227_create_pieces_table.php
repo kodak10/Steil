@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('pieces', function (Blueprint $table) {
             $table->id();
             $table->string('categorie_pieces');
-            $table->string('reference')->unique();
-            $table->string('nom');
+            $table->string('reference')->nullable();
+            $table->string('nom')->nullable();
             $table->string('image');
             $table->string('description')->nullable();
 

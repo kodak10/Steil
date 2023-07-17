@@ -165,7 +165,7 @@
                       <div class="info-item d-flex flex-column justify-content-center align-items-center p-2">
                         <i class="fa-solid fa-envelope"></i>
                         <h3>Email</h3>
-                        <p>steilautocommercial@gmail.com</p>
+                        <p class="m-auto">steilautocommercial@gmail.com</p>
                         <br>
                       </div>
 
@@ -175,7 +175,7 @@
                       <div class="info-item  d-flex flex-column justify-content-center align-items-center p-2">
                         <i class="fa-solid fa-map-pin"></i>
                         <h3>Notre Adresse</h3>
-                        <p>Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord</p><br>
+                        <p class="m-auto">Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord</p><br>
                       </div>
 
                     </div>
@@ -235,7 +235,7 @@
 
           <div class="d-flex justify-content-between m-auto">
             <h2 class="text-uppercase text-white title-section ">Pieces récentes</h2>
-            <a href="/pieces_engin" class="fs-4 fw-bold">Voir Tout</a>
+            <a href="/pieces_engin" class="fs-4 fw-bold">VOIR TOUT</a>
           </div>
           <div class="row">
                 @foreach ($pieces_recentes as $pieces_recente)
@@ -335,7 +335,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="text-center">ENGINS</h2>
+                        <h2 class="text-uppercase title-section text-center mb-5">ENGINS</h2>
                     </div>
                 </div>
             </div>
@@ -346,8 +346,8 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <a data-fancybox="engin_{{$engin->id}}" href="{{ $engin->image }}">
-                                        <img class="default-img" src="{{ $engin->image }}" alt="#">
-                                        <img class="hover-img" src="{{ $engin->image }}" alt="#">
+                                        <img class="default-img" src="{{ $engin->image }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ $engin->image }}" alt="#" style="height:300px !important; widht:100% !important">
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >

@@ -60,11 +60,19 @@ class WebsiteController extends Controller
     }
     public function search(Request $request)
     {
+        $engins = Engin::get();
+        $marques = Marque::all();
+        //$pieces = Piece::paginate(9);
+        $banner_engins = Engin::latest()->take(1)->get();
+        $banner_pieces = Piece::latest()->take(2)->get();
+        $top_pieces_buys = Piece::orderBy('created_at', 'asc')->take(2)->get();
+
+
         $searchTerm = $request->input('search');
 
-        $pieces = Piece::where('nom', 'like', '%' . $searchTerm . '%')->get();
+        $pieces = Piece::where('nom', 'like', '%' . $searchTerm . '%')->paginate(9);
 
-        return view('pieces', compact('engins'));
+        return view('pieces', compact('engins', 'marques', 'pieces', 'banner_engins', 'banner_pieces', 'top_pieces_buys'));
     }
 
 

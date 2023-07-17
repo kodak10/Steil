@@ -2,43 +2,39 @@
 
 namespace App\Http\Controllers;
 
-
-
+use App\Imports\YourImport;
 use App\Models\Piece;
 
-use PHPExcel;
-use PHPExcel_IOFactory;
+use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 
 class ImportPieceDetaillerController extends Controller
 {
-    public function importExcel()
+
+    public function import(Request $request)
     {
-        
-        $filePath = 'chemin/vers/votre/fichier.xlsx';
+        $file = $request->file('excel_file');
+        $data = Excel::toArray([], $file);
 
-        // Charger le fichier Excel
-        $objPHPExcel = PHPExcel_IOFactory::load($filePath);
+        $i=1;
+        foreach ($data[0] as $column) {
 
-        // Sélectionner la première feuille de calcul
-        $worksheet = $objPHPExcel->getActiveSheet();
 
-        // Traiter les données du fichier Excel
-        foreach ($worksheet->getRowIterator() as $row) {
-            // Accéder aux différentes cellules de chaque ligne
-            foreach ($row->getCellIterator() as $cell) {
-                // Récupérer la valeur de chaque cellule
-                $cellValue = $cell->getValue();
+            $name = $column['0'];
+            $reference = $column['1'];
 
-                // Faites quelque chose avec la valeur de la cellule
-                // Par exemple, enregistrez-la dans une base de données
-            }
+            // Créez une instance du modèle et enregistrez les données dans la base de données
+            $importData = new Piece();
+            $importData->categorie_pieces = "Moteur";
+            $importData->nom = $name;
+            $importData->reference = $reference;
+            $importData->image = 'assets/img/pieces/image' . $i++ . '.jpg';
+            $importData->save();
         }
 
-        // Faire d'autres opérations nécessaires, comme enregistrer les données dans la base de données
-
-        // Rediriger ou afficher un message de confirmation
         return redirect()->back()->with('success', 'Importation du fichier Excel réussie.');
+}
 
-    }
 }

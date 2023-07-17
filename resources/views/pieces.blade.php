@@ -138,13 +138,11 @@
 
                                     <div class="product-img">
                                         <a data-fancybox="piece_{{$piece->id}}" href="{{ $piece->image }}">
-                                            <img class="default-img" src="{{ $piece->thumbnail }}" alt="#">
-                                            <img class="hover-img" src="{{ $piece->thumbnail }}" alt="#">
+                                            <img class="default-img" src="{{ $piece->image }}" alt="#" style="height:250px !important; widht:100% !important">
+                                            <img class="hover-img" src="{{ $piece->image }}" alt="#" style="height:250px !important; widht:100% !important">
                                         </a>
                                         <div class="button-head " style="text-align: center !important;">
-                                            <div class="product-action">
-                                                    <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class="fa-solid fa-eye"></i><span>Détails</span></a>
-                                            </div>
+
                                             <div class="product-action-2 text-center" >
                                                 <a  href="tel:+2250767754079">Appeler</a>
                                             </div>
@@ -156,7 +154,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="d-flex text-center justify-content-center" id="pagination">
+                        <div class="container d-flex text-center justify-content-center" id="pagination">
                             {{ $pieces->links() }}
                         </div>
                     </div>
@@ -186,8 +184,8 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <a data-fancybox="engin_{{$engin->id}}" href="{{ $engin->image }}">
-                                        <img class="default-img" src="{{ $engin->image }}" alt="#">
-                                        <img class="hover-img" src="{{ $engin->image }}" alt="#">
+                                        <img class="default-img" src="{{ $engin->image }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ $engin->image }}" alt="#" style="height:300px !important; widht:100% !important">
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
@@ -388,19 +386,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
-    <script>
-        $("[data-fancybox]").fancybox({
-                    zoom            : true,
-                    thumbs          : false,
-                    hash            : false,
-                    loop            : true,
-                    keyboard        : true,
-                    toolbar         : false,
-                    animationEffect : false,
-                    arrows          : true,
-                    clickContent    : false
-                });
-    </script>
 
 
     <script>

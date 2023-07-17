@@ -3,78 +3,27 @@
 namespace App\Imports;
 
 use App\Models\Piece;
-use App\Models\YourModel;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\File;
+use Maatwebsite\Excel\Concerns\ToCollection;
+use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Events\AfterImport;
-use Maatwebsite\Excel\Concerns\WithEvents;
-use Maatwebsite\Excel\Events\BeforeImport;
-use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Maatwebsite\Excel\Concerns\WithMappedCells;
-use Maatwebsite\Excel\Concerns\WithProgressBar;
-use App\Http\Controllers\ImportPieceDetaillerController;
-use PhpOffice\PhpSpreadsheet\Shared\Date;
-use PhpOffice\PhpSpreadsheet\Cell\Cell;
-use PhpOffice\PhpSpreadsheet\Cell\DefaultValueBinder;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class YourImport implements ToModel, WithHeadingRow, WithEvents{
-    private $imagePath;
 
-    public function __construct($imagePath)
+class YourImport implements ToCollection
+{
+
+    public function collection(YourImport $rows)
     {
-        $this->imagePath = $imagePath;
-    }
+        foreach ($rows as $row) {
+            $name = $row[0]; // L'indice 0 représente la colonne du nom
+            $reference = $row[1]; // L'indice 1 représente la colonne de la référence
 
-
-
-    public function model(array $row)
-    {
-        // Récupérez les données de chaque ligne du fichier Excel
-        $reference = $row['reference'];
-        $nom = $row['nom'];
-        $description = $row['description'];
-        $image = $row['image'];
-
-        if ($image) {
-            // Générez un nom de fichier unique pour l'image
-            $fileName = Str::random(100) . '.' . $image->getClientOriginalExtension();
-
-            $image->move($this->imagePath, $fileName); // Déplacez l'image vers le dossier de destination
-
-        } else {
-            // Si aucune image n'est fournie, vous pouvez définir une valeur par défaut ou gérer cette situation en conséquence
-            $fileName = null;
+            // Enregistrez les données dans la base de données ou effectuez les actions souhaitées
+            $PiecesImporter = new Piece();
+            $PiecesImporter->categorie_pieces = "Moteur";
+            $PiecesImporter->nom = $name;
+            $PiecesImporter->reference = $reference;
+            $PiecesImporter->save();
         }
-
-        // Créez une nouvelle instance de votre modèle et enregistrez les données
-        $PiecesDetailler = new Piece();
-        $PiecesDetailler->categorie_pieces = "moteur";
-        $PiecesDetailler->reference = $reference;
-        $PiecesDetailler->nom = $nom;
-        $PiecesDetailler->description = $description;
-        $PiecesDetailler->couverture = $fileName;
-        $PiecesDetailler->save();
-
-        return $PiecesDetailler;
-
-
-    }
-
-    public function registerEvents(): array
-    {
-        return [
-            BeforeImport::class => function (BeforeImport $event) {
-                // Avant l'importation, assurez-vous que le dossier de destination des images existe
-                if (!File::exists($this->imagePath)) {
-                    File::makeDirectory($this->imagePath, 0755, true);
-                }
-            },
-            AfterImport::class => function (AfterImport $event) {
-                // Après l'importation, supprimez la barre de progression
-                echo"Importantion réussi";
-                //$this->getConsoleOutput()->clear();
-            },
-        ];
     }
 }
