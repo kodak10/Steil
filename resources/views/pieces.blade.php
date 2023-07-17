@@ -110,16 +110,26 @@
 
                                     <form action="{{ route('recherche') }}" method="POST">
                                         @csrf
-										<input type="text" placeholder="Entrer le nom d'une piece" name="search" class="form-control p-2">
-                                        <button type="submit">Rechercher</button>
+										<input type="text" placeholder="Entrer le nom d'une piece" name="search" class="form-control p-2 mb-3">
+                                        <button type="submit" class="btn btn-primary">Rechercher</button>
                                     </form>
 								</div>
 							</div>
                         </div>
 
                         <div class="col-6">
-                            <form action="{{ route('pieces_engin') }}" method="GET">
+                            {{-- <form action="{{ route('pieces_engin') }}" method="GET">
                                 <select name="categorie_pieces" class="form-control p-2" onchange="this.form.submit()">
+                                    <option value="">Toutes les Categories</option>
+                                    <option value="Moteur">Moteur</option>
+                                    <option value="Pieces_detachees">Pieces Détachées</option>
+                                </select>
+
+
+                            </form> --}}
+
+                            <form >
+                                <select name="categorie_pieces" class="form-control p-2 mb-3">
                                     <option value="">Toutes les Categories</option>
                                     <option value="Moteur">Moteur</option>
                                     <option value="Pieces_detachees">Pieces Détachées</option>
