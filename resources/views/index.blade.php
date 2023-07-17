@@ -244,8 +244,8 @@
                             <div class="product-img">
 
                                 <a data-fancybox="piece_{{$pieces_recente->id}}" href="{{ $pieces_recente->image }}">
-                                    <img class="default-img" src="{{ $pieces_recente->image }}" alt="#">
-                                    <img class="hover-img" src="{{ $pieces_recente->image }}" alt="#">
+                                    <img class="default-img" src="{{ $pieces_recente->image }}" alt="#" style="height:250px !important; widht:100% !important">
+                                    <img class="hover-img" src="{{ $pieces_recente->image }}" alt="#" style="height:250px !important; widht:100% !important">
                                 </a>
                                 <div class="button-head " style="text-align: center !important;">
 
