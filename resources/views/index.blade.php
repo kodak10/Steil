@@ -154,9 +154,8 @@
                       <div class="info-item  d-flex flex-column justify-content-center align-items-center p-2">
                         <i class="fa-solid fa-phone"></i>
                         <h3>Téléphone</h3>
-                        <p>+225 0767754079</p>
-                        <p>+225 0767754095</p>
-                        <p>+225 0767755112</p>
+                        <p>+225 0777424405</p>
+                        <p>+225 0707636245</p>
 
                       </div>
                     </div>
@@ -165,7 +164,7 @@
                       <div class="info-item d-flex flex-column justify-content-center align-items-center p-2">
                         <i class="fa-solid fa-envelope"></i>
                         <h3>Email</h3>
-                        <p class="m-auto">steilautocommercial@gmail.com</p>
+                        <p class="m-auto">dafstephen@gmail.com</p>
                         <br>
                       </div>
 
@@ -250,7 +249,7 @@
                                 <div class="button-head " style="text-align: center !important;">
 
                                     <div class="product-action-2 text-center" >
-                                        <a  href="tel:+2250758265650">Appeler</a>
+                                        <a  href="tel:+2250777424405">Appeler</a>
                                     </div>
                                 </div>
                             </div>
@@ -351,7 +350,7 @@
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
-                                            <a  href="tel:+2250758265650">Appeler</a>
+                                            <a  href="tel:+2250777424405">Appeler</a>
                                         </div>
                                     </div>
                                 </div>
@@ -389,7 +388,7 @@
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
-                                            <a  href="tel:+2250758265650">Appeler</a>
+                                            <a  href="tel:+2250777424405">Appeler</a>
                                         </div>
                                     </div>
                                 </div>
@@ -406,7 +405,7 @@
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
-                                            <a  href="tel:+2250758265650">Appeler</a>
+                                            <a  href="tel:+2250777424405">Appeler</a>
                                         </div>
                                     </div>
                                 </div>
@@ -423,7 +422,7 @@
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
-                                            <a  href="tel:+2250758265650">Appeler</a>
+                                            <a  href="tel:+2250777424405">Appeler</a>
                                         </div>
                                     </div>
                                 </div>
@@ -440,7 +439,7 @@
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
-                                            <a  href="tel:+2250758265650">Appeler</a>
+                                            <a  href="tel:+2250777424405">Appeler</a>
                                         </div>
                                     </div>
                                 </div>
@@ -457,7 +456,7 @@
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
-                                            <a  href="tel:+2250758265650">Appeler</a>
+                                            <a  href="tel:+2250777424405">Appeler</a>
                                         </div>
                                     </div>
                                 </div>
@@ -474,7 +473,7 @@
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
-                                            <a  href="tel:+2250758265650">Appeler</a>
+                                            <a  href="tel:+2250777424405">Appeler</a>
                                         </div>
                                     </div>
                                 </div>
@@ -563,8 +562,8 @@
               <p>
 
                 Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
-                <strong>Téléphone:</strong>+225 0767754079 <br> +225 0767755112 <br> <br>+225 0767754095
-                <strong>Email:</strong> steilautocommercial@gmail.com<br>
+                <strong>Téléphone:</strong>+225 0777424405 <br> +225 0707636245 <br> <br>+225 0767754095
+                <strong>Email:</strong> dafstephen@gmail.com<br>
               </p>
               <div class="social-links d-flex mt-3">
                     <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
