@@ -195,7 +195,7 @@
           <h2 class="text-center mb-5 title-section text-white">NOS SERVICES</h2>
             <div class="row">
                 <div class="col-lg-4">
-                    <a href="">
+                    <a href="/pieces_engin">
                       <div class="card pieces_auto  w-100" style="min-height: 200px;">
                         <div class="card-body d-flex justify-content-center align-items-center text-center">
                           <h5 class="card-title">VENTE DE PIECE AUTO /ENGIN / BUS</h5>
@@ -205,7 +205,7 @@
                 </div>
 
                 <div class="col-lg-4 mt-5 mb-5">
-                    <a href="">
+                    <a href="/reparation">
                       <div class="card reparation w-100" style="min-height: 200px;">
                         <div class="card-body d-flex justify-content-center align-items-center text-center">
                           <h5 class="card-title">GARAGE</h5>
@@ -215,7 +215,7 @@
                 </div>
 
                 <div class="col-lg-4 ">
-                  <a href="">
+                  <a href="/pieces_engin#engins">
                     <div class="card vente_vehicule w-100" style="min-height: 200px;">
                       <div class="card-body d-flex justify-content-center align-items-center text-center">
                         <h5 class="card-title">VENTE ET LOCATION D'ENGIN</h5>
@@ -489,7 +489,7 @@
     </div>
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    {{-- <section id="testimonials" class="testimonials section-bg">
         <div class="container" data-aos="fade-up">
             <h2 class="text-uppercase title-section text-center mb-5">Temoignages</h2>
 
@@ -517,7 +517,7 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
 
     <!-- ======= Marques Section ======= -->
     <section id="" class="marques">
@@ -562,7 +562,7 @@
               <p>
 
                 Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
-                <strong>Téléphone:</strong>+225 0777424405 <br> +225 0707636245 <br> <br>+225 0767754095
+                <strong>Téléphone:</strong>+225 0777424405 <br> +225 0707636245 <br>
                 <strong>Email:</strong> dafstephen@gmail.com<br>
               </p>
               <div class="social-links d-flex mt-3">

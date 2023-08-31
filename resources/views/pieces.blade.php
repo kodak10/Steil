@@ -102,44 +102,32 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-8 col-12">
-                    <div class="row">
-                        <div class="col-lg-6 mb-3">
-                            <div class="search-top">
-								<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
-								<div class="search-top">
 
-                                    <form action="{{ route('recherche') }}" method="POST">
-                                        @csrf
-										<input type="text" placeholder="Entrer le nom d'une piece" name="search" class="form-control p-2 mb-3">
+                    <form action="{{ route('recherche') }}" method="GET">
+                        <div class="row">
+                            <div class="col-lg-6 mb-3">
+                                <div class="search-top">
+                                    <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
+                                    <div class="search-top">
+                                        <input type="text" placeholder="Entrer le nom d'une piece" name="keyword" class="form-control p-2 mb-3">
                                         <button type="submit" class="btn btn-primary">Rechercher</button>
-                                    </form>
-								</div>
-							</div>
-                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div class="col-lg-6">
-                            {{-- <form action="{{ route('pieces_engin') }}" method="GET">
-                                <select name="categorie_pieces" class="form-control p-2" onchange="this.form.submit()">
+                            <div class="col-lg-6">
+                                <select name="category" class="form-control p-2 mb-3">
                                     <option value="">Toutes les Categories</option>
                                     <option value="Moteur">Moteur</option>
                                     <option value="Pieces_detachees">Pieces Détachées</option>
                                 </select>
 
-
-                            </form> --}}
-
-                            <form >
-                                <select name="categorie_pieces" class="form-control p-2 mb-3">
-                                    <option value="">Toutes les Categories</option>
-                                    <option value="Moteur">Moteur</option>
-                                    <option value="Pieces_detachees">Pieces Détachées</option>
-                                </select>
-
-
-                            </form>
+                            </div>
                         </div>
 
-                    </div>
+
+                    </form>
+
 
                     <div class="row" id="selectedPieces">
                         @foreach ($pieces as $piece )
@@ -167,6 +155,8 @@
                             {{ $pieces->links() }}
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -175,7 +165,7 @@
 
 
 	<!-- ======= Engin disponible Section ======= -->
-	<div class="product-area most-popular section">
+	<div class="product-area most-popular section" id="engins">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -438,7 +428,7 @@
                   <p>
 
                     Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
-                    <strong>Téléphone:</strong>+225 0777424405 <br> +225 0707636245 <br> <br>+225 0767754095
+                    <strong>Téléphone:</strong>+225 0777424405 <br> +225 0707636245 <br>
                 <strong>Email:</strong> dafstephen@gmail.com<br>
                   </p>
                   <div class="social-links d-flex mt-3">
@@ -516,38 +506,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 
-
-    <script>
-       document.getElementById('selectionForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    var moteurId = document.getElementById('moteurSelect').value;
-
-    // Envoyer une requête AJAX
-    axios.post('/select-pieces', {
-        moteur_id: moteurId
-    })
-    .then(function (response) {
-        var piecesHtml = '';
-
-        // Générer le HTML des pièces sélectionnées
-        response.data.pieces.data.forEach(function(piece) {
-            piecesHtml += '<div>';
-            piecesHtml += '<h2>' + piece.nom + '</h2>';
-            piecesHtml += '<p>' + piece.description + '</p>';
-            // Ajoutez d'autres informations de la pièce détachée...
-            piecesHtml += '</div>';
-        });
-
-        // Mettre à jour la section 'selectedPieces' avec les pièces sélectionnées et la pagination
-        document.getElementById('selectedPieces').innerHTML = piecesHtml + response.data.pagination;
-    })
-    .catch(function (error) {
-        console.error(error);
-    });
-});
-
-    </script>
 
 </body>
 </html>

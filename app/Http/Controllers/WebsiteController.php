@@ -67,12 +67,32 @@ class WebsiteController extends Controller
         $banner_pieces = Piece::latest()->take(2)->get();
         $top_pieces_buys = Piece::orderBy('created_at', 'asc')->take(2)->get();
 
+        $query = DB::table('pieces');
 
-        $searchTerm = $request->input('search');
 
-        $pieces = Piece::where('nom', 'like', '%' . $searchTerm . '%')->paginate(9);
+       
+
+        $category = $request->input('category');
+        $keyword = $request->input('keyword');
+
+
+        if (!empty($category)) {
+            $query->where('categorie_pieces', $category);
+        }
+
+        if (!empty($keyword)) {
+            $query->where('nom', 'like', '%' . $keyword . '%');
+        }
+
+        $pieces = $query->paginate(8);
+
+
+        //$pieces = Piece::where('nom', 'like', '%' . $searchTerm . '%')->paginate(9);
 
         return view('pieces', compact('engins', 'marques', 'pieces', 'banner_engins', 'banner_pieces', 'top_pieces_buys'));
+
+
+
     }
 
 

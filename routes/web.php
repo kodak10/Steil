@@ -18,7 +18,7 @@ use App\Http\Controllers\WebsiteController;
 Route::get('/', [WebsiteController::class, 'index']);
 Route::get('/pieces_engin', [WebsiteController::class, 'eshop']);
 Route::get('/pieces_engin/{type?}', [WebsiteController::class, 'eshop'])->name('pieces_engin');
-Route::post('/pieces_engin', [WebsiteController::class, 'search']  )->name('recherche');
+Route::get('/pieces_engin', [WebsiteController::class, 'search']  )->name('recherche');
 
 Route::get('/reparation', [WebsiteController::class, 'reparation']);
 Route::get('/contact', function () {
