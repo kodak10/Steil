@@ -43,6 +43,10 @@
 		a{
 			text-decoration: none !important;
 		}
+        .product-content h3 a{
+            font-weight: bold !important;
+            color: #e41a20 !important;
+        }
 	</style>
 
 </head>
@@ -61,15 +65,15 @@
 		  <i class="mobile-nav-toggle mobile-nav-hide d-none fa-solid fa-xmark"></i>
 		  <nav id="navbar" class="navbar">
             <ul>
-              <li><a href="/">Accueil</a></li>
-              <li><a href="/#get-started">A Propos</a></li>
-              <li><a href="/#ours_services">Services</a></li>
-              <li><a href="/pieces_engin"  class="active">Pièces Auto / Engin</a></li>
-              <li><a href="/reparation">Reparation d'engin</a></li>
-              <li><a href="/contact">Contact</a></li>
-              <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="/" >ACCUEIL</a></li>
+                <li><a href="/#get-started">A PROPOS</a></li>
+                <li><a href="/#ours_services">SERVICES</a></li>
+                <li><a href="/pieces_engin" class="active">PIECES AUTO / ENGIN / BUS</a></li>
+                <li><a href="/reparation">GARAGE</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
 
-            </ul>
+              </ul>
           </nav>
 
 		</div>
@@ -168,9 +172,7 @@
         </div>
     </section>
 
-	<div style="max-height: 300px; min-height:200px">
 
-    </div>
 
 	<!-- ======= Engin disponible Section ======= -->
 	<div class="product-area most-popular section">
@@ -178,7 +180,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="text-center">ENGINS</h2>
+                        <h2 class="text-uppercase title-section text-center mb-5">ENGINS</h2>
                     </div>
                 </div>
             </div>
@@ -203,6 +205,128 @@
                                 </div>
                             </div>
                         @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Bus  ======= -->
+	<div class="product-area most-popular section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2 class="text-uppercase title-section text-center mb-5">BUS</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel popular-slider">
+
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a data-fancybox="engin_01" href="{{ asset('assets/img/bus/1.avif') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/1.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/1.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    </a>
+                                    <div class="button-head " style="text-align: center !important;">
+                                        <div class="product-action-2 text-center" >
+                                            <a  href="tel:+2250758265650">Appeler</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="product-content align-self-end">
+                                    <h3><a href="#">{{$engin->nom}}</a></h3>
+                                </div> --}}
+                            </div>
+
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a data-fancybox="engin_02" href="{{ asset('assets/img/bus/2.avif') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/2.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/2.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    </a>
+                                    <div class="button-head " style="text-align: center !important;">
+                                        <div class="product-action-2 text-center" >
+                                            <a  href="tel:+2250758265650">Appeler</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="product-content align-self-end">
+                                    <h3><a href="#">{{$engin->nom}}</a></h3>
+                                </div> --}}
+                            </div>
+
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a data-fancybox="engin_03" href="{{ asset('assets/img/bus/3.jpg') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/3.jpg') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/3.jpg') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    </a>
+                                    <div class="button-head " style="text-align: center !important;">
+                                        <div class="product-action-2 text-center" >
+                                            <a  href="tel:+2250758265650">Appeler</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="product-content align-self-end">
+                                    <h3><a href="#">{{$engin->nom}}</a></h3>
+                                </div> --}}
+                            </div>
+
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a data-fancybox="engin_04" href="{{ asset('assets/img/bus/4.avif') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/4.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/4.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    </a>
+                                    <div class="button-head " style="text-align: center !important;">
+                                        <div class="product-action-2 text-center" >
+                                            <a  href="tel:+2250758265650">Appeler</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="product-content align-self-end">
+                                    <h3><a href="#">{{$engin->nom}}</a></h3>
+                                </div> --}}
+                            </div>
+
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a data-fancybox="engin_05" href="{{ asset('assets/img/bus/5.avif') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/5.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/5.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    </a>
+                                    <div class="button-head " style="text-align: center !important;">
+                                        <div class="product-action-2 text-center" >
+                                            <a  href="tel:+2250758265650">Appeler</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="product-content align-self-end">
+                                    <h3><a href="#">{{$engin->nom}}</a></h3>
+                                </div> --}}
+                            </div>
+
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a data-fancybox="engin_06" href="{{ asset('assets/img/bus/6.jpg') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/6.jpg') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/6.jpg') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    </a>
+                                    <div class="button-head " style="text-align: center !important;">
+                                        <div class="product-action-2 text-center" >
+                                            <a  href="tel:+2250758265650">Appeler</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="product-content align-self-end">
+                                    <h3><a href="#">{{$engin->nom}}</a></h3>
+                                </div> --}}
+                            </div>
 
                     </div>
                 </div>

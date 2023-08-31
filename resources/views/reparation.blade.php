@@ -46,15 +46,15 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none fa-solid fa-xmark"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/" >Accueil</a></li>
-          <li><a href="/#get-started">A Propos</a></li>
-          <li><a href="/#ours_services">Services</a></li>
-          <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
-          <li><a href="/reparation" class="active">Reparation d'engin</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="/" >ACCUEIL</a></li>
+            <li><a href="/#get-started">A PROPOS</a></li>
+            <li><a href="/#ours_services">SERVICES</a></li>
+            <li><a href="/pieces_engin">PIECES AUTO / ENGIN / BUS</a></li>
+            <li><a href="/reparation" class="active">GARAGE</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+            <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
 
-        </ul>
+          </ul>
       </nav>
 
     </div>
@@ -65,7 +65,7 @@
 
     <section class="big-banner section" style="background-image: url('https://fakeimg.pl/1024x800') ;">
 		<div class="container">
-			<h2 class="text-center text-dark">REPARATION D'ENGIN</h2>
+			<h2 class="text-center text-dark">GARAGE</h2>
 		</div>
 	</section>
 
@@ -74,7 +74,7 @@
       <div class="container">
 
         <div class="section-header">
-          <h2>NOS PRESTATIONS DE REPARATION</h2>
+          <h2>NOS PRESTATIONS</h2>
         </div>
 
         <div class="row gy-4">
@@ -85,7 +85,8 @@
                 <i class="fa-solid fa-toolbox"></i>
               </div>
               <h3>Entretien</h3>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+              <p>Notre entretien automobile inclus vidange, remplacement de filtres, vérifications sécurité, diagnostic électronique
+                 et rotation pneus, assurant longévité du véhicule et conformité normes constructeur, pour une tranquillité d'esprit totale.</p>
             </div>
           </div>
 
@@ -95,7 +96,8 @@
                 <i class="fa-solid fa-screwdriver-wrench"></i>
               </div>
               <h3>Réparation du moteur</h3>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+              <p>
+                Nous réparons les moteurs avec précision : diagnostics, remplacement pièces, ajustements, tests approfondis pour retrouver performances optimales en toute sécurité.</p>
             </div>
           </div>
 
@@ -105,7 +107,7 @@
                 <i class="fa-solid fa-toolbox"></i>
               </div>
               <h3>Réparation de la transmission</h3>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+              <p>Nous réparons les transmissions avec expertise : évaluation, remplacement pièces, ajustements et essais pour un fonctionnement optimal de votre véhicule.</p>
             </div>
           </div>
 
@@ -115,7 +117,7 @@
                 <i class="fa-solid fa-screwdriver-wrench"></i>
               </div>
               <h3>Réparation de la climatisation et du système de refroidissement</h3>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+              <p>Nous réparons climatisation et refroidissement : évaluation, réparation composants et tests pour un confort intérieur optimal et un moteur bien refroidi.</p>
             </div>
           </div>
 
@@ -125,7 +127,8 @@
                 <i class="fa-solid fa-toolbox"></i>
               </div>
               <h3>Réparation du système électrique</h3>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+              <p>
+                Nous réparons le système électrique : évaluation, résolution des problèmes et tests pour un fonctionnement fiable de vos systèmes</p>
             </div>
           </div>
 
@@ -135,7 +138,7 @@
                 <i class="fa-solid fa-screwdriver-wrench"></i>
               </div>
               <h3>Réparation de la carrosserie</h3>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+              <p>Nous réparons la carrosserie : évaluation, réparation et finitions pour une apparence retrouvée, à la fois fiable et esthétique.</p>
             </div>
           </div>
 

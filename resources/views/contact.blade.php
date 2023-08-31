@@ -45,15 +45,15 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none fa-solid fa-xmark"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/" >Accueil</a></li>
-          <li><a href="/#get-started">A Propos</a></li>
-          <li><a href="/#ours_services">Services</a></li>
-          <li><a href="/pieces_engin">Pièces Auto / Engin</a></li>
-          <li><a href="/reparation">Reparation d'engin</a></li>
-          <li><a href="/contact" class="active">Contact</a></li>
-          <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="/" >ACCUEIL</a></li>
+            <li><a href="/#get-started">A PROPOS</a></li>
+            <li><a href="/#ours_services">SERVICES</a></li>
+            <li><a href="/pieces_engin">PIECES AUTO / ENGIN / BUS</a></li>
+            <li><a href="/reparation">GARAGE</a></li>
+            <li><a href="/contact" class="active">CONTACT</a></li>
+            <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
 
-        </ul>
+          </ul>
       </nav>
 
     </div>
