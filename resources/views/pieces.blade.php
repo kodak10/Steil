@@ -118,8 +118,8 @@
                             <div class="col-lg-6">
                                 <select name="category" class="form-control p-2 mb-3">
                                     <option value="">Toutes les Categories</option>
-                                    <option value="Moteur">Moteur</option>
-                                    <option value="Pieces_detachees">Pieces Détachées</option>
+                                    <option value="moteur">Moteur</option>
+                                    <option value="pieces">Pieces Détachées</option>
                                 </select>
 
                             </div>
