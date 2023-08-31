@@ -92,6 +92,14 @@ class WebsiteController extends Controller
 
     }
 
+    public function search_cat($categorie)
+    {
+        $engins = Engin::get();
+        $marques = Marque::all();
+        $pieces = Piece::where('categorie_pieces', $categorie)->paginate(8);
+        return view('pieces', compact('pieces', 'engins', 'marques'));
+    }
+
 
     public function select_catgeories_pieces($type = null)
     {

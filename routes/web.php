@@ -17,7 +17,7 @@ use App\Http\Controllers\WebsiteController;
 // Website Route
 Route::get('/', [WebsiteController::class, 'index']);
 Route::get('/pieces_engin', [WebsiteController::class, 'eshop']);
-Route::get('/pieces_engin/{type?}', [WebsiteController::class, 'eshop'])->name('pieces_engin');
+Route::get('/pieces_engin/{categorie}', [WebsiteController::class, 'search_cat'])->name('search_categorie');
 Route::get('/pieces_engin', [WebsiteController::class, 'search']  )->name('recherche');
 
 Route::get('/reparation', [WebsiteController::class, 'reparation']);

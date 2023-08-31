@@ -94,9 +94,8 @@
                                 <h3 class="title">Catégories</h3>
                                 <ul class="categor-list">
                                     <li><a href="#" data-categorie="" class="active">TOUTES LES PIECES</a></li>
-                                    <li><a href="#" data-categorie="moteur">Moteur</a></li>
-                                    <li><a href="#" data-categorie="pieces_detachees">Pièces détachées</a></li>
-
+                                    <li><a href="{{ route('search_categorie', ['categorie' => 'moteur']) }}">Moteur</a></li>
+                                    <li><a href="{{ route('search_categorie', ['categorie' => 'pieces']) }}">Pieces détachées</a></li>
                                 </ul>
                             </div>
                     </div>
@@ -134,9 +133,9 @@
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="single-product" id="single-product">
                                     <div class="product-img">
-                                        <a data-fancybox="piece_{{$piece->id}}" href="{{ $piece->image }}">
-                                            <img class="default-img" src="{{ $piece->image }}" alt="#" style="height:250px !important; widht:100% !important">
-                                            <img class="hover-img" src="{{ $piece->image }}" alt="#" style="height:250px !important; widht:100% !important">
+                                        <a data-fancybox="piece_{{$piece->id}}" href="/{{ $piece->image }}">
+                                            <img class="default-img" src="/{{ $piece->image }}" alt="#" style="height:250px !important; widht:100% !important">
+                                            <img class="hover-img" src="/{{ $piece->image }}" alt="#" style="height:250px !important; widht:100% !important">
                                         </a>
                                         <div class="button-head " style="text-align: center !important;">
 
