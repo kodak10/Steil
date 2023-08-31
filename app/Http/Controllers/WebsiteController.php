@@ -69,9 +69,6 @@ class WebsiteController extends Controller
 
         $query = DB::table('pieces');
 
-
-       
-
         $category = $request->input('category');
         $keyword = $request->input('keyword');
 

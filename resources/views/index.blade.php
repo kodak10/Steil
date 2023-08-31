@@ -382,9 +382,9 @@
 
                             <div class="single-product">
                                 <div class="product-img">
-                                    <a data-fancybox="engin_01" href="{{ asset('assets/img/bus/1.avif') }}">
-                                        <img class="default-img" src="{{ asset('assets/img/bus/1.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
-                                        <img class="hover-img" src="{{ asset('assets/img/bus/1.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    <a data-fancybox="engin_01" href="{{ asset('assets/img/bus/1.png') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/1.png') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/1.png') }}" alt="#" style="height:300px !important; widht:100% !important">
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
@@ -399,9 +399,9 @@
 
                             <div class="single-product">
                                 <div class="product-img">
-                                    <a data-fancybox="engin_02" href="{{ asset('assets/img/bus/2.avif') }}">
-                                        <img class="default-img" src="{{ asset('assets/img/bus/2.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
-                                        <img class="hover-img" src="{{ asset('assets/img/bus/2.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    <a data-fancybox="engin_02" href="{{ asset('assets/img/bus/2.png') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/2.png') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/2.png') }}" alt="#" style="height:300px !important; widht:100% !important">
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
@@ -433,9 +433,9 @@
 
                             <div class="single-product">
                                 <div class="product-img">
-                                    <a data-fancybox="engin_04" href="{{ asset('assets/img/bus/4.avif') }}">
-                                        <img class="default-img" src="{{ asset('assets/img/bus/4.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
-                                        <img class="hover-img" src="{{ asset('assets/img/bus/4.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    <a data-fancybox="engin_04" href="{{ asset('assets/img/bus/4.png') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/4.png') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/4.png') }}" alt="#" style="height:300px !important; widht:100% !important">
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
@@ -450,9 +450,9 @@
 
                             <div class="single-product">
                                 <div class="product-img">
-                                    <a data-fancybox="engin_05" href="{{ asset('assets/img/bus/5.avif') }}">
-                                        <img class="default-img" src="{{ asset('assets/img/bus/5.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
-                                        <img class="hover-img" src="{{ asset('assets/img/bus/5.avif') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                    <a data-fancybox="engin_05" href="{{ asset('assets/img/bus/5.png') }}">
+                                        <img class="default-img" src="{{ asset('assets/img/bus/5.png') }}" alt="#" style="height:300px !important; widht:100% !important">
+                                        <img class="hover-img" src="{{ asset('assets/img/bus/5.png') }}" alt="#" style="height:300px !important; widht:100% !important">
                                     </a>
                                     <div class="button-head " style="text-align: center !important;">
                                         <div class="product-action-2 text-center" >
