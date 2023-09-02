@@ -192,7 +192,7 @@
     <!-- ======= ActivitY Section ======= -->
     <section class="activite h-100" style="background-color: #000000;" id="ours_services">
         <div class="container">
-          <h2 class="text-center mb-5 title-section text-white">NOS SERVICES</h2>
+          <h2 class="text-center mb-5 fw-bold text-white" style="color: #ffffff !imporant">NOS SERVICES</h2>
             <div class="row">
                 <div class="col-lg-4">
                     <a href="/pieces_engin">
@@ -329,12 +329,12 @@
     </div>
 
     <!-- ======= Top Engin Section ======= -->
-    <div class="product-area most-popular section">
+    <div class="product-area most-popular section mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="text-uppercase title-section text-center mb-5">ENGINS</h2>
+                        <h2 class="text-uppercase title-section text-center mb-3">ENGINS</h2>
                     </div>
                 </div>
             </div>
@@ -372,7 +372,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="text-uppercase title-section text-center mb-5">BUS</h2>
+                        <h2 class="text-uppercase title-section text-center">BUS</h2>
                     </div>
                 </div>
             </div>
@@ -523,7 +523,7 @@
     <section id="" class="marques">
         <div class="container-fluid" data-aos="fade-up">
             <div class="section-title">
-                <h2 class="text-center">NOS MARQUES DE PIECES AUTO</h2>
+                <h2 class="text-uppercase title-section text-center">NOS MARQUES DE PIECES AUTO</h2>
             </div>
             <div class="slides-3 swiper text-center">
                 <div class="swiper-wrapper">

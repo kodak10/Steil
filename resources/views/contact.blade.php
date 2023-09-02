@@ -102,15 +102,27 @@
             <form action="" method="post" role="form" class="php-email-form">
               <div class="row gy-4">
                 <div class="col-lg-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom Complet" required>
+                  <input type="text" name="name" class="form-control" placeholder="Votre Nom Complet" required>
                 </div>
                 <div class="col-lg-6 form-group">
-                  <input type="email" class="form-control" name="phone" id="email" placeholder="Votre Numéro de téléphone" required>
+                  <input type="texte" class="form-control" name="phone" placeholder="Votre Numéro de téléphone" required>
                 </div>
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Motif" required>
+              <div class="row gy-4">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Votre adresse Email" required>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" placeholder="Motif" required>
+                    </div>
+                </div>
+
               </div>
+
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>

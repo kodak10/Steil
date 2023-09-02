@@ -22,15 +22,15 @@ class ImportPieceDetaillerController extends Controller
         foreach ($data[0] as $column) {
 
 
-            $name = $column['0'];
-            $reference = $column['1'];
+            $reference = $column['0'];
+            $name = $column['1'];
 
             // Créez une instance du modèle et enregistrez les données dans la base de données
             $importData = new Piece();
-            $importData->categorie_pieces = "Moteur";
-            $importData->nom = $name;
-            $importData->reference = $reference;
-            $importData->image = 'assets/img/pieces/image' . $i++ . '.jpg';
+            $importData->categorie_pieces = "moteur";
+            //$importData->nom = $name;
+            //$importData->reference = $reference;
+            $importData->image = 'assets/img/moteurs/image' . $i++ . '.jpg';
             $importData->save();
         }
 
