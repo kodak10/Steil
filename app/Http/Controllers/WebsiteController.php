@@ -81,7 +81,7 @@ class WebsiteController extends Controller
             $query->where('nom', 'like', '%' . $keyword . '%');
         }
 
-        $pieces = $query->paginate(8);
+        $pieces = $query->paginate(9);
 
 
         //$pieces = Piece::where('nom', 'like', '%' . $searchTerm . '%')->paginate(9);
@@ -96,7 +96,7 @@ class WebsiteController extends Controller
     {
         $engins = Engin::get();
         $marques = Marque::all();
-        $pieces = Piece::where('categorie_pieces', $categorie)->paginate(8);
+        $pieces = Piece::where('categorie_pieces', $categorie)->paginate(9);
         return view('pieces', compact('pieces', 'engins', 'marques'));
     }
 
