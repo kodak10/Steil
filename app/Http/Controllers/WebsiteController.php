@@ -140,7 +140,7 @@ class WebsiteController extends Controller
         // Validez les données du formulaire ici
 
         $data = [
-            'name' => $request->input('nom'),
+            'name' => $request->input('name'),
             'number' => $request->input('phone'),
             'email' => $request->input('email'),
             'subject' => $request->input('subject'),
