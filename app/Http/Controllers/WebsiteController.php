@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoriePiece;
 use App\Models\Engin;
 use App\Models\Image;
-use App\Models\Marque;
 use App\Models\Piece;
+use App\Models\Marque;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Realisation;
-use App\Models\RealisationCategorie;
 use App\Models\testimonial;
 use Illuminate\Http\Request;
+use App\Models\CategoriePiece;
 use Illuminate\Support\Facades\DB;
+use App\Models\RealisationCategorie;
+
 
 class WebsiteController extends Controller
 {
@@ -132,4 +135,22 @@ class WebsiteController extends Controller
 
     }
 
+    public function send_mail(Request $request)
+    {
+        // Validez les données du formulaire ici
+
+        $data = [
+            'name' => $request->input('nom'),
+            'number' => $request->input('phone'),
+            'email' => $request->input('email'),
+            'subject' => $request->input('subject'),
+            'message' => $request->input('message'),
+        ];
+
+        Mail::to('infos@steilautomobile.com')->send(new ContactMail($data));
+
+        // Redirigez l'utilisateur après l'envoi du message
+
+        return redirect('/contact')->with('success', 'Votre message a été envoyé avec succès !');
+    }
 }

@@ -1,17 +1,18 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EnginController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ImportPieceDetaillerController;
-use App\Http\Controllers\MarquesController;
+use App\Http\Controllers\EnginController;
 use App\Http\Controllers\PiecesController;
-use App\Http\Controllers\RealisationCategorieController;
+use App\Http\Controllers\MarquesController;
+use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\SendMailController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\RealisationController;
 use App\Http\Controllers\TestimonialsController;
-use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\ImportPieceDetaillerController;
+use App\Http\Controllers\RealisationCategorieController;
 
 
 // Website Route
@@ -24,6 +25,8 @@ Route::get('/reparation', [WebsiteController::class, 'reparation']);
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::post('/contact', [WebsiteController::class, 'send_mail'])->name('mail');
+
 
 Route::get('/filtrer-pieces',  [WebsiteController::class, 'filtrerPieces'])->name('filtrer-pieces');
 
