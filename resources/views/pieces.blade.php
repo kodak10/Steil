@@ -428,7 +428,7 @@
 
                     Abidjan, Yopougon en face de UNIWAX sur l'autoroute du nord<br>
                     <strong>Téléphone:</strong>+225 0777424405 <br> +225 0707636245 <br>
-                <strong>Email:</strong> dafstephen@gmail.com<br>
+                <strong>Email:</strong> infos@steilautomobile.com<br>
                   </p>
                   <div class="social-links d-flex mt-3">
                         <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
