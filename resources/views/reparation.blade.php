@@ -52,7 +52,7 @@
             <li><a href="/pieces_engin">PIECES AUTO / ENGIN / BUS</a></li>
             <li><a href="/reparation" class="active">GARAGE</a></li>
             <li><a href="/contact">CONTACT</a></li>
-            <li><a href="/home"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
 
           </ul>
       </nav>
