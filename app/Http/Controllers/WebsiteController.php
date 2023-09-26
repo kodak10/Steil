@@ -26,7 +26,7 @@ class WebsiteController extends Controller
         $marques = Marque::all();
         $engins = Engin::get();
         $images = Image::get();
-        $pieces_recentes = Piece::latest()->take(8)->get();
+        $pieces_recentes = Piece::inRandomOrder()->take(8)->get();
 
         $images_engins = DB::table('images')
             ->join('engins', 'engins.id', '=', 'images.engin_id')
@@ -48,7 +48,7 @@ class WebsiteController extends Controller
         $top_pieces_buys = Piece::orderBy('created_at', 'asc')->take(2)->get();
 
 
-        $query = Piece::query();
+        $query = Piece::inRandomOrder()->query();
 
         // Appliquer des conditions basées sur le type sélectionné
         if ($type) {
@@ -100,6 +100,7 @@ class WebsiteController extends Controller
         $engins = Engin::get();
         $marques = Marque::all();
         $pieces = Piece::where('categorie_pieces', $categorie)->paginate(9);
+        //$pieces = Piece::whereIn('categorie_pieces', $categorie)->paginate(9);
         return view('pieces', compact('pieces', 'engins', 'marques'));
     }
 
@@ -147,7 +148,7 @@ class WebsiteController extends Controller
             'message' => $request->input('message'),
         ];
 
-        Mail::to('infos@steilautomobile.com')->send(new ContactMail($data));
+        Mail::to('steilautomobile@gmail.com')->send(new ContactMail($data));
 
         // Redirigez l'utilisateur après l'envoi du message
 

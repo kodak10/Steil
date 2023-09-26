@@ -36,7 +36,7 @@
   <header id="header" class=" d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center">
         <img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid">
         <h1>STEIL AUTOMOBILE</h1>
       </a>

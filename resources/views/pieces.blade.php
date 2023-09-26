@@ -91,11 +91,31 @@
                     <div class="shop-sidebar">
                             <!-- Single Widget -->
                             <div class="single-widget category">
-                                <h3 class="title">Catégories</h3>
+                                <h3 class="title fw-bold">Catégories</h3>
+
                                 <ul class="categor-list">
-                                    <li><a href="/pieces_engin" data-categorie="" class="active">TOUTES LES PIECES</a></li>
-                                    <li><a href="{{ route('search_categorie', ['categorie' => 'moteur']) }}">Moteur</a></li>
-                                    <li><a href="{{ route('search_categorie', ['categorie' => 'pieces']) }}">Pieces détachées</a></li>
+                                    <li><a href="/pieces_engin" data-categorie="" class="btn btn-danger p-2 text-white uppercase w-100">TOUTES LES PIECES</a></li>
+                                        <ul>
+                                            <li><a href="{{ route('search_categorie', ['categorie' => 'pieces']) }}" class="btn btn-danger p-2 text-white uppercase w-100">Pieces détachées</a></li>
+
+                                            <li>
+                                                <div class="btn-group w-100">
+
+                                                    <button type="button" class="btn btn-danger uppercase w-100">
+                                                        {{-- <a href="{{ route('search_categorie', ['categorie' => 'moteur|boite']) }}" class="text-white w-100">Moteurs et boite</a> --}}
+                                                        <a href="#" class="text-white w-100">Moteurs et boite</a>
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="sr-only">Toggle</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="{{ route('search_categorie', ['categorie' => 'moteur']) }}">Moteurs Simple</a>
+                                                        <a class="dropdown-item" href="{{ route('search_categorie', ['categorie' => 'boite']) }}">Boites</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
                                 </ul>
                             </div>
                     </div>
@@ -118,6 +138,7 @@
                                 <select name="category" class="form-control p-2 mb-3">
                                     <option value="">Toutes les Categories</option>
                                     <option value="moteur">Moteur</option>
+                                    <option value="boite">Boite</option>
                                     <option value="pieces">Pieces Détachées</option>
                                 </select>
 
